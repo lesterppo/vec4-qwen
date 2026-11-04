@@ -1,0 +1,503 @@
+{
+  "mode": "control_text_only",
+  "cases": [
+    {
+      "scenario": 0,
+      "kind": "tie_first",
+      "profile_a": [
+        13,
+        5,
+        14,
+        9
+      ],
+      "profile_b": [
+        3,
+        3,
+        4,
+        7
+      ],
+      "combined": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 22,
+        "Laugh Riot": 124,
+        "The Long Winter": 54,
+        "Neon Rebellion": 42,
+        "Family Picnic": 124,
+        "Quiet Harbor": 44,
+        "Galaxy Heist": 72,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Laugh Riot"
+      ],
+      "final_text": "To find the best match, we will first calculate the combined profile for each film by adding the two taste profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[13, 5, 14, 9]`\n**Profile 2 (Friend):** `[3, 3, 4, 7]`\n\n| Lane | You (13) | Friend (3) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 13 | 3 | **16** (0) |\n| **Comedy** | 5 | 3 | **8** |\n| **Drama** | 14 | 4 | **18** (2) |\n| **Sci-Fi** | 9 | 7 | **16** (0) |\n\n**Combined Profile (You + Friend):** `[0, 8, 2, 0]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[0, 8, 2, 0]` with each film's profile vector. The",
+      "final_raw": "To find the best match, we will first calculate the combined profile for each film by adding the two taste profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[13, 5, 14, 9]`\n**Profile 2 (Friend):** `[3, 3, 4, 7]`\n\n| Lane | You (13) | Friend (3) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 13 | 3 | **16** (0) |\n| **Comedy** | 5 | 3 | **8** |\n| **Drama** | 14 | 4 | **18** (2) |\n| **Sci-Fi** | 9 | 7 | **16** (0) |\n\n**Combined Profile (You + Friend):** `[0, 8, 2, 0]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[0, 8, 2, 0]` with each film's profile vector. The",
+      "seconds": 27.088183879852295,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        124,
+        124,
+        72
+      ]
+    },
+    {
+      "scenario": 1,
+      "kind": "all_zero",
+      "profile_a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "combined": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 0,
+        "Laugh Riot": 0,
+        "The Long Winter": 0,
+        "Neon Rebellion": 0,
+        "Family Picnic": 0,
+        "Quiet Harbor": 0,
+        "Galaxy Heist": 0,
+        "Static": 0
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Galaxy Heist",
+        "Laugh Riot",
+        "Neon Rebellion",
+        "Quiet Harbor",
+        "Starfall Squadron",
+        "Static",
+        "The Long Winter"
+      ],
+      "final_text": "To find the best match, we first need to normalize the input data. The input profiles are given as vectors of integers (0 to 15), but the instructions specify that the dot product is computed over the **integers** (0 to 15), not the **indices** (0 to 15). This is a crucial distinction in the prompt.\n\nLet's break down the data:\n\n**1. Normalize the Input Profiles (Lane-by-Lane Modulo 16):**\nThe prompt says: \"add the two profiles lane by lane modulo 16\".\nSince both profiles are 0-indexed integers (0 to 15), the modulo operation is simply the identity function.\n*   **Friend's Profile:** `[0, 0, 0, 0]`\n*   **Starfall Squadron:** `[15, 2, 3, 14]`\n*   **Laugh Riot:** `[3, 15, 2, 1]`\n*   **The Long Winter:** `[2, 3, 15, 1]`\n*   **Neon Rebellion:** `[13, 4, 5, 13]`\n*   **Family Picnic:** `[1, 14, 6, 0]`\n*   **Quiet Harbor:** `[1, 2, 14, 2]`\n",
+      "final_raw": "To find the best match, we first need to normalize the input data. The input profiles are given as vectors of integers (0 to 15), but the instructions specify that the dot product is computed over the **integers** (0 to 15), not the **indices** (0 to 15). This is a crucial distinction in the prompt.\n\nLet's break down the data:\n\n**1. Normalize the Input Profiles (Lane-by-Lane Modulo 16):**\nThe prompt says: \"add the two profiles lane by lane modulo 16\".\nSince both profiles are 0-indexed integers (0 to 15), the modulo operation is simply the identity function.\n*   **Friend's Profile:** `[0, 0, 0, 0]`\n*   **Starfall Squadron:** `[15, 2, 3, 14]`\n*   **Laugh Riot:** `[3, 15, 2, 1]`\n*   **The Long Winter:** `[2, 3, 15, 1]`\n*   **Neon Rebellion:** `[13, 4, 5, 13]`\n*   **Family Picnic:** `[1, 14, 6, 0]`\n*   **Quiet Harbor:** `[1, 2, 14, 2]`\n",
+      "seconds": 27.08608078956604,
+      "score_first_names": [
+        "Starfall Squadron",
+        "Laugh Riot",
+        "The Long Winter",
+        "Neon Rebellion",
+        "Family Picnic",
+        "Quiet Harbor"
+      ],
+      "score_top1": true,
+      "score_top3_order": true,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": true,
+      "score_top_scores_sorted": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": 2,
+      "kind": "near_max",
+      "profile_a": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "profile_b": [
+        15,
+        14,
+        15,
+        13
+      ],
+      "combined": [
+        14,
+        13,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 446,
+        "Laugh Riot": 277,
+        "The Long Winter": 289,
+        "Neon Rebellion": 460,
+        "Family Picnic": 280,
+        "Quiet Harbor": 260,
+        "Galaxy Heist": 472,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Galaxy Heist"
+      ],
+      "final_text": "To find the best match, we first need to normalize the input data. The input profiles are given as a list of integers representing the preference for each genre (0 to 15). Since the input lists are not explicitly normalized to a single value per genre (e.g., [15, 15, 15, 15] instead of [15, 15, 15, 15]), we must assume that the list represents the preference for each genre.\n\nLet's define the normalized profiles:\n- **User Profile**: `[15, 15, 15, 15]`\n- **Friend's Profile**: `[15, 14, 15, 13]`\n\n**Step 1: Add the two profiles lane by lane modulo 16.**\nSince the input values are already between 0 and 15, we can simply add them directly without modulo arithmetic.\n- **User Lane 1**: 15 + 15 = 30. Modulo 16: 30 % 16 = **14**.\n- **User Lane 2**: 15 + 14 = 29. Modulo 16: 29 % 16 = **13**.\n- **User Lane 3**: 15 + 15 = 30. Modulo ",
+      "final_raw": "To find the best match, we first need to normalize the input data. The input profiles are given as a list of integers representing the preference for each genre (0 to 15). Since the input lists are not explicitly normalized to a single value per genre (e.g., [15, 15, 15, 15] instead of [15, 15, 15, 15]), we must assume that the list represents the preference for each genre.\n\nLet's define the normalized profiles:\n- **User Profile**: `[15, 15, 15, 15]`\n- **Friend's Profile**: `[15, 14, 15, 13]`\n\n**Step 1: Add the two profiles lane by lane modulo 16.**\nSince the input values are already between 0 and 15, we can simply add them directly without modulo arithmetic.\n- **User Lane 1**: 15 + 15 = 30. Modulo 16: 30 % 16 = **14**.\n- **User Lane 2**: 15 + 14 = 29. Modulo 16: 29 % 16 = **13**.\n- **User Lane 3**: 15 + 15 = 30. Modulo ",
+      "seconds": 26.734330892562866,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        472,
+        460,
+        446
+      ]
+    },
+    {
+      "scenario": 3,
+      "kind": "random",
+      "profile_a": [
+        6,
+        10,
+        11,
+        15
+      ],
+      "profile_b": [
+        0,
+        7,
+        12,
+        0
+      ],
+      "combined": [
+        6,
+        1,
+        7,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 323,
+        "Laugh Riot": 62,
+        "The Long Winter": 135,
+        "Neon Rebellion": 312,
+        "Family Picnic": 62,
+        "Quiet Harbor": 136,
+        "Galaxy Heist": 288,
+        "Static": 7
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "final_text": "To find the best match, we first calculate the combined profile by adding the two friend's and the user's taste profiles lane by lane, taking the result modulo 16.\n\n### Step 1: Calculate Combined Profiles\n\n**User Profile:** `[6, 10, 11, 15]`\n**Friend's Profile:** `[0, 7, 12, 0]`\n\n*   **Action (0-15):**\n    *   User: 6 + Friend: 0 = **6**\n    *   Comedy: 10 + 7 = **17** \u2192 **1**\n    *   Drama: 11 + 12 = **23** \u2192 **7**\n    *   Sci-Fi: 15 + 0 = **15**\n\n*   **Comedy (0-15):**\n    *   User: 10 + Friend: 7 = **17** \u2192 **1**\n    *   Drama: 11 + 12 = **23** \u2192 **7**\n    *   Sci-Fi: 15 + 0 = **15**\n\n*   **Drama (0-15):**\n    *   User: 11 + Friend: 12 = **23** \u2192 **7**\n    *   Comedy: 10 + 7 = **",
+      "final_raw": "To find the best match, we first calculate the combined profile by adding the two friend's and the user's taste profiles lane by lane, taking the result modulo 16.\n\n### Step 1: Calculate Combined Profiles\n\n**User Profile:** `[6, 10, 11, 15]`\n**Friend's Profile:** `[0, 7, 12, 0]`\n\n*   **Action (0-15):**\n    *   User: 6 + Friend: 0 = **6**\n    *   Comedy: 10 + 7 = **17** \u2192 **1**\n    *   Drama: 11 + 12 = **23** \u2192 **7**\n    *   Sci-Fi: 15 + 0 = **15**\n\n*   **Comedy (0-15):**\n    *   User: 10 + Friend: 7 = **17** \u2192 **1**\n    *   Drama: 11 + 12 = **23** \u2192 **7**\n    *   Sci-Fi: 15 + 0 = **15**\n\n*   **Drama (0-15):**\n    *   User: 11 + Friend: 12 = **23** \u2192 **7**\n    *   Comedy: 10 + 7 = **",
+      "seconds": 28.137961387634277,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        323,
+        312,
+        288
+      ]
+    },
+    {
+      "scenario": 4,
+      "kind": "random",
+      "profile_a": [
+        2,
+        14,
+        12,
+        0
+      ],
+      "profile_b": [
+        14,
+        5,
+        15,
+        7
+      ],
+      "combined": [
+        0,
+        3,
+        11,
+        7
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 137,
+        "Laugh Riot": 74,
+        "The Long Winter": 181,
+        "Neon Rebellion": 158,
+        "Family Picnic": 108,
+        "Quiet Harbor": 174,
+        "Galaxy Heist": 152,
+        "Static": 11
+      },
+      "winners_gt": [
+        "The Long Winter"
+      ],
+      "final_text": "To find the best match, we will first calculate the combined profile for each film by adding the two profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[2, 14, 12, 0]`\n**Profile 2 (Friend):** `[14, 5, 15, 7]`\n\n| Action | You (2) + Friend (14) = 16 | You (2) + Friend (5) = 7 | You (12) + Friend (15) = 27 | You (0) + Friend (7) = 7 |\n| :--- | :---: | :---: | :---: | :---: |\n| **Result** | **0** | **7** | **1** | **7** |\n\n**Combined Profiles:**\n1.  **0**\n2.  **7**\n3.  **1**\n4.  **7**\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile (a vector of length 4) with each film's profile vector. The formula is:\n$$ \\text{Score}",
+      "final_raw": "To find the best match, we will first calculate the combined profile for each film by adding the two profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[2, 14, 12, 0]`\n**Profile 2 (Friend):** `[14, 5, 15, 7]`\n\n| Action | You (2) + Friend (14) = 16 | You (2) + Friend (5) = 7 | You (12) + Friend (15) = 27 | You (0) + Friend (7) = 7 |\n| :--- | :---: | :---: | :---: | :---: |\n| **Result** | **0** | **7** | **1** | **7** |\n\n**Combined Profiles:**\n1.  **0**\n2.  **7**\n3.  **1**\n4.  **7**\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile (a vector of length 4) with each film's profile vector. The formula is:\n$$ \\text{Score}",
+      "seconds": 27.23673963546753,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        181,
+        174,
+        158
+      ]
+    },
+    {
+      "scenario": 5,
+      "kind": "random",
+      "profile_a": [
+        3,
+        9,
+        9,
+        6
+      ],
+      "profile_b": [
+        3,
+        10,
+        15,
+        15
+      ],
+      "combined": [
+        6,
+        3,
+        8,
+        5
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 190,
+        "Laugh Riot": 84,
+        "The Long Winter": 146,
+        "Neon Rebellion": 195,
+        "Family Picnic": 96,
+        "Quiet Harbor": 134,
+        "Galaxy Heist": 188,
+        "Static": 8
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "final_text": "To solve this, we will perform the following steps for each film:\n1.  **Add the two profiles lane by lane modulo 16.**\n2.  **Compute the dot product** of the combined profile with the film's profile.\n3.  **Rank** the films by the dot product score.\n\n### Step 1: Profile Addition (Lane by Lane Modulo 16)\n\n**Profile 1 (You):** `[3, 9, 9, 6]`\n**Profile 2 (Friend):** `[3, 10, 15, 15]`\n\n| Action | You (3) | Friend (10) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 3 + 3 = 6 | 3 + 10 = 13 | **13** |\n| **Comedy** | 9 + 10 = 19 | 9 + 15 = 24 | **8** |\n| **Drama** | 9 + 15 = 24 | 9 + 15 = 24 | **24** |\n| **Sci-Fi** | 6 + 15 = 21 | 6 + 15 = 21 | **21**",
+      "final_raw": "To solve this, we will perform the following steps for each film:\n1.  **Add the two profiles lane by lane modulo 16.**\n2.  **Compute the dot product** of the combined profile with the film's profile.\n3.  **Rank** the films by the dot product score.\n\n### Step 1: Profile Addition (Lane by Lane Modulo 16)\n\n**Profile 1 (You):** `[3, 9, 9, 6]`\n**Profile 2 (Friend):** `[3, 10, 15, 15]`\n\n| Action | You (3) | Friend (10) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 3 + 3 = 6 | 3 + 10 = 13 | **13** |\n| **Comedy** | 9 + 10 = 19 | 9 + 15 = 24 | **8** |\n| **Drama** | 9 + 15 = 24 | 9 + 15 = 24 | **24** |\n| **Sci-Fi** | 6 + 15 = 21 | 6 + 15 = 21 | **21**",
+      "seconds": 27.086116075515747,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        195,
+        190,
+        188
+      ]
+    },
+    {
+      "scenario": 6,
+      "kind": "random",
+      "profile_a": [
+        12,
+        14,
+        10,
+        5
+      ],
+      "profile_b": [
+        13,
+        6,
+        4,
+        7
+      ],
+      "combined": [
+        9,
+        4,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 353,
+        "Laugh Riot": 127,
+        "The Long Winter": 252,
+        "Neon Rebellion": 359,
+        "Family Picnic": 149,
+        "Quiet Harbor": 237,
+        "Galaxy Heist": 340,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "final_text": "To find the best match, we will first calculate the combined profile for each film by adding the two taste profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's vector and rank the films accordingly.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[12, 14, 10, 5]`\n**Profile 2 (Friend):** `[13, 6, 4, 7]`\n\n| Lane | You (12) | Friend (13) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 12 | 13 | **25** -> **9** |\n| **Comedy** | 14 | 6 | **20** -> **4** |\n| **Drama** | 10 | 4 | **14** |\n| **Sci-Fi** | 5 | 7 | **12** |\n\n**Combined Profile (You + Friend):** `[9, 4, 14, 12]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[9, 4, 14, 12]` with each film's vector `[Action,",
+      "final_raw": "To find the best match, we will first calculate the combined profile for each film by adding the two taste profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's vector and rank the films accordingly.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[12, 14, 10, 5]`\n**Profile 2 (Friend):** `[13, 6, 4, 7]`\n\n| Lane | You (12) | Friend (13) | Sum (Mod 16) |\n| :--- | :---: | :---: | :---: |\n| **Action** | 12 | 13 | **25** -> **9** |\n| **Comedy** | 14 | 6 | **20** -> **4** |\n| **Drama** | 10 | 4 | **14** |\n| **Sci-Fi** | 5 | 7 | **12** |\n\n**Combined Profile (You + Friend):** `[9, 4, 14, 12]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[9, 4, 14, 12]` with each film's vector `[Action,",
+      "seconds": 26.755234003067017,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        359,
+        353,
+        340
+      ]
+    },
+    {
+      "scenario": 7,
+      "kind": "random",
+      "profile_a": [
+        1,
+        10,
+        15,
+        0
+      ],
+      "profile_b": [
+        11,
+        15,
+        12,
+        13
+      ],
+      "combined": [
+        12,
+        9,
+        11,
+        13
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 413,
+        "Laugh Riot": 206,
+        "The Long Winter": 229,
+        "Neon Rebellion": 416,
+        "Family Picnic": 204,
+        "Quiet Harbor": 210,
+        "Galaxy Heist": 416,
+        "Static": 11
+      },
+      "winners_gt": [
+        "Galaxy Heist",
+        "Neon Rebellion"
+      ],
+      "final_text": "To find the best match, we will first calculate the combined profile for each film by adding the two profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[1, 10, 15, 0]`\n**Profile 2 (Friend):** `[11, 15, 12, 13]`\n\n| Lane | You (0-15) | Friend (0-15) | Combined (Mod 16) |\n| :--- | :--- | :--- | :--- |\n| **Action** | 1 | 11 | **12** |\n| **Comedy** | 10 | 15 | **5** |\n| **Drama** | 15 | 12 | **27** (27 % 16 = **11**) |\n| **Sci-Fi** | 0 | 13 | **13** |\n\n**Combined Profile (You + Friend):** `[12, 5, 11, 13]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[12, 5",
+      "final_raw": "To find the best match, we will first calculate the combined profile for each film by adding the two profiles lane by lane modulo 16. Then, we will compute the dot product of this combined profile with each film's profile vector. Finally, we will rank the films by the dot product score.\n\n### Step 1: Calculate Combined Profiles\n\n**Profile 1 (You):** `[1, 10, 15, 0]`\n**Profile 2 (Friend):** `[11, 15, 12, 13]`\n\n| Lane | You (0-15) | Friend (0-15) | Combined (Mod 16) |\n| :--- | :--- | :--- | :--- |\n| **Action** | 1 | 11 | **12** |\n| **Comedy** | 10 | 15 | **5** |\n| **Drama** | 15 | 12 | **27** (27 % 16 = **11**) |\n| **Sci-Fi** | 0 | 13 | **13** |\n\n**Combined Profile (You + Friend):** `[12, 5, 11, 13]`\n\n---\n\n### Step 2: Compute Dot Products\n\nWe calculate the dot product of the combined profile `[12, 5",
+      "seconds": 26.467573642730713,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        416,
+        416,
+        413
+      ]
+    },
+    {
+      "scenario": 8,
+      "kind": "random",
+      "profile_a": [
+        6,
+        7,
+        0,
+        14
+      ],
+      "profile_b": [
+        7,
+        9,
+        13,
+        1
+      ],
+      "combined": [
+        13,
+        0,
+        13,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 444,
+        "Laugh Riot": 80,
+        "The Long Winter": 236,
+        "Neon Rebellion": 429,
+        "Family Picnic": 91,
+        "Quiet Harbor": 225,
+        "Galaxy Heist": 388,
+        "Static": 13
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "final_text": "To find the best match, we first need to normalize the input data. The input profiles are given as a list of integers representing the preference for each genre (0 to 15). Since the problem asks for a \"match\" and then a \"dot product,\" it implies a vectorization where the preference lists are treated as vectors.\n\nLet's define the vectors for both profiles:\n*   **My Profile (M):** `[6, 7, 0, 14]`\n*   **Friend's Profile (F):** `[7, 9, 13, 1]`\n\nWe need to add these two vectors element-wise.\n*   **Genre 1 (Action):** $6 + 7 = 13$\n*   **Genre 2 (Comedy):** $7 + 9 = 16$\n*   **Genre 3 (Drama):** $0 + 13 = 13$\n*   **Genre 4 (Sci-Fi):** $14 + 1 = 15$\n\nSo, the combined profile vector is:\n**Combined Profile (C):** `[13, 16, 13, 15]`\n\nNow, we calculate the dot product of this combined profile with each film's profile. The dot product is calculated as:\n$$ \\text{Score} = \\sum (\\text{Combined Profile}[i] \\times \\",
+      "final_raw": "To find the best match, we first need to normalize the input data. The input profiles are given as a list of integers representing the preference for each genre (0 to 15). Since the problem asks for a \"match\" and then a \"dot product,\" it implies a vectorization where the preference lists are treated as vectors.\n\nLet's define the vectors for both profiles:\n*   **My Profile (M):** `[6, 7, 0, 14]`\n*   **Friend's Profile (F):** `[7, 9, 13, 1]`\n\nWe need to add these two vectors element-wise.\n*   **Genre 1 (Action):** $6 + 7 = 13$\n*   **Genre 2 (Comedy):** $7 + 9 = 16$\n*   **Genre 3 (Drama):** $0 + 13 = 13$\n*   **Genre 4 (Sci-Fi):** $14 + 1 = 15$\n\nSo, the combined profile vector is:\n**Combined Profile (C):** `[13, 16, 13, 15]`\n\nNow, we calculate the dot product of this combined profile with each film's profile. The dot product is calculated as:\n$$ \\text{Score} = \\sum (\\text{Combined Profile}[i] \\times \\",
+      "seconds": 27.09998917579651,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        444,
+        429,
+        388
+      ]
+    },
+    {
+      "scenario": 9,
+      "kind": "random",
+      "profile_a": [
+        3,
+        3,
+        10,
+        13
+      ],
+      "profile_b": [
+        4,
+        0,
+        8,
+        11
+      ],
+      "combined": [
+        7,
+        3,
+        2,
+        8
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 229,
+        "Laugh Riot": 78,
+        "The Long Winter": 61,
+        "Neon Rebellion": 217,
+        "Family Picnic": 61,
+        "Quiet Harbor": 57,
+        "Galaxy Heist": 212,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "final_text": "To find the best match, we first calculate the combined profile by adding the two friend's and the user's taste profiles lane by lane, taking the result modulo 16.\n\n### Step 1: Calculate Combined Profiles\n\n**User Profile:** `[3, 3, 10, 13]`\n**Friend's Profile:** `[4, 0, 8, 11]`\n\n*   **Action (0-15):** $3 + 4 = 7$\n*   **Comedy (0-15):** $3 + 0 = 3$\n*   **Drama (0-15):** $10 + 8 = 18 \\rightarrow 18 - 16 = 2$\n*   **Sci-Fi (0-15):** $13 + 11 = 24 \\rightarrow 24 - 16 = 8$\n\n**Combined User Profile:** `[7, 3, 2, 8]`\n\n**Friend's Profile:** `[4, 0, 8, 11]`\n\n*   **Action:** $4 + 4 = 8$\n*   **Comedy:** $0 + 0 = 0$\n*   **Drama:** $8 + 8 = 16 \\rightarrow 16 - 16 = 0$\n*   **",
+      "final_raw": "To find the best match, we first calculate the combined profile by adding the two friend's and the user's taste profiles lane by lane, taking the result modulo 16.\n\n### Step 1: Calculate Combined Profiles\n\n**User Profile:** `[3, 3, 10, 13]`\n**Friend's Profile:** `[4, 0, 8, 11]`\n\n*   **Action (0-15):** $3 + 4 = 7$\n*   **Comedy (0-15):** $3 + 0 = 3$\n*   **Drama (0-15):** $10 + 8 = 18 \\rightarrow 18 - 16 = 2$\n*   **Sci-Fi (0-15):** $13 + 11 = 24 \\rightarrow 24 - 16 = 8$\n\n**Combined User Profile:** `[7, 3, 2, 8]`\n\n**Friend's Profile:** `[4, 0, 8, 11]`\n\n*   **Action:** $4 + 4 = 8$\n*   **Comedy:** $0 + 0 = 0$\n*   **Drama:** $8 + 8 = 16 \\rightarrow 16 - 16 = 0$\n*   **",
+      "seconds": 26.98748469352722,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        229,
+        217,
+        212
+      ]
+    }
+  ],
+  "seconds_total": 1415.61705327034,
+  "vram_max_mib": 4465.29833984375
+}
