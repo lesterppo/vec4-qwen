@@ -1,0 +1,636 @@
+{
+  "mode": "2_app_orchestrated",
+  "cases": [
+    {
+      "scenario": 0,
+      "kind": "tie_first",
+      "profile_a": [
+        13,
+        5,
+        14,
+        9
+      ],
+      "profile_b": [
+        3,
+        3,
+        4,
+        7
+      ],
+      "combined": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 22,
+        "Laugh Riot": 124,
+        "The Long Winter": 54,
+        "Neon Rebellion": 42,
+        "Family Picnic": 124,
+        "Quiet Harbor": 44,
+        "Galaxy Heist": 72,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Laugh Riot"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $13 + 3 = 16 \\rightarrow 0$\n*   **Comedy:** $5 + 3 = 8$\n*   **Drama:** $14 + 4 = 18 \\rightarrow 2$\n*   **Sci-Fi:** $9 + 7 = 16 \\rightarrow 0$\n*   **Combined Profile:** $[0, 8, 2, 0]$\n\n**2. Calculate Dot Products with Each Film**\nNext, we compute the dot product of the combined profile $[0, 8, 2, 0]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (0 \\times a) + (8 \\times c) + (2 \\times d) + (0 \\times s) = 8c + ",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $13 + 3 = 16 \\rightarrow 0$\n*   **Comedy:** $5 + 3 = 8$\n*   **Drama:** $14 + 4 = 18 \\rightarrow 2$\n*   **Sci-Fi:** $9 + 7 = 16 \\rightarrow 0$\n*   **Combined Profile:** $[0, 8, 2, 0]$\n\n**2. Calculate Dot Products with Each Film**\nNext, we compute the dot product of the combined profile $[0, 8, 2, 0]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (0 \\times a) + (8 \\times c) + (2 \\times d) + (0 \\times s) = 8c + ",
+      "final_loop": false,
+      "seconds": 28.73264741897583,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        124,
+        124,
+        72
+      ]
+    },
+    {
+      "scenario": 1,
+      "kind": "all_zero",
+      "profile_a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "combined": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 0,
+        "Laugh Riot": 0,
+        "The Long Winter": 0,
+        "Neon Rebellion": 0,
+        "Family Picnic": 0,
+        "Quiet Harbor": 0,
+        "Galaxy Heist": 0,
+        "Static": 0
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Galaxy Heist",
+        "Laugh Riot",
+        "Neon Rebellion",
+        "Quiet Harbor",
+        "Starfall Squadron",
+        "Static",
+        "The Long Winter"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n1.  **Combine the Profiles**:\n    *   **Your Profile**: `[0, 0, 0, 0]`\n    *   **Friend's Profile**: `[0, 0, 0, 0]`\n    *   **Combined Profile**: `[0, 0, 0, 0]`\n\n2.  **Calculate Dot Products**:\n    The tool explicitly states that the dot product of the combined profile with each film is **0** for all of them.\n\n3.  **Determine the Best Match**:\n    Since the combined profile is `[0, 0, 0, 0]` and the dot product with every single film is 0, there is no single film that maximizes the score. In this specific scenario, all films are equally good matches.\n\n4.  **Select Top 3 Films**:\n    Since the scores are tied (all 0), the top 3 films are simply the first three films listed in the tool results, ordered by their index:\n    1.  Starfall Squadron\n   ",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n1.  **Combine the Profiles**:\n    *   **Your Profile**: `[0, 0, 0, 0]`\n    *   **Friend's Profile**: `[0, 0, 0, 0]`\n    *   **Combined Profile**: `[0, 0, 0, 0]`\n\n2.  **Calculate Dot Products**:\n    The tool explicitly states that the dot product of the combined profile with each film is **0** for all of them.\n\n3.  **Determine the Best Match**:\n    Since the combined profile is `[0, 0, 0, 0]` and the dot product with every single film is 0, there is no single film that maximizes the score. In this specific scenario, all films are equally good matches.\n\n4.  **Select Top 3 Films**:\n    Since the scores are tied (all 0), the top 3 films are simply the first three films listed in the tool results, ordered by their index:\n    1.  Starfall Squadron\n   ",
+      "final_loop": false,
+      "seconds": 28.510196924209595,
+      "score_first_names": [
+        "Starfall Squadron"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": true,
+      "score_top_scores_sorted": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": 2,
+      "kind": "near_max",
+      "profile_a": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "profile_b": [
+        15,
+        14,
+        15,
+        13
+      ],
+      "combined": [
+        14,
+        13,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 446,
+        "Laugh Riot": 277,
+        "The Long Winter": 289,
+        "Neon Rebellion": 460,
+        "Family Picnic": 280,
+        "Quiet Harbor": 260,
+        "Galaxy Heist": 472,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Galaxy Heist"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $15 + 15 = 30 \\rightarrow 30 \\pmod{16} = 14$\n*   **Comedy:** $15 + 14 = 29 \\rightarrow 29 \\pmod{16} = 13$\n*   **Drama:** $15 + 15 = 30 \\rightarrow 30 \\pmod{16} = 14$\n*   **Sci-Fi:** $15 + 13 = 28 \\rightarrow 28 \\pmod{16} = 12$\n*   **Combined Profile:** `[14, 13, 14, 12]`\n\n**2. Calculate Dot Products**\nNext, we compute the dot product of the combined profile with each film's vector. The formula is: $\\text{Score}",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $15 + 15 = 30 \\rightarrow 30 \\pmod{16} = 14$\n*   **Comedy:** $15 + 14 = 29 \\rightarrow 29 \\pmod{16} = 13$\n*   **Drama:** $15 + 15 = 30 \\rightarrow 30 \\pmod{16} = 14$\n*   **Sci-Fi:** $15 + 13 = 28 \\rightarrow 28 \\pmod{16} = 12$\n*   **Combined Profile:** `[14, 13, 14, 12]`\n\n**2. Calculate Dot Products**\nNext, we compute the dot product of the combined profile with each film's vector. The formula is: $\\text{Score}",
+      "final_loop": false,
+      "seconds": 29.44287133216858,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        472,
+        460,
+        446
+      ]
+    },
+    {
+      "scenario": 3,
+      "kind": "random",
+      "profile_a": [
+        6,
+        10,
+        11,
+        15
+      ],
+      "profile_b": [
+        0,
+        7,
+        12,
+        0
+      ],
+      "combined": [
+        6,
+        1,
+        7,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 323,
+        "Laugh Riot": 62,
+        "The Long Winter": 135,
+        "Neon Rebellion": 312,
+        "Family Picnic": 62,
+        "Quiet Harbor": 136,
+        "Galaxy Heist": 288,
+        "Static": 7
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $6 + 0 = 6$\n*   **Comedy:** $10 + 7 = 17 \\rightarrow 1$\n*   **Drama:** $11 + 12 = 23 \\rightarrow 7$\n*   **Sci-Fi:** $15 + 0 = 15$\n\nCombined Profile: `[6, 1, 7, 15]`\n\n**2. Calculate Dot Products**\nWe now compute the dot product of the combined profile with each film's vector. The formula is:\n$$ \\text{Score} = \\sum (\\text{Combined} \\times \\text{Film}) $$\n\n*   **Starfall Squadron:** $6 \\times 15 + 1 \\times 2 + 7 \\times 3 + 15 \\times 14 = 90 + 2 + 21 +",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $6 + 0 = 6$\n*   **Comedy:** $10 + 7 = 17 \\rightarrow 1$\n*   **Drama:** $11 + 12 = 23 \\rightarrow 7$\n*   **Sci-Fi:** $15 + 0 = 15$\n\nCombined Profile: `[6, 1, 7, 15]`\n\n**2. Calculate Dot Products**\nWe now compute the dot product of the combined profile with each film's vector. The formula is:\n$$ \\text{Score} = \\sum (\\text{Combined} \\times \\text{Film}) $$\n\n*   **Starfall Squadron:** $6 \\times 15 + 1 \\times 2 + 7 \\times 3 + 15 \\times 14 = 90 + 2 + 21 +",
+      "final_loop": false,
+      "seconds": 28.623364686965942,
+      "score_first_names": [
+        "Starfall Squadron"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        323,
+        312,
+        288
+      ]
+    },
+    {
+      "scenario": 4,
+      "kind": "random",
+      "profile_a": [
+        2,
+        14,
+        12,
+        0
+      ],
+      "profile_b": [
+        14,
+        5,
+        15,
+        7
+      ],
+      "combined": [
+        0,
+        3,
+        11,
+        7
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 137,
+        "Laugh Riot": 74,
+        "The Long Winter": 181,
+        "Neon Rebellion": 158,
+        "Family Picnic": 108,
+        "Quiet Harbor": 174,
+        "Galaxy Heist": 152,
+        "Static": 11
+      },
+      "winners_gt": [
+        "The Long Winter"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $2 + 14 = 16 \\rightarrow 0$\n*   **Comedy:** $14 + 5 = 19 \\rightarrow 3$\n*   **Drama:** $12 + 15 = 27 \\rightarrow 11$\n*   **Sci-Fi:** $0 + 7 = 7$\n*   **Combined Profile:** $[0, 3, 11, 7]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[0, 3, 11, 7]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (0 \\times a) + (3 \\times c) + (11 \\times d) + (7 \\times s) =",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $2 + 14 = 16 \\rightarrow 0$\n*   **Comedy:** $14 + 5 = 19 \\rightarrow 3$\n*   **Drama:** $12 + 15 = 27 \\rightarrow 11$\n*   **Sci-Fi:** $0 + 7 = 7$\n*   **Combined Profile:** $[0, 3, 11, 7]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[0, 3, 11, 7]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (0 \\times a) + (3 \\times c) + (11 \\times d) + (7 \\times s) =",
+      "final_loop": false,
+      "seconds": 28.75597310066223,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        181,
+        174,
+        158
+      ]
+    },
+    {
+      "scenario": 5,
+      "kind": "random",
+      "profile_a": [
+        3,
+        9,
+        9,
+        6
+      ],
+      "profile_b": [
+        3,
+        10,
+        15,
+        15
+      ],
+      "combined": [
+        6,
+        3,
+        8,
+        5
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 190,
+        "Laugh Riot": 84,
+        "The Long Winter": 146,
+        "Neon Rebellion": 195,
+        "Family Picnic": 96,
+        "Quiet Harbor": 134,
+        "Galaxy Heist": 188,
+        "Static": 8
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $3 + 3 = 6$\n*   **Comedy:** $9 + 10 = 19 \\rightarrow 3$\n*   **Drama:** $9 + 15 = 24 \\rightarrow 8$\n*   **Sci-Fi:** $6 + 15 = 21 \\rightarrow 5$\n*   **Combined Profile:** $[6, 3, 8, 5]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[6, 3, 8, 5]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (6 \\times a) + (3 \\times c) + (8 \\times d) + (5 \\times s) $$\n\n*   **Star",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $3 + 3 = 6$\n*   **Comedy:** $9 + 10 = 19 \\rightarrow 3$\n*   **Drama:** $9 + 15 = 24 \\rightarrow 8$\n*   **Sci-Fi:** $6 + 15 = 21 \\rightarrow 5$\n*   **Combined Profile:** $[6, 3, 8, 5]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[6, 3, 8, 5]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (6 \\times a) + (3 \\times c) + (8 \\times d) + (5 \\times s) $$\n\n*   **Star",
+      "final_loop": false,
+      "seconds": 28.83239245414734,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        195,
+        190,
+        188
+      ]
+    },
+    {
+      "scenario": 6,
+      "kind": "random",
+      "profile_a": [
+        12,
+        14,
+        10,
+        5
+      ],
+      "profile_b": [
+        13,
+        6,
+        4,
+        7
+      ],
+      "combined": [
+        9,
+        4,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 353,
+        "Laugh Riot": 127,
+        "The Long Winter": 252,
+        "Neon Rebellion": 359,
+        "Family Picnic": 149,
+        "Quiet Harbor": 237,
+        "Galaxy Heist": 340,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $12 + 13 = 25 \\rightarrow 9$\n*   **Comedy:** $14 + 6 = 20 \\rightarrow 4$\n*   **Drama:** $10 + 4 = 14$\n*   **Sci-Fi:** $5 + 7 = 12$\n*   **Result:** `[9, 4, 14, 12]`\n\n**2. Calculate Dot Products**\nNext, we compute the dot product of the combined profile `[9, 4, 14, 12]` with each film's profile vector.\n\n*   **Starfall Squadron:** $[15, 2, 3, 14]$\n    *   $9 \\times 15 + 4 \\times 2 + 14 \\times 3 + 12 \\times ",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $12 + 13 = 25 \\rightarrow 9$\n*   **Comedy:** $14 + 6 = 20 \\rightarrow 4$\n*   **Drama:** $10 + 4 = 14$\n*   **Sci-Fi:** $5 + 7 = 12$\n*   **Result:** `[9, 4, 14, 12]`\n\n**2. Calculate Dot Products**\nNext, we compute the dot product of the combined profile `[9, 4, 14, 12]` with each film's profile vector.\n\n*   **Starfall Squadron:** $[15, 2, 3, 14]$\n    *   $9 \\times 15 + 4 \\times 2 + 14 \\times 3 + 12 \\times ",
+      "final_loop": false,
+      "seconds": 28.728611707687378,
+      "score_first_names": [
+        "Starfall Squadron"
+      ],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        359,
+        353,
+        340
+      ]
+    },
+    {
+      "scenario": 7,
+      "kind": "random",
+      "profile_a": [
+        1,
+        10,
+        15,
+        0
+      ],
+      "profile_b": [
+        11,
+        15,
+        12,
+        13
+      ],
+      "combined": [
+        12,
+        9,
+        11,
+        13
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 413,
+        "Laugh Riot": 206,
+        "The Long Winter": 229,
+        "Neon Rebellion": 416,
+        "Family Picnic": 204,
+        "Quiet Harbor": 210,
+        "Galaxy Heist": 416,
+        "Static": 11
+      },
+      "winners_gt": [
+        "Galaxy Heist",
+        "Neon Rebellion"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $1 + 11 = 12$\n*   **Comedy:** $10 + 15 = 25 \\rightarrow 9$\n*   **Drama:** $15 + 12 = 27 \\rightarrow 11$\n*   **Sci-Fi:** $0 + 13 = 13$\n*   **Combined Profile:** $[12, 9, 11, 13]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[12, 9, 11, 13]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$Score = 12 \\times a + 9 \\times c + 11 \\times d + 13 \\times s$$\n\n*  ",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $1 + 11 = 12$\n*   **Comedy:** $10 + 15 = 25 \\rightarrow 9$\n*   **Drama:** $15 + 12 = 27 \\rightarrow 11$\n*   **Sci-Fi:** $0 + 13 = 13$\n*   **Combined Profile:** $[12, 9, 11, 13]$\n\n**2. Calculate Dot Products with Each Film**\nWe now compute the dot product of the combined profile $[12, 9, 11, 13]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$Score = 12 \\times a + 9 \\times c + 11 \\times d + 13 \\times s$$\n\n*  ",
+      "final_loop": false,
+      "seconds": 28.532230138778687,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        416,
+        416,
+        413
+      ]
+    },
+    {
+      "scenario": 8,
+      "kind": "random",
+      "profile_a": [
+        6,
+        7,
+        0,
+        14
+      ],
+      "profile_b": [
+        7,
+        9,
+        13,
+        1
+      ],
+      "combined": [
+        13,
+        0,
+        13,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 444,
+        "Laugh Riot": 80,
+        "The Long Winter": 236,
+        "Neon Rebellion": 429,
+        "Family Picnic": 91,
+        "Quiet Harbor": 225,
+        "Galaxy Heist": 388,
+        "Static": 13
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $6 + 7 = 13$\n*   **Comedy:** $7 + 9 = 16 \\rightarrow 0$\n*   **Drama:** $0 + 13 = 13$\n*   **Sci-Fi:** $14 + 1 = 15$\n*   **Result:** $[13, 0, 13, 15]$\n\n**2. Calculate Dot Products**\nWe then compute the dot product of the combined profile $[13, 0, 13, 15]$ with each film's profile vector.\n\n*   **Starfall Squadron:** $13 \\times 15 + 0 \\times 2 + 13 \\times 3 + 15 \\times 14 = 195 + 0 + 39 + 210 = \\mathbf",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $6 + 7 = 13$\n*   **Comedy:** $7 + 9 = 16 \\rightarrow 0$\n*   **Drama:** $0 + 13 = 13$\n*   **Sci-Fi:** $14 + 1 = 15$\n*   **Result:** $[13, 0, 13, 15]$\n\n**2. Calculate Dot Products**\nWe then compute the dot product of the combined profile $[13, 0, 13, 15]$ with each film's profile vector.\n\n*   **Starfall Squadron:** $13 \\times 15 + 0 \\times 2 + 13 \\times 3 + 15 \\times 14 = 195 + 0 + 39 + 210 = \\mathbf",
+      "final_loop": false,
+      "seconds": 28.958590507507324,
+      "score_first_names": [
+        "Starfall Squadron"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        444,
+        429,
+        388
+      ]
+    },
+    {
+      "scenario": 9,
+      "kind": "random",
+      "profile_a": [
+        3,
+        3,
+        10,
+        13
+      ],
+      "profile_b": [
+        4,
+        0,
+        8,
+        11
+      ],
+      "combined": [
+        7,
+        3,
+        2,
+        8
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 229,
+        "Laugh Riot": 78,
+        "The Long Winter": 61,
+        "Neon Rebellion": 217,
+        "Family Picnic": 61,
+        "Quiet Harbor": 57,
+        "Galaxy Heist": 212,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "final_text": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $3 + 4 = 7$\n*   **Comedy:** $3 + 0 = 3$\n*   **Drama:** $10 + 8 = 18 \\rightarrow 2$\n*   **Sci-Fi:** $13 + 11 = 24 \\rightarrow 8$\n*   **Combined Profile:** $[7, 3, 2, 8]$\n\n**2. Calculate Dot Products with Each Film**\nNext, we compute the dot product of the combined profile $[7, 3, 2, 8]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (7 \\times a) + (3 \\times c) + (2 \\times d) + (8 \\times s) $$\n\n*   **Starfall Squadron:** $",
+      "final_raw": "Based on the tool results provided, here is the step-by-step analysis to determine the best match:\n\n**1. Combine the Taste Profiles**\nFirst, we add the two profiles lane by lane (modulo 16) to get the combined profile:\n*   **Action:** $3 + 4 = 7$\n*   **Comedy:** $3 + 0 = 3$\n*   **Drama:** $10 + 8 = 18 \\rightarrow 2$\n*   **Sci-Fi:** $13 + 11 = 24 \\rightarrow 8$\n*   **Combined Profile:** $[7, 3, 2, 8]$\n\n**2. Calculate Dot Products with Each Film**\nNext, we compute the dot product of the combined profile $[7, 3, 2, 8]$ with each film's profile vector $[a, c, d, s]$. The formula is:\n$$ \\text{Score} = (7 \\times a) + (3 \\times c) + (2 \\times d) + (8 \\times s) $$\n\n*   **Starfall Squadron:** $",
+      "final_loop": false,
+      "seconds": 28.691641330718994,
+      "score_first_names": [
+        "Starfall Squadron"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        229,
+        217,
+        212
+      ]
+    }
+  ],
+  "seconds_total": 1144.9298920631409,
+  "vram_max_mib": 4465.29833984375
+}
