@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/content/qwenputer-colab/vec4-untested/stage0_untested.py", line 54, in <module>
+    log("STAGE0_DONE seconds", time.time() - t0, flush=True)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got an unexpected keyword argument 'flush'
