@@ -87,6 +87,9 @@ Counting rules that have burned people before:
   discarded at teardown. Rebuild from the merge script. Do not
   commit checkpoints, base weights, or anything over a few MB
   (this repo's largest file is under 100 KB for that reason).
+- Merge each model in its own process on a 13 GB VM (see "Known
+  bug classes"). Run long stages detached with a log file and
+  verify liveness from the log, not from the launch call.
 
 ## Known bug classes (check these first on any failure)
 
@@ -114,6 +117,47 @@ Counting rules that have burned people before:
   token identity (≥20 cases) before using the cached driver for
   any tool test. A first-pass cached 0/20 in this project was an
   END-trim scoring bug, not a driver failure.
+- **OP ids colliding with VAL tokens.** VEC4 v2's new ops were
+  first placed at ids 2–5, which collide with VAL tokens (2–129):
+  ADD with A0=0 read back as OP_SUB. The circuit test caught it
+  before any model ran. New OP ids must live outside every other
+  token range; the v2 ids are 244–247.
+- **Stale hardcoded paths in a ported driver.** The 2B-v2 tool
+  driver was ported from the 0.8B-v2 one with one path still
+  pointing at the 0.8B directory. After any port, grep every
+  path in every driver, not just the one you edited.
+- **Two merges in one process OOM on a 13 GB VM.** The eff
+  stage0 merged 0.8B successfully, then died merging 2B in the
+  same process (11.65 GB RSS). Merge each model in its own
+  process; the same applies to any future multi-model stage.
+- **Long stages need detached execution + a log file.** A plain
+  exec-style call that returns after ~1 minute cuts a long merge
+  or tool run short mid-stage. Run long stages detached, verify
+  from the log that the process is alive, and download after
+  each stage's WROTE line — never trust the launch call's
+  return alone.
+
+## Efficiency comparisons (rules from vec4-eff)
+
+- Gate before timing: a chip timing number is meaningless if
+  the chip is wrong. Require 60/60 fresh cases matching `ref.py`
+  before reporting any chip latency; a model failing the gate
+  gets no timing comparison at all.
+- Baselines on the same VM, in the same run: Python loop, NumPy
+  vectorised, torch CPU, torch CUDA. Model-independent baselines
+  should roughly agree across model runs — if they do not, the
+  VM conditions changed and the ratios are suspect.
+- The chip cannot batch sequential generation, so throughput is
+  the inverse of per-case latency. Do not imply a batching
+  escape hatch exists.
+- Power snapshots are not energy. An nvidia-smi power draw
+  reading (idle vs mid-loop) is an instantaneous snapshot, not
+  a total; never turn it into an energy claim, and never report
+  a chip-vs-host energy ratio from snapshots.
+- Fixed costs belong in the result alongside latency: load
+  seconds, checkpoint GB, VRAM at load and peak. For in-model
+  exactness, the fixed costs are usually the more decision-
+  relevant numbers.
 
 ## What not to redo, and what not to claim
 
@@ -127,10 +171,20 @@ Counting rules that have burned people before:
   next" item 1).
 - No KL vs base was computed anywhere in this project. Do not claim
   text is "preserved" beyond the recorded text-sanity outputs.
+- V2 gates are complete on both models (0.8B-v2 and 2B-v2 Gate 0
+  396/396, cache 24/24, disp 39+1 refusal on both). A rerun that
+  needs them should cite them, not redo them — unless it changes
+  the case set, in which case it says so and re-proves from
+  Gate 0. The v2 generalisation set is in `vec4-v2/`; reuse it
+  rather than inventing a new one silently.
+- The efficiency comparison is complete (`vec4-eff/`). A rerun
+  should cite its ratios and fixed costs, not re-derive them
+  from a different VM without saying the VM changed.
 - No flash kernels, no stepwise interleaved rerun, no mid-input
-  text interruption, no sentence-form B2, no broader 2B adversarial
-  set. These are open, not failed. A new run that covers one should
-  say which one, with the same strict scoring.
+  text interruption, no sentence-form B2, no base-vs-merged
+  language-probe run, no VSHIFT/matrix/sorting circuit. These
+  are open, not failed. A new run that covers one should say
+  which one, with the same strict scoring.
 - Do not push results to a repo, post them publicly, or touch
   another project from a run in this repo unless the operator
   explicitly says so for that run. This repo's own push history is
