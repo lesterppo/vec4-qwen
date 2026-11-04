@@ -1,0 +1,24 @@
+{
+  "circuit_stats": {
+    "layers": 18,
+    "dims": 447,
+    "heads": 14,
+    "ffn_units": 961,
+    "max_units": 98,
+    "max_heads": 9
+  },
+  "dims": 447,
+  "chip_layers": 18,
+  "tiny_hidden": 512,
+  "tiny_layers": 19,
+  "tiny_vocab": 256,
+  "params": 203529024,
+  "bf16_gb": 0.407058048,
+  "vram_after_load_mib": 403.34765625,
+  "vram_max_mib": 431.72607421875,
+  "forward_pass": "210/210",
+  "forward_fails": [],
+  "generate_pass": "10/10",
+  "generate_fails": [],
+  "seconds_total": 73.99727535247803
+}
