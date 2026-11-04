@@ -1,0 +1,39 @@
+{
+  "variant": "C_plain",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 40.1977059841156,
+  "vram_max_mib": 7402.51220703125,
+  "results": [
+    {
+      "prompt": "What is the capital of France?",
+      "text": "The capital of France is Paris.",
+      "tool_call_in_raw": false,
+      "gen_len": 8
+    },
+    {
+      "prompt": "Tell me a short joke about cats.",
+      "text": "Why don't cats like math? Because they're bad at it!",
+      "tool_call_in_raw": false,
+      "gen_len": 15
+    },
+    {
+      "prompt": "Explain what a vector is in one sentence.",
+      "text": "A vector is a mathematical object that represents a quantity with both magnitude and direction, such as a position in space or a force applied to an object.",
+      "tool_call_in_raw": false,
+      "gen_len": 31
+    },
+    {
+      "prompt": "What is the capital of Japan?",
+      "text": "The capital of Japan is **Tokyo**.",
+      "tool_call_in_raw": false,
+      "gen_len": 10
+    },
+    {
+      "prompt": "Write a one-line greeting.",
+      "text": "Hello!",
+      "tool_call_in_raw": false,
+      "gen_len": 3
+    }
+  ]
+}
