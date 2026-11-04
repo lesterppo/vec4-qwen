@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "spec": 0,
+      "prompt": " The capital of France is",
+      "expected_word": "Paris",
+      "final_text": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is",
+      "contains_expected": true,
+      "seconds": 3.9324235916137695
+    },
+    {
+      "spec": 1,
+      "prompt": " The capital of France is",
+      "expected_word": "Paris",
+      "final_text": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is",
+      "contains_expected": true,
+      "seconds": 3.4562063217163086
+    },
+    {
+      "spec": 2,
+      "prompt": " The capital of Japan is",
+      "expected_word": "Tokyo",
+      "final_text": " Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is",
+      "contains_expected": true,
+      "seconds": 4.139945983886719
+    },
+    {
+      "spec": 3,
+      "prompt": " The largest planet is",
+      "expected_word": "Jupiter",
+      "final_text": " the Sun.\n\nThe largest planet is the Sun.\n\nThe largest planet is the Sun.\n\nThe largest planet is the Sun.\n\nThe largest planet is the Sun.\n\nThe largest planet is",
+      "contains_expected": false,
+      "seconds": 3.5358073711395264
+    },
+    {
+      "spec": 4,
+      "prompt": " The capital of Italy is",
+      "expected_word": "Rome",
+      "final_text": " Rome.\nThe capital of France is Paris.\nThe capital of Spain is Madrid.\nThe capital of Germany is Berlin.\nThe capital of the United States is Washington, D.C.\n",
+      "contains_expected": true,
+      "seconds": 3.5861716270446777
+    }
+  ],
+  "contains": 4,
+  "vram_max_mib": 3009.88134765625
+}
