@@ -1,0 +1,19 @@
+{
+  "merged": {
+    "/content/qwen35-08b-vec4v2": {
+      "hidden": 1280,
+      "vocab": 248576,
+      "layers": 42,
+      "chip_vocab": 248,
+      "layout": "vec4-v2"
+    },
+    "/content/qwen35-2b-vec4v2": {
+      "hidden": 2304,
+      "vocab": 248576,
+      "layers": 42,
+      "chip_vocab": 248,
+      "layout": "vec4-v2"
+    }
+  },
+  "note": "0.8B merged by stage0_eff.py; 2B merged by merge_2b_only.py in a fresh process after stage0_eff.py was OOM-killed (cgroup, 11.65 GB RSS) during the 2B merge"
+}
