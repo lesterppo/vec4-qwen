@@ -1,0 +1,39 @@
+{
+  "variant": "C_notool",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 61.358306646347046,
+  "vram_max_mib": 7405.810546875,
+  "results": [
+    {
+      "prompt": "What is 2+2 in words?",
+      "text": "2 + 2 = 4.",
+      "tool_call_in_raw": false,
+      "gen_len": 9
+    },
+    {
+      "prompt": "Explain what a dot product is in one sentence, without calculating anything.",
+      "text": "A dot product is a mathematical operation that takes two vectors and produces a single scalar value by multiplying corresponding components and summing the results.",
+      "tool_call_in_raw": false,
+      "gen_len": 28
+    },
+    {
+      "prompt": "What is your favourite colour?",
+      "text": "I don't have personal preferences, but I think **blue** is a very popular and calming color!",
+      "tool_call_in_raw": false,
+      "gen_len": 22
+    },
+    {
+      "prompt": "Summarise the plot of Hamlet in one sentence.",
+      "text": "Hamlet, a prince of Denmark, is haunted by the ghost of his father, who claims to have been murdered by his uncle, Claudius, who has usurped the throne and married Hamlet's mother. Desperate to avenge his father's death, Hamlet sets out to investigate the murder and expose Claudius's crimes, but his indecision and philosophical doubts delay his revenge, leading to a tragic confrontation with the king and his own eventual demise.",
+      "tool_call_in_raw": false,
+      "gen_len": 94
+    },
+    {
+      "prompt": "Is Paris the capital of France? Answer yes or no.",
+      "text": "Yes",
+      "tool_call_in_raw": false,
+      "gen_len": 2
+    }
+  ]
+}
