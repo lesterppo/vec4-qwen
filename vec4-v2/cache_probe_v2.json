@@ -1,0 +1,542 @@
+{
+  "rows": [
+    {
+      "op": "ADD",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.9406392574310303,
+      "generate_s": 0.5690023899078369,
+      "cached_s": 0.495070219039917
+    },
+    {
+      "op": "ADD",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6116042137145996,
+      "generate_s": 0.4339299201965332,
+      "cached_s": 0.4675266742706299
+    },
+    {
+      "op": "ADD",
+      "A": [
+        6,
+        10,
+        11,
+        15
+      ],
+      "B": [
+        0,
+        7,
+        12,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.5969979763031006,
+      "generate_s": 0.44594550132751465,
+      "cached_s": 0.437833309173584
+    },
+    {
+      "op": "ADD",
+      "A": [
+        2,
+        14,
+        12,
+        0
+      ],
+      "B": [
+        14,
+        5,
+        15,
+        7
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6201267242431641,
+      "generate_s": 0.43175506591796875,
+      "cached_s": 0.46600341796875
+    },
+    {
+      "op": "DOT",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.4865250587463379,
+      "generate_s": 0.4133431911468506,
+      "cached_s": 0.36179494857788086
+    },
+    {
+      "op": "DOT",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.5280587673187256,
+      "generate_s": 0.4897947311401367,
+      "cached_s": 0.462878942489624
+    },
+    {
+      "op": "DOT",
+      "A": [
+        3,
+        9,
+        9,
+        6
+      ],
+      "B": [
+        3,
+        10,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6185717582702637,
+      "generate_s": 0.5062017440795898,
+      "cached_s": 0.47412633895874023
+    },
+    {
+      "op": "DOT",
+      "A": [
+        12,
+        14,
+        10,
+        5
+      ],
+      "B": [
+        13,
+        6,
+        4,
+        7
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.48255395889282227,
+      "generate_s": 0.36794543266296387,
+      "cached_s": 0.3700072765350342
+    },
+    {
+      "op": "SUB",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6200618743896484,
+      "generate_s": 0.461956262588501,
+      "cached_s": 0.5190348625183105
+    },
+    {
+      "op": "SUB",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6343152523040771,
+      "generate_s": 0.44583892822265625,
+      "cached_s": 0.4576151371002197
+    },
+    {
+      "op": "SUB",
+      "A": [
+        1,
+        10,
+        15,
+        0
+      ],
+      "B": [
+        11,
+        15,
+        12,
+        13
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6113986968994141,
+      "generate_s": 0.4457836151123047,
+      "cached_s": 0.4401817321777344
+    },
+    {
+      "op": "SUB",
+      "A": [
+        6,
+        7,
+        0,
+        14
+      ],
+      "B": [
+        7,
+        9,
+        13,
+        1
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6355125904083252,
+      "generate_s": 0.44635534286499023,
+      "cached_s": 0.4695854187011719
+    },
+    {
+      "op": "MUL",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6102116107940674,
+      "generate_s": 0.4515054225921631,
+      "cached_s": 0.43538689613342285
+    },
+    {
+      "op": "MUL",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6567738056182861,
+      "generate_s": 0.536266565322876,
+      "cached_s": 0.583181619644165
+    },
+    {
+      "op": "MUL",
+      "A": [
+        3,
+        3,
+        10,
+        13
+      ],
+      "B": [
+        4,
+        0,
+        8,
+        11
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.7751760482788086,
+      "generate_s": 0.593163013458252,
+      "cached_s": 0.5736417770385742
+    },
+    {
+      "op": "MUL",
+      "A": [
+        2,
+        5,
+        2,
+        11
+      ],
+      "B": [
+        9,
+        13,
+        7,
+        14
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.5958373546600342,
+      "generate_s": 0.44950342178344727,
+      "cached_s": 0.4386584758758545
+    },
+    {
+      "op": "MAX",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6149389743804932,
+      "generate_s": 0.43933701515197754,
+      "cached_s": 0.46944737434387207
+    },
+    {
+      "op": "MAX",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.5944952964782715,
+      "generate_s": 0.4587523937225342,
+      "cached_s": 0.43856072425842285
+    },
+    {
+      "op": "MAX",
+      "A": [
+        7,
+        5,
+        3,
+        9
+      ],
+      "B": [
+        7,
+        12,
+        2,
+        3
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6111757755279541,
+      "generate_s": 0.4371035099029541,
+      "cached_s": 0.4683101177215576
+    },
+    {
+      "op": "MAX",
+      "A": [
+        12,
+        3,
+        8,
+        3
+      ],
+      "B": [
+        13,
+        6,
+        9,
+        7
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.5904150009155273,
+      "generate_s": 0.5237152576446533,
+      "cached_s": 0.4505593776702881
+    },
+    {
+      "op": "MIN",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6207470893859863,
+      "generate_s": 0.4472341537475586,
+      "cached_s": 0.45722436904907227
+    },
+    {
+      "op": "MIN",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6077194213867188,
+      "generate_s": 0.623354434967041,
+      "cached_s": 0.5643620491027832
+    },
+    {
+      "op": "MIN",
+      "A": [
+        9,
+        6,
+        10,
+        14
+      ],
+      "B": [
+        1,
+        2,
+        5,
+        0
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.7697658538818359,
+      "generate_s": 0.6135008335113525,
+      "cached_s": 0.4520444869995117
+    },
+    {
+      "op": "MIN",
+      "A": [
+        9,
+        0,
+        15,
+        5
+      ],
+      "B": [
+        3,
+        12,
+        9,
+        9
+      ],
+      "stepwise_ok": true,
+      "generate_ok": true,
+      "cached_trimmed_ok": true,
+      "cached_match_stepwise": true,
+      "stepwise_s": 0.6212832927703857,
+      "generate_s": 0.4511730670928955,
+      "cached_s": 0.49190759658813477
+    }
+  ],
+  "stepwise": 24,
+  "generate": 24,
+  "cached_trimmed": 24,
+  "cached_match_stepwise": 24,
+  "median_s": {
+    "stepwise": 0.6132715940475464,
+    "generate": 0.4503382444381714,
+    "cached": 0.464441180229187
+  },
+  "vram_max_mib": 3054.18212890625
+}
