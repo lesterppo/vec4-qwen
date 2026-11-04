@@ -1,0 +1,495 @@
+{
+  "v0": 248320,
+  "seconds_total": 1093.73362326622,
+  "vram_max_mib": 3330.8388671875,
+  "tool_cases": [
+    {
+      "case": 0,
+      "op": "DOT",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "user": "What is the dot product of [0, 0, 0, 0] and [0, 0, 0, 0]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 0, 0]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "b": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "tool_result_str": "0",
+      "final_text": "The dot product of [0, 0, 0, 0] and [0, 0, 0, 0] is 0.",
+      "final_contains": true,
+      "args_match_case": true,
+      "strict_final_contains_dot": true,
+      "strict_final_is_english": true
+    },
+    {
+      "case": 1,
+      "op": "DOT",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "user": "What is the dot product of [15, 15, 15, 15] and [15, 15, 15, 15]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[15, 15, 15, 15]\n</parameter>\n<parameter=b>\n[15, 15, 15, 15]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          15,
+          15,
+          15,
+          15
+        ],
+        "b": [
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "tool_result_str": "900",
+      "final_text": "The dot product of [15, 15, 15, 15] and [15, 15, 15, 15] is 900.",
+      "final_contains": true,
+      "args_match_case": true,
+      "strict_final_contains_dot": true,
+      "strict_final_is_english": true
+    },
+    {
+      "case": 2,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "What is the dot product of [3, 5, 7, 9] and [2, 4, 6, 8]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "b": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        136,
+        156,
+        176,
+        180,
+        243
+      ],
+      "tool_result_str": "[5, 9, 13, 1]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[5, 9, 13, 1]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    },
+    {
+      "case": 3,
+      "op": "DOT",
+      "A": [
+        0,
+        15,
+        0,
+        15
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "user": "What is the dot product of [0, 15, 0, 15] and [15, 0, 15, 0]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[0, 15, 0, 15]\n</parameter>\n<parameter=b>\n[15, 0, 15, 0]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          0,
+          15,
+          0,
+          15
+        ],
+        "b": [
+          15,
+          0,
+          15,
+          0
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "tool_result_str": "0",
+      "final_text": "The dot product of [0, 15, 0, 15] and [15, 0, 15, 0] is 0.",
+      "final_contains": true,
+      "args_match_case": true,
+      "strict_final_contains_dot": true,
+      "strict_final_is_english": true
+    },
+    {
+      "case": 4,
+      "op": "DOT",
+      "A": [
+        2,
+        4,
+        5,
+        5
+      ],
+      "B": [
+        6,
+        4,
+        1,
+        8
+      ],
+      "user": "What is the dot product of [2, 4, 5, 5] and [6, 4, 1, 8]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[2, 4, 5, 5]\n</parameter>\n<parameter=b>\n[6, 4, 1, 8]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          2,
+          4,
+          5,
+          5
+        ],
+        "b": [
+          6,
+          4,
+          1,
+          8
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        139,
+        155,
+        169,
+        192,
+        243
+      ],
+      "tool_result_str": "[8, 8, 6, 13]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[8, 8, 6, 13]\n</parameter>\n<parameter=b>\n[6, 4, 1, 8]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    },
+    {
+      "case": 5,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        14,
+        6
+      ],
+      "B": [
+        10,
+        5,
+        10,
+        10
+      ],
+      "user": "What is the dot product of [3, 5, 14, 6] and [10, 5, 10, 10]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[3, 5, 14, 6]\n</parameter>\n<parameter=b>\n[10, 5, 10, 10]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          3,
+          5,
+          14,
+          6
+        ],
+        "b": [
+          10,
+          5,
+          10,
+          10
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        144,
+        157,
+        171,
+        179,
+        243
+      ],
+      "tool_result_str": "[13, 10, 8, 0]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[13, 10, 8, 0]\n</parameter>\n<parameter=b>\n[10, 5, 10, 10]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    },
+    {
+      "case": 6,
+      "op": "DOT",
+      "A": [
+        14,
+        10,
+        14,
+        6
+      ],
+      "B": [
+        7,
+        3,
+        0,
+        2
+      ],
+      "user": "What is the dot product of [14, 10, 14, 6] and [7, 3, 0, 2]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[14, 10, 14, 6]\n</parameter>\n<parameter=b>\n[7, 3, 0, 2]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          14,
+          10,
+          14,
+          6
+        ],
+        "b": [
+          7,
+          3,
+          0,
+          2
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "tool_result_str": "140",
+      "final_text": "The dot product of [14, 10, 14, 6] and [7, 3, 0, 2] is **140**.",
+      "final_contains": true,
+      "args_match_case": true,
+      "strict_final_contains_dot": true,
+      "strict_final_is_english": true
+    },
+    {
+      "case": 7,
+      "op": "DOT",
+      "A": [
+        9,
+        6,
+        15,
+        7
+      ],
+      "B": [
+        3,
+        12,
+        11,
+        1
+      ],
+      "user": "What is the dot product of [9, 6, 15, 7] and [3, 12, 11, 1]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 6, 15, 7]\n</parameter>\n<parameter=b>\n[3, 12, 11, 1]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          9,
+          6,
+          15,
+          7
+        ],
+        "b": [
+          3,
+          12,
+          11,
+          1
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        143,
+        149,
+        173,
+        187,
+        243
+      ],
+      "tool_result_str": "[12, 2, 10, 8]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[12, 2, 10, 8]\n</parameter>\n<parameter=b>\n[3, 12, 11, 1]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    },
+    {
+      "case": 8,
+      "op": "DOT",
+      "A": [
+        2,
+        15,
+        4,
+        6
+      ],
+      "B": [
+        9,
+        8,
+        1,
+        3
+      ],
+      "user": "What is the dot product of [2, 15, 4, 6] and [9, 8, 1, 3]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[2, 15, 4, 6]\n</parameter>\n<parameter=b>\n[9, 8, 1, 3]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          2,
+          15,
+          4,
+          6
+        ],
+        "b": [
+          9,
+          8,
+          1,
+          3
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        142,
+        154,
+        168,
+        188,
+        243
+      ],
+      "tool_result_str": "[11, 7, 5, 9]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[11, 7, 5, 9]\n</parameter>\n<parameter=b>\n[9, 8, 1, 3]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    },
+    {
+      "case": 9,
+      "op": "DOT",
+      "A": [
+        10,
+        6,
+        13,
+        7
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        5
+      ],
+      "user": "What is the dot product of [10, 6, 13, 7] and [15, 0, 15, 5]? Use vec_dot.",
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[10, 6, 13, 7]\n</parameter>\n<parameter=b>\n[15, 0, 15, 5]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_found": true,
+      "tool_call_format": "xml",
+      "parsed": {
+        "a": [
+          10,
+          6,
+          13,
+          7
+        ],
+        "b": [
+          15,
+          0,
+          15,
+          5
+        ]
+      },
+      "tier": "model_emitted",
+      "chip_ok": true,
+      "chip_gen": [
+        140,
+        153,
+        175,
+        191,
+        243
+      ],
+      "tool_result_str": "[9, 6, 12, 12]",
+      "final_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[9, 6, 12, 12]\n</parameter>\n<parameter=b>\n[15, 0, 15, 5]\n</parameter>\n</function>\n</tool_call>",
+      "final_contains": true,
+      "args_match_case": false,
+      "strict_final_contains_dot": false,
+      "strict_final_is_english": false
+    }
+  ],
+  "plain": [],
+  "notool": []
+}
