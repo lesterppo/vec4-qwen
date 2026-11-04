@@ -1,0 +1,28 @@
+{
+  "chip_offset": 248320,
+  "hidden": 2304,
+  "layers": 42,
+  "vocab": 248576,
+  "params": 3640992896,
+  "bf16_gb": 7.281985792,
+  "vram_after_load_mib": 7114.8115234375,
+  "vram_max_mib": 7162.3125,
+  "load_seconds": 409.8837604522705,
+  "merged_pass": "396/396",
+  "merged_fails": [],
+  "text_prompt": "The capital of France is",
+  "text_output": " Paris.\nA. True\nB. False",
+  "text_ids": [
+    11751,
+    13,
+    198,
+    32,
+    13,
+    2912,
+    198,
+    33,
+    13,
+    3439
+  ],
+  "seconds_total": 409.8837652206421
+}
