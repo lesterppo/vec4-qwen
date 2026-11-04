@@ -7,7 +7,11 @@ Qwen3.5-0.8B and Qwen3.5-2B, where it runs in-model on a free Colab T4.
 Then the pragmatic question is answered honestly: the chip is exact
 everywhere, but the small model cannot *use* it reliably until the
 host-side interface is fixed — and a bigger model fixes the interface
-failure on its own, on the tested cases, at 2.38x the size.
+failure on its own, on the tested cases, at 2.38x the size. V2
+extends the unit to six operations plus a deterministic dispatcher,
+and the dispatcher — not model tool choice — is the route that
+generalises. A measured efficiency comparison prices that exactness:
+~7 orders of magnitude behind NumPy per case.
 
 This repo is the complete record of that arc, scripts plus measured
 results, in the order the work actually happened. Every number below
@@ -26,6 +30,9 @@ pushed until every file was verified against the remote tree.
 | Untested items (0.8B) | `SPEED_CACHED_GREEN` + `B2_TESTED_1` + `INTERLEAVED_PARTIAL_ENGLISH_BARRIER` | Cached driver ~6.5x faster, 20/20; B2 in-model 1/1; interleaved chip 20/20 but English reporting 0/20 |
 | Film-recommendation app (0.8B) | `APP_PARTIAL_ORCHESTRATION_RANKING` | Chip 90/90 in both modes, but no mode is a working recommender (see below) |
 | Path C: VEC4 into 2B | `C2B_GREEN` | Both-tools baseline **20/20 strict** (DOT 10/10) vs 0.8B's 11/20 — the bigger model fixes selection on its own |
+| VEC4 v2 into 0.8B (6 ops) | `V2_08B_GATE_PASS_SELECTION_FAILS` | Gate 0 **396/396**; orig 20/20, paraphrase 7/12, adversarial 3/10 — model tool selection does **not** generalise; dispatcher+chip 39 executed + 1 expected refusal, 0 wrong |
+| VEC4 v2 into 2B (6 ops) | `V2_2B_GATE_PASS_SELECTION_PARTIAL` | Gate 0 **396/396**; orig 20/20, paraphrase 8/12, adversarial 8/10 — selection genuinely improves but does **not** generalise (stickiness survives in canonical misdirection, SUB swap fails, plain false-triggers 1/5); dispatcher+chip identical 39+1 refusal |
+| Efficiency (v2, both models) | `EFF_MEASURED_NOT_COMPETITIVE` | Both gates 60/60; chip cached median **0.477 s (0.8B) / 0.521 s (2B)** per case vs NumPy median ~0.035–0.040 µs — ~7 orders behind, ~8 behind torch CUDA; fixed costs 22–30 s load, 3.0–7.2 GB VRAM |
 
 The one-line story: **the circuit was never the problem after MERGED_GREEN.
 Every later failure was interface — tool selection, English reporting,
@@ -38,8 +45,20 @@ scale fixed the interface too.**
 - Vector registers A and B live in Gated DeltaNet state (one head per
   register), written from input tokens and read back at GO.
 - `VADD`: lane-wise addition mod 16. `VDOT`: sum of `a_i * b_i`,
-  max 4·15·15 = **900**, held as 10 bits (900 is not bf16-exact, so the
-  dot never lives as a single integer).
+  max 4·15·15 = **900**, held as 10 bits by design (900 itself fits
+  bf16's 8-bit significand — 1110000100₂ has 8 significant bits —
+  but the circuit is kept bits-only as the conservative choice).
+- **V2** (`vec4-v2/`, `vec4-2b-v2/`): four more lane-wise ops —
+  `VSUB`, `VMUL` (low 4 bits of the lane product), `VMAX`, `VMIN` —
+  with OP ids ADD=0, DOT=1, SUB=244, MUL=245, MAX=246, MIN=247
+  (ids 2–5 were tried first and collide with VAL tokens — see
+  AGENTS.md), plus a deterministic dispatcher (`dispatcher.py`):
+  semantic task beats tool-name mentions, any disagreeing mention
+  flags CONFLICT and the semantic op executes, subtract-from
+  swaps operands, "instead" clauses take their op from the
+  after-instead clause, and genuinely ambiguous prompts are
+  refused, never guessed. VSHIFT was deliberately deferred — a
+  variable barrel shifter is a different unit.
 - Token encoding: OP (ADD=0, DOT=1), VAL, GO, OUT_ADD, OUT_DOT, END —
   full spec in `vec4/SPEC.md`, reference simulator in `vec4/ref.py`.
 - It is **not** CHIP-8, **not** RV32, **not** QwenPU. Only the compiler
@@ -96,6 +115,27 @@ directory layout documented in `SETUP.md`.
   token-identical, C-baseline 20/20, C-A 20/20, C-B1 10/10
   (B2 0 exercised on 2B). Recommendation: do **not** ship 2B for
   this problem — 0.8B + A + B fixes it at under half the size.
+- `vec4-v2/` — V2 on 0.8B. `SPEC_V2.md`, `dispatcher.py`,
+  `generalisation.json` (12 paraphrase, 10 adversarial, 4
+  programs, 4 long-context, 10 batch, 10 language probes, seed
+  20261104), `stage0_v2.py`, `cache_probe_v2.py`, `tool_v2.py`,
+  `RESULT_V2_LOCAL.md`. Gate 0 396/396 (66/op, 18 layers, 583
+  dims), cache 24/24 token-identical, tool orig 20/20, para 7/12,
+  adv 3/10, plain 5/5, should-not-call 5/5; disp rerun after two
+  bug fixes: 39 executed + 1 expected refusal, 0 wrong.
+- `vec4-2b-v2/` — V2 on 2B. `RETARGET_V2.md` (predictions written
+  before merging; slots 186 and mu_dim 2118 came from the merge
+  log, not the prediction), `merge_2b_v2.py`, `stage0_2b_v2.py`,
+  `cache_probe_2b_v2.py`, `tool_2b_v2.py`, `RESULT_V2_LOCAL.md`.
+  Gate 0 396/396, cache 24/24, orig 20/20, para 8/12, adv 8/10,
+  disp 39+1 refusal, plain 4/5 (one false trigger), notool 5/5.
+  Recommendation unchanged: do **not** ship 2B for this problem —
+  0.8B + dispatcher is the reliable route.
+- `vec4-eff/` — efficiency comparison. `stage0_eff.py`,
+  `eff.py`, `README.md`, `RESULT_EFF.md`. Both gates 60/60;
+  chip cached 0.477/0.521 s/case vs NumPy ~0.035–0.040 µs and
+  torch CUDA ~0.004 µs. Energy not measured (power snapshots
+  only). Read its README before quoting any number from it.
 
 ## How to replicate (short version)
 
@@ -158,9 +198,13 @@ per-case partials (final JSONs only).
   merge side effects (2B's text sanity is looser than 0.8B's, recorded
   verbatim in `vec4-2b/RESULT.md`); no KL vs base was computed, and
   none is claimed anywhere in this repo.
-- Speed: the cached driver is ~6.5x stepwise on 0.8B and ~11.6 s/case
-  on 2B, but that is with reference DeltaNet kernels (flash kernels
-  were never attempted — see below).
+- Speed: the cached driver is ~6.5x stepwise on 0.8B tool cases
+  (v1), but chip latency itself is 0.477 s/case (0.8B-v2) /
+  0.521 s/case (2B-v2) cached — ~7 orders of magnitude behind
+  NumPy and ~8 behind torch CUDA per case (see `vec4-eff/`).
+  Tool-call end-to-end medians were 12.7 s/case (0.8B-v2 orig)
+  and 15.3 s/case (2B-v2 orig). All with reference DeltaNet
+  kernels (flash kernels were never attempted — see below).
 
 ## Where to take it next (open items, in priority order)
 
@@ -168,13 +212,18 @@ These are the items the original runs explicitly left untested or
 unproven. Each is a self-contained next experiment; keep the same
 strict scoring and the same "download before teardown" discipline.
 
-1. **Broader adversarial multi-tool set for 2B.** The one result
-   that would change the ship recommendation: does 2B's unforced
-   selection hold on new wordings, new operations and misdirection
-   prompts, or was 20/20 an artefact of 20 same-wording cases?
-   Include the 0.8B adversarial DOT set (`vec4-untested/exp2_b2.py`)
-   as a starting point, plus multi-operation prompts where no guard
-   can name the tool in advance.
+1. **Does any model-side selection generalise, or is
+   dispatcher+chip the answer?** The v2 generalisation set
+   (`vec4-v2/generalisation.json`) partly answers the old item 1:
+   2B improves adversarial selection (3/10 → 8/10) but paraphrase
+   barely moves (7/12 → 8/12), stickiness survives in the
+   canonical misdirection wording, and SUB operand order fails on
+   both models. The remaining question is whether a different
+   model-side approach (prompting, more tools, a larger model)
+   closes those gaps, or whether the dispatcher route — which is
+   39+1 refusal, 0 wrong on both models — is simply the design.
+   Multi-operation prompts where no guard can name the tool in
+   advance are the sharpest next test.
 2. **Sentence-form B2.** The one in-model B2 case produced a bare
    "140", not a sentence. Test whether a host-rewritten chip result
    can be verbalised into a full sentence, and whether that costs
@@ -194,11 +243,22 @@ strict scoring and the same "download before teardown" discipline.
    report it as a system result, not a model result — then find an
    application where the model genuinely adds something the host
    ranking does not already supply.
-6. **Wider / deeper VEC4.** More lanes, or a third operation, via
+6. **Wider / deeper VEC4.** More lanes, or new circuits, via
    the retarget arithmetic. Watch the merged size and the FFN cap:
-   the circuit's max is 98 units per sublayer, so there is headroom
-   before any redesign is needed, but the widening arithmetic must
-   be recomputed and Gate 0 re-proven from scratch.
+   the v2 circuit's max is 154 units per sublayer, so there is
+   headroom before any redesign is needed, but the widening
+   arithmetic must be recomputed and Gate 0 re-proven from
+   scratch. Named candidates, in order: VSHIFT (deferred from
+   v2 — a variable barrel shifter is a different unit), matrix
+   multiplication, sorting.
+7. **Base-vs-merged language capability.** The 10 language probes
+   in `vec4-v2/generalisation.json` have never been run on any
+   model; plain/notool results show no false triggering, not
+   preservation. Run base vs merged on those probes (and the
+   recorded text-sanity prompts) before claiming the merge is
+   free for ordinary text. No KL was computed anywhere in this
+   project; a probe comparison is not a KL, and must not be
+   reported as one.
 
 ## Provenance
 
