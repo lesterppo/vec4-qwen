@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/content/stage0_fix.py", line 49, in <module>
+    run_merged.main()
+    ~~~~~~~~~~~~~~~^^
+  File "/content/qwenputer-colab/vec4-fix/run_merged.py", line 63, in main
+    args.merged, dtype=torch.bfloat16).to("cuda").eval()
+                                       ~~^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py", line 3710, in to
+    return super().to(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1384, in to
+    return self._apply(convert)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 934, in _apply
+    module._apply(fn)
+    ~~~~~~~~~~~~~^^^^
+  [Previous line repeated 1 more time]
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 965, in _apply
+    param_applied = fn(param)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1370, in convert
+    return t.to(
+           ~~~~^
+        device,
+        ^^^^^^^
+        dtype if t.is_floating_point() or t.is_complex() else None,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        non_blocking,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/cuda/__init__.py", line 471, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
