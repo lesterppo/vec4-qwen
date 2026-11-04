@@ -1,0 +1,39 @@
+{
+  "variant": "T2B_notool",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 745.5311410427094,
+  "vram_max_mib": 7729.44384765625,
+  "results": [
+    {
+      "prompt": "What is 2+2 in words?",
+      "text": "2 + 2 = 4.",
+      "tool_call_in_raw": false,
+      "gen_len": 9
+    },
+    {
+      "prompt": "Explain what a dot product is in one sentence, without calculating anything.",
+      "text": "A dot product is a mathematical operation that takes two vectors and produces a single scalar value by multiplying corresponding elements together and summing the results.",
+      "tool_call_in_raw": false,
+      "gen_len": 29
+    },
+    {
+      "prompt": "What is your favourite colour?",
+      "text": "I don't have personal preferences or feelings, so I don't have a favourite colour. However, I can tell you that blue is often considered a favourite colour by many people because it represents trust, intelligence, and calmness.",
+      "tool_call_in_raw": false,
+      "gen_len": 47
+    },
+    {
+      "prompt": "Summarise the plot of Hamlet in one sentence.",
+      "text": "Hamlet, Prince of Denmark, is a prince whose father, King Hamlet, is murdered by his uncle, Claudius, who has taken the throne. Desperate to restore his father's memory and avenge his death, Hamlet seeks revenge, but his father's ghost appears to him, urging him to do so. However, Hamlet is plagued by indecision and moral dilemmas, leading to a series of feigned madness and a complex web of political intrigue and personal tragedy.",
+      "tool_call_in_raw": false,
+      "gen_len": 100
+    },
+    {
+      "prompt": "Is Paris the capital of France? Answer yes or no.",
+      "text": "Yes, Paris is the capital of France.",
+      "tool_call_in_raw": false,
+      "gen_len": 10
+    }
+  ]
+}
