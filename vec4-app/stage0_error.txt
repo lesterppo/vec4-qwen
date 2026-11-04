@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/content/qwenputer-colab/vec4-app/stage0_app.py", line 54, in <module>
+    log("STAGE0_DONE seconds", time.time() - t0, flush=True)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/qwenputer-colab/vec4-app/stage0_app.py", line 9, in log
+    print(*a, **kw, flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: print() got multiple values for keyword argument 'flush'
