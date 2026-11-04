@@ -35,7 +35,8 @@ file:
 /content/qwen35-2b-vec4/             <- merge output (2B)
 /content/vec4-toolcall/              <- per-experiment output dir (stage0 writes here)
 ... and likewise /content/vec4-fix/, /content/vec4-untested/,
-    /content/vec4-app/, /content/vec4-2b/
+    /content/vec4-app/, /content/vec4-2b/, /content/vec4-v2/,
+    /content/vec4-2b-v2/, /content/vec4-eff/
 ```
 
 The merge drivers resolve the upstream chipformer via
@@ -146,6 +147,46 @@ C-baseline **20/20** strict (DOT 10/10), C-A **20/20**, C-B1
 **10/10** with B2 0 exercised, plain 5/5, should-not-call 5/5.
 Text sanity is looser than 0.8B's (" Paris.\nA. True\nB. False"),
 recorded verbatim.
+
+### 7. `vec4-v2/` — V2 on 0.8B
+
+Local first: `test_ref_v2.py`, `test_circuit.py` (396 cases,
+66/op, 0 mismatches), `test_dispatcher.py`. On Colab, in order:
+`stage0_v2.py` (merge, Gate 0 396/396), `cache_probe_v2.py`
+(24/24 token-identical), `tool_v2.py` (configs orig/para/adv/
+disp/plain; cached driver; strict scoring, no guard/retry).
+Expected: orig 20/20, para 7/12, adv 3/10, plain 5/5,
+should-not-call 5/5; disp 39 executed + 1 expected refusal
+after the two gate-bug fixes (SUB expectation computed via
+`ref.py`, dispatcher pattern allowing "the" in "sum of the
+products") — see `RESULT_V2_LOCAL.md` for the first-gate
+38+1+1 wrong and exactly which two bugs were fixed, and do
+not quote the first-gate disp numbers as the result.
+
+### 8. `vec4-2b-v2/` — V2 on 2B
+
+Read `RETARGET_V2.md` first. On Colab: `stage0_2b_v2.py`
+(in-place-widen merge, Gate 0 396/396), `cache_probe_2b_v2.py`
+(24/24), `tool_2b_v2.py` (same configs as step 7). Expected:
+merged hidden 2304, slots 186, mu_dim 2118 (both from the
+merge log — the pre-merge prediction said 142 slots / mu
+2114, and the log is ground truth); orig 20/20, para 8/12,
+adv 8/10, disp 39+1 refusal, plain 4/5 (one false trigger on
+a greeting prompt), notool 5/5. If you port a driver from
+step 7, grep every path in it — the original port shipped
+one stale 0.8B path.
+
+### 9. `vec4-eff/` — efficiency comparison
+
+Read `vec4-eff/README.md` first. On Colab: `stage0_eff.py`
+— but merge each model in its OWN process (the combined
+stage0 OOMed on the 2B merge; see its README). Then
+`eff.py` per model (gate 60/60, then cached/stepwise timing
+plus same-VM baselines). Expected: 0.8B cached median
+0.477 s/case, 2B 0.521 s/case; NumPy median ~0.035–0.040 µs,
+torch CUDA ~0.004 µs; fixed costs 22–30 s load, 3.05–7.28 GB,
+3.0–7.2 GB VRAM. Energy is not measured here — do not add
+an energy claim to a rerun without a real measurement method.
 
 ## After every run
 
