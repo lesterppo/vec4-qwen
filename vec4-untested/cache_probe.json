@@ -1,0 +1,82 @@
+{
+  "v0": 248320,
+  "chip_stepwise": [
+    195,
+    219,
+    239,
+    243
+  ],
+  "chip_expected": [
+    195,
+    219,
+    239,
+    243
+  ],
+  "chip_stepwise_match": true,
+  "chip_stepwise_s": 0.8304128646850586,
+  "chip_generate": [
+    195,
+    219,
+    239,
+    243
+  ],
+  "chip_generate_match": true,
+  "chip_generate_s": 0.48815107345581055,
+  "chip_generate_err": null,
+  "chip_manual": [
+    195,
+    219,
+    239,
+    243
+  ],
+  "chip_manual_match": true,
+  "chip_manual_s": 0.37043094635009766,
+  "chip_manual_err": null,
+  "text_stepwise_ids": [
+    11751,
+    13,
+    198,
+    760,
+    6511,
+    314,
+    9338,
+    369,
+    11751,
+    13
+  ],
+  "text_stepwise": " Paris.\nThe capital of France is Paris.",
+  "text_stepwise_s": 1.2435133457183838,
+  "text_manual_ids": [
+    11751,
+    13,
+    198,
+    760,
+    6511,
+    314,
+    9338,
+    369,
+    11751,
+    13
+  ],
+  "text_manual": " Paris.\nThe capital of France is Paris.",
+  "text_manual_match": true,
+  "text_manual_s": 0.8694965839385986,
+  "text_manual_err": null,
+  "text_generate_ids": [
+    11751,
+    13,
+    198,
+    760,
+    6511,
+    314,
+    9338,
+    369,
+    11751,
+    13
+  ],
+  "text_generate": " Paris.\nThe capital of France is Paris.",
+  "text_generate_match": true,
+  "text_generate_s": 0.8587079048156738,
+  "text_generate_err": null,
+  "vram_max_mib": 3092.49609375
+}
