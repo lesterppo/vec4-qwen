@@ -1,0 +1,39 @@
+{
+  "variant": "T2B_plain",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 712.6697425842285,
+  "vram_max_mib": 7729.44384765625,
+  "results": [
+    {
+      "prompt": "What is the capital of France?",
+      "text": "The capital of France is Paris.",
+      "tool_call_in_raw": false,
+      "gen_len": 8
+    },
+    {
+      "prompt": "Tell me a short joke about cats.",
+      "text": "Why don't cats play hide and seek? Because they're too good at finding you!",
+      "tool_call_in_raw": false,
+      "gen_len": 19
+    },
+    {
+      "prompt": "Explain what a vector is in one sentence.",
+      "text": "A vector is a mathematical object that represents a quantity with both magnitude and direction, typically consisting of a set of numbers (components) that describe its state in a specific space.",
+      "tool_call_in_raw": false,
+      "gen_len": 36
+    },
+    {
+      "prompt": "What is the capital of Japan?",
+      "text": "The capital of Japan is Tokyo.",
+      "tool_call_in_raw": false,
+      "gen_len": 8
+    },
+    {
+      "prompt": "Write a one-line greeting.",
+      "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[\"Hello\", \"World\", \"!\", \"\"]\n</parameter>\n</function>\n</tool_call>",
+      "tool_call_in_raw": true,
+      "gen_len": 56
+    }
+  ]
+}
