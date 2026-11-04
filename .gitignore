@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+colab_registry*.json
+*.lock
+*.log
+*_partial.json
+/content/
+qwen35-*/
+qwen35-*-vec4/
+upstream/
+*.safetensors
+*.bin
+*.pt
