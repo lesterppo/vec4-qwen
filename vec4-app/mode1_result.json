@@ -1,0 +1,6770 @@
+{
+  "mode": "1_model_orchestrated",
+  "cases": [
+    {
+      "scenario": 0,
+      "kind": "tie_first",
+      "profile_a": [
+        13,
+        5,
+        14,
+        9
+      ],
+      "profile_b": [
+        3,
+        3,
+        4,
+        7
+      ],
+      "combined": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 22,
+        "Laugh Riot": 124,
+        "The Long Winter": 54,
+        "Neon Rebellion": 42,
+        "Family Picnic": 124,
+        "Quiet Harbor": 44,
+        "Galaxy Heist": 72,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Laugh Riot"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              3,
+              3,
+              4,
+              7
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[3, 3, 4, 7]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            131,
+            155,
+            165,
+            179,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            212,
+            233,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            218,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            233,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            213,
+            237,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            218,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            213,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            215,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              5,
+              14,
+              9
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 5, 14, 9]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              8,
+              2,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            229,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "The best match is **Laugh Riot** with a score of **22**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 22)\n2. **Neon Rebellion** (Score: 124)\n3. **Family Picnic** (Score: 124)",
+      "final_raw": "The best match is **Laugh Riot** with a score of **22**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 22)\n2. **Neon Rebellion** (Score: 124)\n3. **Family Picnic** (Score: 124)<|im_end|>",
+      "seconds": 156.34596705436707,
+      "score_first_names": [
+        "Laugh Riot",
+        "Neon Rebellion",
+        "Family Picnic"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        124,
+        124,
+        72
+      ]
+    },
+    {
+      "scenario": 1,
+      "kind": "all_zero",
+      "profile_a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "combined": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 0,
+        "Laugh Riot": 0,
+        "The Long Winter": 0,
+        "Neon Rebellion": 0,
+        "Family Picnic": 0,
+        "Quiet Harbor": 0,
+        "Galaxy Heist": 0,
+        "Static": 0
+      },
+      "winners_gt": [
+        "Family Picnic",
+        "Galaxy Heist",
+        "Laugh Riot",
+        "Neon Rebellion",
+        "Quiet Harbor",
+        "Starfall Squadron",
+        "Static",
+        "The Long Winter"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 0, 0]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            131,
+            147,
+            163,
+            179,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            227,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "The best match is **Laugh Riot** with a score of **0**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 0)\n2. **Static** (Score: 0)\n3. **Family Picnic** (Score: 0)",
+      "final_raw": "The best match is **Laugh Riot** with a score of **0**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 0)\n2. **Static** (Score: 0)\n3. **Family Picnic** (Score: 0)<|im_end|>",
+      "seconds": 155.56305837631226,
+      "score_first_names": [
+        "Laugh Riot",
+        "Static",
+        "Family Picnic"
+      ],
+      "score_top1": true,
+      "score_top3_order": true,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": true,
+      "score_top_scores_sorted": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": 2,
+      "kind": "near_max",
+      "profile_a": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "profile_b": [
+        15,
+        14,
+        15,
+        13
+      ],
+      "combined": [
+        14,
+        13,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 446,
+        "Laugh Riot": 277,
+        "The Long Winter": 289,
+        "Neon Rebellion": 460,
+        "Family Picnic": 280,
+        "Quiet Harbor": 260,
+        "Galaxy Heist": 472,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Galaxy Heist"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              15,
+              15,
+              15,
+              15
+            ],
+            "b": [
+              15,
+              14,
+              15,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[15, 15, 15, 15]\n</parameter>\n<parameter=b>\n[15, 14, 15, 13]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            145,
+            160,
+            177,
+            191,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            222,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            212,
+            232,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            213,
+            228,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            223,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            212,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            211,
+            231,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            224,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              14,
+              13,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            241,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+      "final_raw": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[14, 13, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call><|im_end|>",
+      "seconds": 165.17752957344055,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        472,
+        460,
+        446
+      ]
+    },
+    {
+      "scenario": 3,
+      "kind": "random",
+      "profile_a": [
+        6,
+        10,
+        11,
+        15
+      ],
+      "profile_b": [
+        0,
+        7,
+        12,
+        0
+      ],
+      "combined": [
+        6,
+        1,
+        7,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 323,
+        "Laugh Riot": 62,
+        "The Long Winter": 135,
+        "Neon Rebellion": 312,
+        "Family Picnic": 62,
+        "Quiet Harbor": 136,
+        "Galaxy Heist": 288,
+        "Static": 7
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              10,
+              11,
+              15
+            ],
+            "b": [
+              0,
+              7,
+              12,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 10, 11, 15]\n</parameter>\n<parameter=b>\n[0, 7, 12, 0]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            137,
+            148,
+            170,
+            194,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            215,
+            230,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            219,
+            234,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            214,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            219,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            213,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 1, 7, 15]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              1,
+              7,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            234,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[6, 1, 7, 15]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 323\n    *   Laugh Riot: 323\n    *   The Long Winter: 323\n    *   Neon Rebellion: 62\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Static: 136\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n",
+      "final_raw": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[6, 1, 7, 15]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 323\n    *   Laugh Riot: 323\n    *   The Long Winter: 323\n    *   Neon Rebellion: 62\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Static: 136\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n    *   Galaxy Heist: 136\n    *   Static: 312\n    *   Family Picnic: 135\n    *   Quiet Harbor: 135\n",
+      "seconds": 175.13790678977966,
+      "score_first_names": [
+        "Starfall Squadron",
+        "Laugh Riot",
+        "The Long Winter",
+        "Neon Rebellion",
+        "Family Picnic",
+        "Quiet Harbor",
+        "Galaxy Heist",
+        "Static"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        323,
+        312,
+        288
+      ]
+    },
+    {
+      "scenario": 4,
+      "kind": "random",
+      "profile_a": [
+        2,
+        14,
+        12,
+        0
+      ],
+      "profile_b": [
+        14,
+        5,
+        15,
+        7
+      ],
+      "combined": [
+        0,
+        3,
+        11,
+        7
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 137,
+        "Laugh Riot": 74,
+        "The Long Winter": 181,
+        "Neon Rebellion": 158,
+        "Family Picnic": 108,
+        "Quiet Harbor": 174,
+        "Galaxy Heist": 152,
+        "Static": 11
+      },
+      "winners_gt": [
+        "The Long Winter"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              2,
+              14,
+              12,
+              0
+            ],
+            "b": [
+              14,
+              5,
+              15,
+              7
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[2, 14, 12, 0]\n</parameter>\n<parameter=b>\n[14, 5, 15, 7]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            131,
+            150,
+            174,
+            186,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            219,
+            236,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            215,
+            237,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            222,
+            232,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            220,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            217,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            221,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            220,
+            235,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 3, 11, 7]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              0,
+              3,
+              11,
+              7
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            238,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[0, 3, 11, 7]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 158\n    *   Laugh Riot: 137\n    *   The Long Winter: 181\n    *   Neon Rebellion: 74\n    *   Family Picnic: 108\n    *   Quiet Harbor: 152\n    *   Galaxy Heist: 174\n    *   Static: 152\n    *   Static: 108\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: 152\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: 152\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: ",
+      "final_raw": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[0, 3, 11, 7]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 158\n    *   Laugh Riot: 137\n    *   The Long Winter: 181\n    *   Neon Rebellion: 74\n    *   Family Picnic: 108\n    *   Quiet Harbor: 152\n    *   Galaxy Heist: 174\n    *   Static: 152\n    *   Static: 108\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: 152\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: 152\n    *   Static: 11\n    *   Static: 152\n    *   Static: 174\n    *   Static: ",
+      "seconds": 173.40890264511108,
+      "score_first_names": [
+        "Starfall Squadron",
+        "Laugh Riot",
+        "The Long Winter",
+        "Neon Rebellion",
+        "Family Picnic",
+        "Quiet Harbor",
+        "Galaxy Heist",
+        "Static"
+      ],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": true,
+      "score_top_scores_sorted": [
+        181,
+        174,
+        158
+      ]
+    },
+    {
+      "scenario": 5,
+      "kind": "random",
+      "profile_a": [
+        3,
+        9,
+        9,
+        6
+      ],
+      "profile_b": [
+        3,
+        10,
+        15,
+        15
+      ],
+      "combined": [
+        6,
+        3,
+        8,
+        5
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 190,
+        "Laugh Riot": 84,
+        "The Long Winter": 146,
+        "Neon Rebellion": 195,
+        "Family Picnic": 96,
+        "Quiet Harbor": 134,
+        "Galaxy Heist": 188,
+        "Static": 8
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              3,
+              9,
+              9,
+              6
+            ],
+            "b": [
+              3,
+              10,
+              15,
+              15
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[3, 9, 9, 6]\n</parameter>\n<parameter=b>\n[3, 10, 15, 15]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            137,
+            150,
+            171,
+            184,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            222,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            216,
+            231,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            220,
+            229,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            223,
+            230,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            217,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            219,
+            233,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            222,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 3, 8, 5]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              6,
+              3,
+              8,
+              5
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            235,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "The best match is **Laugh Riot** with a score of **190**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 190)\n2. **Static** (Score: 195)\n3. **Family Picnic** (Score: 146)",
+      "final_raw": "The best match is **Laugh Riot** with a score of **190**.\n\nThe top 3 films in order are:\n1. **Laugh Riot** (Score: 190)\n2. **Static** (Score: 195)\n3. **Family Picnic** (Score: 146)<|im_end|>",
+      "seconds": 164.42407608032227,
+      "score_first_names": [
+        "Laugh Riot",
+        "Static",
+        "Family Picnic"
+      ],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        195,
+        190,
+        188
+      ]
+    },
+    {
+      "scenario": 6,
+      "kind": "random",
+      "profile_a": [
+        12,
+        14,
+        10,
+        5
+      ],
+      "profile_b": [
+        13,
+        6,
+        4,
+        7
+      ],
+      "combined": [
+        9,
+        4,
+        14,
+        12
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 353,
+        "Laugh Riot": 127,
+        "The Long Winter": 252,
+        "Neon Rebellion": 359,
+        "Family Picnic": 149,
+        "Quiet Harbor": 237,
+        "Galaxy Heist": 340,
+        "Static": 14
+      },
+      "winners_gt": [
+        "Neon Rebellion"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              14,
+              10,
+              5
+            ],
+            "b": [
+              13,
+              6,
+              4,
+              7
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 14, 10, 5]\n</parameter>\n<parameter=b>\n[13, 6, 4, 7]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            140,
+            151,
+            177,
+            191,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            217,
+            228,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            218,
+            242,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            226,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            217,
+            234,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            220,
+            232,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            225,
+            240,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            216,
+            231,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              9,
+              4,
+              14,
+              12
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            241,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+      "final_raw": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[9, 4, 14, 12]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call><|im_end|>",
+      "seconds": 167.63239336013794,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        359,
+        353,
+        340
+      ]
+    },
+    {
+      "scenario": 7,
+      "kind": "random",
+      "profile_a": [
+        1,
+        10,
+        15,
+        0
+      ],
+      "profile_b": [
+        11,
+        15,
+        12,
+        13
+      ],
+      "combined": [
+        12,
+        9,
+        11,
+        13
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 413,
+        "Laugh Riot": 206,
+        "The Long Winter": 229,
+        "Neon Rebellion": 416,
+        "Family Picnic": 204,
+        "Quiet Harbor": 210,
+        "Galaxy Heist": 416,
+        "Static": 11
+      },
+      "winners_gt": [
+        "Galaxy Heist",
+        "Neon Rebellion"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              1,
+              10,
+              15,
+              0
+            ],
+            "b": [
+              11,
+              15,
+              12,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[1, 10, 15, 0]\n</parameter>\n<parameter=b>\n[11, 15, 12, 13]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            143,
+            156,
+            174,
+            192,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            220,
+            240,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            223,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            225,
+            232,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            221,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            223,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            224,
+            229,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            221,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[12, 9, 11, 13]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              12,
+              9,
+              11,
+              13
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            238,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "The best match is **Starfall Squadron** with a score of **416**.\n\nThe top 3 films in order are:\n1. **Neon Rebellion** (Score: 206)\n2. **Laugh Riot** (Score: 413)\n3. **Family Picnic** (Score: 229)",
+      "final_raw": "The best match is **Starfall Squadron** with a score of **416**.\n\nThe top 3 films in order are:\n1. **Neon Rebellion** (Score: 206)\n2. **Laugh Riot** (Score: 413)\n3. **Family Picnic** (Score: 229)<|im_end|>",
+      "seconds": 171.53645825386047,
+      "score_first_names": [
+        "Starfall Squadron",
+        "Neon Rebellion",
+        "Laugh Riot",
+        "Family Picnic"
+      ],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": true,
+      "score_top3_scores_mentioned": true,
+      "score_top_scores_sorted": [
+        416,
+        416,
+        413
+      ]
+    },
+    {
+      "scenario": 8,
+      "kind": "random",
+      "profile_a": [
+        6,
+        7,
+        0,
+        14
+      ],
+      "profile_b": [
+        7,
+        9,
+        13,
+        1
+      ],
+      "combined": [
+        13,
+        0,
+        13,
+        15
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 444,
+        "Laugh Riot": 80,
+        "The Long Winter": 236,
+        "Neon Rebellion": 429,
+        "Family Picnic": 91,
+        "Quiet Harbor": 225,
+        "Galaxy Heist": 388,
+        "Static": 13
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              6,
+              7,
+              0,
+              14
+            ],
+            "b": [
+              7,
+              9,
+              13,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[6, 7, 0, 14]\n</parameter>\n<parameter=b>\n[7, 9, 13, 1]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            144,
+            147,
+            176,
+            194,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            222,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            216,
+            227,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            225,
+            239,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            221,
+            240,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            216,
+            238,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            225,
+            228,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            196,
+            219,
+            231,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[13, 0, 13, 15]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              13,
+              0,
+              13,
+              15
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            240,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[13, 0, 13, 15]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 429\n    *   Laugh Riot: 91\n    *   The Long Winter: 225\n    *   Neon Rebellion: 80\n    *   Family Picnic: 236\n    *   Quiet Harbor: 388\n    *   Galaxy Heist: 13\n    *   Static: 429\n3.  **Top Film**: **Starfall Squadron** with a score of **429**.\n4.  **Top 3 Films**:\n    1.  **Quiet Harbor** (388)\n    2.  **Starfall Squadron** (429)\n    3.  **Family Picnic** (236)",
+      "final_raw": "Based on the calculations:\n\n1.  **Combined Taste Profile**: `[13, 0, 13, 15]`\n2.  **Film Scores**:\n    *   Starfall Squadron: 429\n    *   Laugh Riot: 91\n    *   The Long Winter: 225\n    *   Neon Rebellion: 80\n    *   Family Picnic: 236\n    *   Quiet Harbor: 388\n    *   Galaxy Heist: 13\n    *   Static: 429\n3.  **Top Film**: **Starfall Squadron** with a score of **429**.\n4.  **Top 3 Films**:\n    1.  **Quiet Harbor** (388)\n    2.  **Starfall Squadron** (429)\n    3.  **Family Picnic** (236)<|im_end|>",
+      "seconds": 182.59424424171448,
+      "score_first_names": [
+        "Starfall Squadron",
+        "Laugh Riot",
+        "The Long Winter",
+        "Neon Rebellion",
+        "Family Picnic",
+        "Quiet Harbor",
+        "Galaxy Heist",
+        "Static"
+      ],
+      "score_top1": true,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        444,
+        429,
+        388
+      ]
+    },
+    {
+      "scenario": 9,
+      "kind": "random",
+      "profile_a": [
+        3,
+        3,
+        10,
+        13
+      ],
+      "profile_b": [
+        4,
+        0,
+        8,
+        11
+      ],
+      "combined": [
+        7,
+        3,
+        2,
+        8
+      ],
+      "scores_gt": {
+        "Starfall Squadron": 229,
+        "Laugh Riot": 78,
+        "The Long Winter": 61,
+        "Neon Rebellion": 217,
+        "Family Picnic": 61,
+        "Quiet Harbor": 57,
+        "Galaxy Heist": 212,
+        "Static": 2
+      },
+      "winners_gt": [
+        "Starfall Squadron"
+      ],
+      "calls": [
+        {
+          "step": 0,
+          "expected_tool": "vec_add",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              3,
+              3,
+              10,
+              13
+            ],
+            "b": [
+              4,
+              0,
+              8,
+              11
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[3, 3, 10, 13]\n</parameter>\n<parameter=b>\n[4, 0, 8, 11]\n</parameter>\n</function>\n</tool_call>",
+          "chip_ok": true,
+          "chip_gen": [
+            138,
+            150,
+            165,
+            187,
+            243
+          ]
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 1,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            225,
+            232,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 2,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            215,
+            241,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 3,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            240,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 4,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            224,
+            236,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              15,
+              2,
+              3,
+              14
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[15, 2, 3, 14]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              3,
+              15,
+              2,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 5,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            240,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              2,
+              3,
+              15,
+              1
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[2, 3, 15, 1]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              13,
+              4,
+              5,
+              13
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[13, 4, 5, 13]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 6,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            214,
+            236,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              14,
+              6,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[1, 14, 6, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              1,
+              2,
+              14,
+              2
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[1, 2, 14, 2]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 7,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            224,
+            231,
+            243
+          ],
+          "b2": true
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 1,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              12,
+              8,
+              4,
+              12
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[12, 8, 4, 12]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": 2,
+          "tool": "vec_add",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[0, 0, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+          "guard_error": "Error: wrong tool or arguments. The next step is vec_dot. Call it with the correct arguments."
+        },
+        {
+          "step": 8,
+          "expected_tool": "vec_dot",
+          "attempt": "B2",
+          "tool": "vec_dot",
+          "args": {
+            "a": [
+              7,
+              3,
+              2,
+              8
+            ],
+            "b": [
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          "chip_ok": true,
+          "chip_gen": [
+            195,
+            211,
+            229,
+            243
+          ],
+          "b2": true
+        }
+      ],
+      "n_tool_calls": 17,
+      "b2_steps": 8,
+      "chip_exact_all": true,
+      "chip_ok_list": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "workflow_clean": false,
+      "final_loop": true,
+      "final_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call>",
+      "final_raw": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 3, 2, 8]\n</parameter>\n<parameter=b>\n[3, 15, 2, 1]\n</parameter>\n</function>\n</tool_call><|im_end|>",
+      "seconds": 164.7923812866211,
+      "score_first_names": [],
+      "score_top1": false,
+      "score_top3_order": false,
+      "score_top_score_mentioned": false,
+      "score_top3_scores_mentioned": false,
+      "score_top_scores_sorted": [
+        229,
+        217,
+        212
+      ]
+    }
+  ],
+  "seconds_total": 857.1125411987305,
+  "vram_max_mib": 4465.29833984375
+}
