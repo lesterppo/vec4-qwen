@@ -1,0 +1,1387 @@
+{
+  "experiment": "3_interleaved",
+  "driver": "cached",
+  "seconds_total": 219.5556628704071,
+  "vram_max_mib": 3024.42236328125,
+  "prefix_text": "Question: compute the vector operation. ",
+  "prefix_ids": [
+    14162,
+    25,
+    12204,
+    279,
+    4471,
+    5488,
+    13,
+    220
+  ],
+  "cue_ids": [
+    561,
+    4087,
+    369
+  ],
+  "bridge_ids": [
+    9019,
+    11,
+    220
+  ],
+  "i1": [
+    {
+      "case": 0,
+      "op": "DOT",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "chip_expected": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": true,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.107480049133301
+    },
+    {
+      "case": 1,
+      "op": "DOT",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "chip_expected": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.348015546798706
+    },
+    {
+      "case": 2,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "chip_expected": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.703288793563843
+    },
+    {
+      "case": 3,
+      "op": "DOT",
+      "A": [
+        0,
+        15,
+        0,
+        15
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "chip_expected": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": true,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.170979261398315
+    },
+    {
+      "case": 4,
+      "op": "DOT",
+      "A": [
+        2,
+        4,
+        5,
+        5
+      ],
+      "B": [
+        6,
+        4,
+        1,
+        8
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        215,
+        236,
+        243
+      ],
+      "chip_expected": [
+        195,
+        215,
+        236,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.865345478057861
+    },
+    {
+      "case": 5,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        14,
+        6
+      ],
+      "B": [
+        10,
+        5,
+        10,
+        10
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        226,
+        242,
+        243
+      ],
+      "chip_expected": [
+        195,
+        226,
+        242,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.156822204589844
+    },
+    {
+      "case": 6,
+      "op": "DOT",
+      "A": [
+        14,
+        10,
+        14,
+        6
+      ],
+      "B": [
+        7,
+        3,
+        0,
+        2
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "chip_expected": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.90973973274231
+    },
+    {
+      "case": 7,
+      "op": "DOT",
+      "A": [
+        9,
+        6,
+        15,
+        7
+      ],
+      "B": [
+        3,
+        12,
+        11,
+        1
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        196,
+        211,
+        242,
+        243
+      ],
+      "chip_expected": [
+        196,
+        211,
+        242,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.177286386489868
+    },
+    {
+      "case": 8,
+      "op": "DOT",
+      "A": [
+        2,
+        15,
+        4,
+        6
+      ],
+      "B": [
+        9,
+        8,
+        1,
+        3
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        221,
+        227,
+        243
+      ],
+      "chip_expected": [
+        195,
+        221,
+        227,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.022356271743774
+    },
+    {
+      "case": 9,
+      "op": "DOT",
+      "A": [
+        10,
+        6,
+        13,
+        7
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        5
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        196,
+        218,
+        239,
+        243
+      ],
+      "chip_expected": [
+        196,
+        218,
+        239,
+        243
+      ],
+      "final_text": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_raw": ":\nA. 100\nB. 1000\nC. 10000\nD. 100000\nE. 1000000\nF. 10000000\nG",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.073901176452637
+    },
+    {
+      "case": 10,
+      "op": "ADD",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        131,
+        147,
+        163,
+        179,
+        243
+      ],
+      "chip_expected": [
+        131,
+        147,
+        163,
+        179,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.184936285018921
+    },
+    {
+      "case": 11,
+      "op": "ADD",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        145,
+        161,
+        177,
+        193,
+        243
+      ],
+      "chip_expected": [
+        145,
+        161,
+        177,
+        193,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.8742570877075195
+    },
+    {
+      "case": 12,
+      "op": "ADD",
+      "A": [
+        15,
+        0,
+        8,
+        7
+      ],
+      "B": [
+        1,
+        15,
+        8,
+        9
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        131,
+        162,
+        163,
+        179,
+        243
+      ],
+      "chip_expected": [
+        131,
+        162,
+        163,
+        179,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.112596035003662
+    },
+    {
+      "case": 13,
+      "op": "ADD",
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "B": [
+        15,
+        14,
+        13,
+        12
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        146,
+        162,
+        178,
+        194,
+        243
+      ],
+      "chip_expected": [
+        146,
+        162,
+        178,
+        194,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.796156167984009
+    },
+    {
+      "case": 14,
+      "op": "ADD",
+      "A": [
+        1,
+        4,
+        3,
+        12
+      ],
+      "B": [
+        3,
+        3,
+        11,
+        4
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        135,
+        154,
+        177,
+        179,
+        243
+      ],
+      "chip_expected": [
+        135,
+        154,
+        177,
+        179,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.307522535324097
+    },
+    {
+      "case": 15,
+      "op": "ADD",
+      "A": [
+        5,
+        10,
+        1,
+        1
+      ],
+      "B": [
+        6,
+        5,
+        13,
+        1
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        142,
+        162,
+        177,
+        181,
+        243
+      ],
+      "chip_expected": [
+        142,
+        162,
+        177,
+        181,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.011079788208008
+    },
+    {
+      "case": 16,
+      "op": "ADD",
+      "A": [
+        11,
+        8,
+        7,
+        10
+      ],
+      "B": [
+        14,
+        15,
+        11,
+        13
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        140,
+        154,
+        165,
+        186,
+        243
+      ],
+      "chip_expected": [
+        140,
+        154,
+        165,
+        186,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.270947217941284
+    },
+    {
+      "case": 17,
+      "op": "ADD",
+      "A": [
+        7,
+        15,
+        2,
+        3
+      ],
+      "B": [
+        3,
+        9,
+        12,
+        1
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        141,
+        155,
+        177,
+        183,
+        243
+      ],
+      "chip_expected": [
+        141,
+        155,
+        177,
+        183,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.692525625228882
+    },
+    {
+      "case": 18,
+      "op": "ADD",
+      "A": [
+        10,
+        11,
+        11,
+        9
+      ],
+      "B": [
+        10,
+        15,
+        3,
+        8
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        135,
+        157,
+        177,
+        180,
+        243
+      ],
+      "chip_expected": [
+        135,
+        157,
+        177,
+        180,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.303517580032349
+    },
+    {
+      "case": 19,
+      "op": "ADD",
+      "A": [
+        8,
+        4,
+        0,
+        11
+      ],
+      "B": [
+        11,
+        11,
+        7,
+        5
+      ],
+      "driver": "cached",
+      "prefix": "Question: compute the vector operation. ",
+      "chip_ok": true,
+      "chip_gen": [
+        134,
+        162,
+        170,
+        179,
+        243
+      ],
+      "chip_expected": [
+        134,
+        162,
+        170,
+        179,
+        243
+      ],
+      "final_text": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nA. 1000000000000000000000000000000000000000000000000000000",
+      "final_contains_result": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.727911472320557
+    }
+  ],
+  "i1_chip": 20,
+  "i1_final_contains": 2,
+  "i1_no_toolcall": 20,
+  "i1pure": [
+    {
+      "case": 0,
+      "op": "DOT",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "final_text": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_raw": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_contains_result": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.45317530632019
+    },
+    {
+      "case": 1,
+      "op": "DOT",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "chip_ok": true,
+      "chip_gen": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "final_text": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_raw": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_contains_result": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.745501756668091
+    },
+    {
+      "case": 2,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "final_text": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_raw": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_contains_result": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.2966930866241455
+    },
+    {
+      "case": 3,
+      "op": "DOT",
+      "A": [
+        0,
+        15,
+        0,
+        15
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "final_text": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_raw": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_contains_result": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 5.703993320465088
+    },
+    {
+      "case": 4,
+      "op": "DOT",
+      "A": [
+        2,
+        4,
+        5,
+        5
+      ],
+      "B": [
+        6,
+        4,
+        1,
+        8
+      ],
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        215,
+        236,
+        243
+      ],
+      "final_text": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_raw": "!\nAnswer:\n\n```python\nimport numpy as np\n\n# Create a 2D array\narr = np.array([[1, 2, 3],\n                 [4, 5, 6],\n                 [7, 8, 9]])\n\n# Perform vector",
+      "final_contains_result": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 6.270907640457153
+    }
+  ],
+  "i1pure_chip": 5,
+  "i2": [
+    {
+      "pair": 0,
+      "add_case": 10,
+      "dot_case": 0,
+      "A_add": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B_add": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "A_dot": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B_dot": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chip1_ok_add": true,
+      "chip1_gen": [
+        131,
+        147,
+        163,
+        179,
+        243
+      ],
+      "chip2_ok_dot": true,
+      "chip2_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "both_chip_ok": true,
+      "expected_add": "[0, 0, 0, 0]",
+      "expected_dot": "0",
+      "final_text": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_contains_add": false,
+      "final_contains_dot": true,
+      "final_contains_both": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 8.082998514175415
+    },
+    {
+      "pair": 1,
+      "add_case": 11,
+      "dot_case": 1,
+      "A_add": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B_add": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "A_dot": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B_dot": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "chip1_ok_add": true,
+      "chip1_gen": [
+        145,
+        161,
+        177,
+        193,
+        243
+      ],
+      "chip2_ok_dot": true,
+      "chip2_gen": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "both_chip_ok": true,
+      "expected_add": "[14, 14, 14, 14]",
+      "expected_dot": "900",
+      "final_text": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_contains_add": false,
+      "final_contains_dot": false,
+      "final_contains_both": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 8.515367984771729
+    },
+    {
+      "pair": 2,
+      "add_case": 12,
+      "dot_case": 2,
+      "A_add": [
+        15,
+        0,
+        8,
+        7
+      ],
+      "B_add": [
+        1,
+        15,
+        8,
+        9
+      ],
+      "A_dot": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B_dot": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "chip1_ok_add": true,
+      "chip1_gen": [
+        131,
+        162,
+        163,
+        179,
+        243
+      ],
+      "chip2_ok_dot": true,
+      "chip2_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "both_chip_ok": true,
+      "expected_add": "[0, 15, 0, 0]",
+      "expected_dot": "140",
+      "final_text": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_contains_add": false,
+      "final_contains_dot": false,
+      "final_contains_both": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 8.597756624221802
+    },
+    {
+      "pair": 3,
+      "add_case": 14,
+      "dot_case": 4,
+      "A_add": [
+        1,
+        4,
+        3,
+        12
+      ],
+      "B_add": [
+        3,
+        3,
+        11,
+        4
+      ],
+      "A_dot": [
+        2,
+        4,
+        5,
+        5
+      ],
+      "B_dot": [
+        6,
+        4,
+        1,
+        8
+      ],
+      "chip1_ok_add": true,
+      "chip1_gen": [
+        135,
+        154,
+        177,
+        179,
+        243
+      ],
+      "chip2_ok_dot": true,
+      "chip2_gen": [
+        195,
+        215,
+        236,
+        243
+      ],
+      "both_chip_ok": true,
+      "expected_add": "[4, 7, 14, 0]",
+      "expected_dot": "73",
+      "final_text": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_contains_add": false,
+      "final_contains_dot": false,
+      "final_contains_both": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 8.221022129058838
+    },
+    {
+      "pair": 4,
+      "add_case": 15,
+      "dot_case": 5,
+      "A_add": [
+        5,
+        10,
+        1,
+        1
+      ],
+      "B_add": [
+        6,
+        5,
+        13,
+        1
+      ],
+      "A_dot": [
+        3,
+        5,
+        14,
+        6
+      ],
+      "B_dot": [
+        10,
+        5,
+        10,
+        10
+      ],
+      "chip1_ok_add": true,
+      "chip1_gen": [
+        142,
+        162,
+        177,
+        181,
+        243
+      ],
+      "chip2_ok_dot": true,
+      "chip2_gen": [
+        195,
+        226,
+        242,
+        243
+      ],
+      "both_chip_ok": true,
+      "expected_add": "[11, 15, 14, 2]",
+      "expected_dot": "255",
+      "final_text": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_raw": ":\nQuestion: compute the vector operation. 1000000000000000000000000000000000000000000000000000000000000000000000",
+      "final_contains_add": false,
+      "final_contains_dot": false,
+      "final_contains_both": false,
+      "tool_call_in_final_raw": false,
+      "chip_tokens_in_text_gen": false,
+      "seconds": 8.435269117355347
+    }
+  ],
+  "i2_chip1": 5,
+  "i2_chip2": 5,
+  "i2_both_chip": 5,
+  "i2_final_both": 0,
+  "i3": [
+    {
+      "spec": 0,
+      "op": "DOT",
+      "case": 0,
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "prompt": " The capital of France is",
+      "expected_word": "Paris",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ],
+      "final_text": " Paris, the capital of the United States is Washington, the capital of the United Kingdom is London, the capital of the United States of America is Washington, the capital of the United Kingdom is London,",
+      "final_raw": " Paris, the capital of the United States is Washington, the capital of the United Kingdom is London, the capital of the United States of America is Washington, the capital of the United Kingdom is London,",
+      "contains_expected": true,
+      "chip_tokens_in_text_gen": false,
+      "tool_call_in_final_raw": false,
+      "sane": true,
+      "seconds": 4.33660364151001
+    },
+    {
+      "spec": 1,
+      "op": "ADD",
+      "case": 10,
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "prompt": " The capital of France is",
+      "expected_word": "Paris",
+      "chip_ok": true,
+      "chip_gen": [
+        131,
+        147,
+        163,
+        179,
+        243
+      ],
+      "final_text": " Paris, the capital of the United States is Washington, the capital of the United Kingdom is London, the capital of the United States of America is Washington, the capital of the United Kingdom is London,",
+      "final_raw": " Paris, the capital of the United States is Washington, the capital of the United Kingdom is London, the capital of the United States of America is Washington, the capital of the United Kingdom is London,",
+      "contains_expected": true,
+      "chip_tokens_in_text_gen": false,
+      "tool_call_in_final_raw": false,
+      "sane": true,
+      "seconds": 4.426994562149048
+    },
+    {
+      "spec": 2,
+      "op": "DOT",
+      "case": 1,
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "prompt": " The capital of Japan is",
+      "expected_word": "Tokyo",
+      "chip_ok": true,
+      "chip_gen": [
+        198,
+        219,
+        231,
+        243
+      ],
+      "final_text": " Tokyo, and the capital of the United States is Washington, D.C. The capital of the United Kingdom is London. The capital of the United States is Washington, D.C. The capital of the",
+      "final_raw": " Tokyo, and the capital of the United States is Washington, D.C. The capital of the United Kingdom is London. The capital of the United States is Washington, D.C. The capital of the",
+      "contains_expected": true,
+      "chip_tokens_in_text_gen": false,
+      "tool_call_in_final_raw": false,
+      "sane": true,
+      "seconds": 4.068029880523682
+    },
+    {
+      "spec": 3,
+      "op": "ADD",
+      "case": 11,
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "prompt": " The largest planet is",
+      "expected_word": "Jupiter",
+      "chip_ok": true,
+      "chip_gen": [
+        145,
+        161,
+        177,
+        193,
+        243
+      ],
+      "final_text": " the Sun, which is the star in our solar system. The second largest planet is Earth, which is the only planet in our solar system that is known to have life. The third largest planet is",
+      "final_raw": " the Sun, which is the star in our solar system. The second largest planet is Earth, which is the only planet in our solar system that is known to have life. The third largest planet is",
+      "contains_expected": false,
+      "chip_tokens_in_text_gen": false,
+      "tool_call_in_final_raw": false,
+      "sane": false,
+      "seconds": 4.4343421459198
+    },
+    {
+      "spec": 4,
+      "op": "DOT",
+      "case": 2,
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "prompt": " The capital of Italy is",
+      "expected_word": "Rome",
+      "chip_ok": true,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ],
+      "final_text": " Rome.\nThe capital of France is Paris.\nThe capital of Spain is Madrid.\nThe capital of Germany is Berlin.\nThe capital of Japan is Tokyo.\nThe capital of the United",
+      "final_raw": " Rome.\nThe capital of France is Paris.\nThe capital of Spain is Madrid.\nThe capital of Germany is Berlin.\nThe capital of Japan is Tokyo.\nThe capital of the United",
+      "contains_expected": true,
+      "chip_tokens_in_text_gen": false,
+      "tool_call_in_final_raw": false,
+      "sane": true,
+      "seconds": 4.406330823898315
+    }
+  ],
+  "i3_sane": 4,
+  "i3_chip": 5
+}
