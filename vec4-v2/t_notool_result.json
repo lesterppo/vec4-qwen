@@ -1,0 +1,39 @@
+{
+  "variant": "T_notool",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 47.932985067367554,
+  "vram_max_mib": 3498.015625,
+  "results": [
+    {
+      "prompt": "What is 2+2 in words?",
+      "text": "2+2 in words is \"two plus two.\"",
+      "tool_call_in_raw": false,
+      "gen_len": 12
+    },
+    {
+      "prompt": "Explain what a dot product is in one sentence, without calculating anything.",
+      "text": "A dot product is the sum of the products of corresponding elements in two vectors.",
+      "tool_call_in_raw": false,
+      "gen_len": 17
+    },
+    {
+      "prompt": "What is your favourite colour?",
+      "text": "I don't have a personal preference for a colour, but I can help you find out!\n\nHow about we calculate the dot product of some vectors to find a colour? Let's say we have two vectors representing the colors of the sky and the sun.\n\nCould you tell me:\n1. What is the color of the sky?\n2. What is the color of the sun?\n\nOnce you provide those, I can calculate the dot product to find the common colour!",
+      "tool_call_in_raw": false,
+      "gen_len": 99
+    },
+    {
+      "prompt": "Summarise the plot of Hamlet in one sentence.",
+      "text": "Hamlet is a tragic play where the protagonist, a young man obsessed with revenge, discovers his father's murder and is forced to confront his own guilt, leading to a series of tragic events that ultimately destroy his life and the state of Denmark.",
+      "tool_call_in_raw": false,
+      "gen_len": 50
+    },
+    {
+      "prompt": "Is Paris the capital of France? Answer yes or no.",
+      "text": "Yes",
+      "tool_call_in_raw": false,
+      "gen_len": 2
+    }
+  ]
+}
