@@ -1,0 +1,794 @@
+{
+  "attributes": [
+    "action",
+    "comedy",
+    "drama",
+    "sci-fi"
+  ],
+  "films": [
+    {
+      "name": "Starfall Squadron",
+      "vector": [
+        15,
+        2,
+        3,
+        14
+      ]
+    },
+    {
+      "name": "Laugh Riot",
+      "vector": [
+        3,
+        15,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "The Long Winter",
+      "vector": [
+        2,
+        3,
+        15,
+        1
+      ]
+    },
+    {
+      "name": "Neon Rebellion",
+      "vector": [
+        13,
+        4,
+        5,
+        13
+      ]
+    },
+    {
+      "name": "Family Picnic",
+      "vector": [
+        1,
+        14,
+        6,
+        0
+      ]
+    },
+    {
+      "name": "Quiet Harbor",
+      "vector": [
+        1,
+        2,
+        14,
+        2
+      ]
+    },
+    {
+      "name": "Galaxy Heist",
+      "vector": [
+        12,
+        8,
+        4,
+        12
+      ]
+    },
+    {
+      "name": "Static",
+      "vector": [
+        0,
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": 0,
+      "kind": "tie_first",
+      "profile_a": [
+        13,
+        5,
+        14,
+        9
+      ],
+      "profile_b": [
+        3,
+        3,
+        4,
+        7
+      ],
+      "combined": [
+        0,
+        8,
+        2,
+        0
+      ],
+      "scores": {
+        "Starfall Squadron": 22,
+        "Laugh Riot": 124,
+        "The Long Winter": 54,
+        "Neon Rebellion": 42,
+        "Family Picnic": 124,
+        "Quiet Harbor": 44,
+        "Galaxy Heist": 72,
+        "Static": 2
+      },
+      "ranking": [
+        {
+          "film": "Family Picnic",
+          "score": 124
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 124
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 72
+        },
+        {
+          "film": "The Long Winter",
+          "score": 54
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 44
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 42
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 22
+        },
+        {
+          "film": "Static",
+          "score": 2
+        }
+      ],
+      "winners": [
+        "Family Picnic",
+        "Laugh Riot"
+      ],
+      "note": "Designed tie: combined [0,8,2,0]; Laugh Riot 124 = Family Picnic 124, next best 72."
+    },
+    {
+      "id": 1,
+      "kind": "all_zero",
+      "profile_a": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_b": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "combined": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "Starfall Squadron": 0,
+        "Laugh Riot": 0,
+        "The Long Winter": 0,
+        "Neon Rebellion": 0,
+        "Family Picnic": 0,
+        "Quiet Harbor": 0,
+        "Galaxy Heist": 0,
+        "Static": 0
+      },
+      "ranking": [
+        {
+          "film": "Family Picnic",
+          "score": 0
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 0
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 0
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 0
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 0
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 0
+        },
+        {
+          "film": "Static",
+          "score": 0
+        },
+        {
+          "film": "The Long Winter",
+          "score": 0
+        }
+      ],
+      "winners": [
+        "Family Picnic",
+        "Galaxy Heist",
+        "Laugh Riot",
+        "Neon Rebellion",
+        "Quiet Harbor",
+        "Starfall Squadron",
+        "Static",
+        "The Long Winter"
+      ],
+      "note": "All-zero profiles: combined [0,0,0,0], all scores 0; correct top answer is a tie, not a single winner."
+    },
+    {
+      "id": 2,
+      "kind": "near_max",
+      "profile_a": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "profile_b": [
+        15,
+        14,
+        15,
+        13
+      ],
+      "combined": [
+        14,
+        13,
+        14,
+        12
+      ],
+      "scores": {
+        "Starfall Squadron": 446,
+        "Laugh Riot": 277,
+        "The Long Winter": 289,
+        "Neon Rebellion": 460,
+        "Family Picnic": 280,
+        "Quiet Harbor": 260,
+        "Galaxy Heist": 472,
+        "Static": 14
+      },
+      "ranking": [
+        {
+          "film": "Galaxy Heist",
+          "score": 472
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 460
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 446
+        },
+        {
+          "film": "The Long Winter",
+          "score": 289
+        },
+        {
+          "film": "Family Picnic",
+          "score": 280
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 277
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 260
+        },
+        {
+          "film": "Static",
+          "score": 14
+        }
+      ],
+      "winners": [
+        "Galaxy Heist"
+      ],
+      "note": "Near-max profiles: combined [14,13,14,12]."
+    },
+    {
+      "id": 3,
+      "kind": "random",
+      "profile_a": [
+        6,
+        10,
+        11,
+        15
+      ],
+      "profile_b": [
+        0,
+        7,
+        12,
+        0
+      ],
+      "combined": [
+        6,
+        1,
+        7,
+        15
+      ],
+      "scores": {
+        "Starfall Squadron": 323,
+        "Laugh Riot": 62,
+        "The Long Winter": 135,
+        "Neon Rebellion": 312,
+        "Family Picnic": 62,
+        "Quiet Harbor": 136,
+        "Galaxy Heist": 288,
+        "Static": 7
+      },
+      "ranking": [
+        {
+          "film": "Starfall Squadron",
+          "score": 323
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 312
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 288
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 136
+        },
+        {
+          "film": "The Long Winter",
+          "score": 135
+        },
+        {
+          "film": "Family Picnic",
+          "score": 62
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 62
+        },
+        {
+          "film": "Static",
+          "score": 7
+        }
+      ],
+      "winners": [
+        "Starfall Squadron"
+      ],
+      "note": "Random(20261104) draw 0."
+    },
+    {
+      "id": 4,
+      "kind": "random",
+      "profile_a": [
+        2,
+        14,
+        12,
+        0
+      ],
+      "profile_b": [
+        14,
+        5,
+        15,
+        7
+      ],
+      "combined": [
+        0,
+        3,
+        11,
+        7
+      ],
+      "scores": {
+        "Starfall Squadron": 137,
+        "Laugh Riot": 74,
+        "The Long Winter": 181,
+        "Neon Rebellion": 158,
+        "Family Picnic": 108,
+        "Quiet Harbor": 174,
+        "Galaxy Heist": 152,
+        "Static": 11
+      },
+      "ranking": [
+        {
+          "film": "The Long Winter",
+          "score": 181
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 174
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 158
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 152
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 137
+        },
+        {
+          "film": "Family Picnic",
+          "score": 108
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 74
+        },
+        {
+          "film": "Static",
+          "score": 11
+        }
+      ],
+      "winners": [
+        "The Long Winter"
+      ],
+      "note": "Random(20261104) draw 1."
+    },
+    {
+      "id": 5,
+      "kind": "random",
+      "profile_a": [
+        3,
+        9,
+        9,
+        6
+      ],
+      "profile_b": [
+        3,
+        10,
+        15,
+        15
+      ],
+      "combined": [
+        6,
+        3,
+        8,
+        5
+      ],
+      "scores": {
+        "Starfall Squadron": 190,
+        "Laugh Riot": 84,
+        "The Long Winter": 146,
+        "Neon Rebellion": 195,
+        "Family Picnic": 96,
+        "Quiet Harbor": 134,
+        "Galaxy Heist": 188,
+        "Static": 8
+      },
+      "ranking": [
+        {
+          "film": "Neon Rebellion",
+          "score": 195
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 190
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 188
+        },
+        {
+          "film": "The Long Winter",
+          "score": 146
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 134
+        },
+        {
+          "film": "Family Picnic",
+          "score": 96
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 84
+        },
+        {
+          "film": "Static",
+          "score": 8
+        }
+      ],
+      "winners": [
+        "Neon Rebellion"
+      ],
+      "note": "Random(20261104) draw 2."
+    },
+    {
+      "id": 6,
+      "kind": "random",
+      "profile_a": [
+        12,
+        14,
+        10,
+        5
+      ],
+      "profile_b": [
+        13,
+        6,
+        4,
+        7
+      ],
+      "combined": [
+        9,
+        4,
+        14,
+        12
+      ],
+      "scores": {
+        "Starfall Squadron": 353,
+        "Laugh Riot": 127,
+        "The Long Winter": 252,
+        "Neon Rebellion": 359,
+        "Family Picnic": 149,
+        "Quiet Harbor": 237,
+        "Galaxy Heist": 340,
+        "Static": 14
+      },
+      "ranking": [
+        {
+          "film": "Neon Rebellion",
+          "score": 359
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 353
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 340
+        },
+        {
+          "film": "The Long Winter",
+          "score": 252
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 237
+        },
+        {
+          "film": "Family Picnic",
+          "score": 149
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 127
+        },
+        {
+          "film": "Static",
+          "score": 14
+        }
+      ],
+      "winners": [
+        "Neon Rebellion"
+      ],
+      "note": "Random(20261104) draw 3."
+    },
+    {
+      "id": 7,
+      "kind": "random",
+      "profile_a": [
+        1,
+        10,
+        15,
+        0
+      ],
+      "profile_b": [
+        11,
+        15,
+        12,
+        13
+      ],
+      "combined": [
+        12,
+        9,
+        11,
+        13
+      ],
+      "scores": {
+        "Starfall Squadron": 413,
+        "Laugh Riot": 206,
+        "The Long Winter": 229,
+        "Neon Rebellion": 416,
+        "Family Picnic": 204,
+        "Quiet Harbor": 210,
+        "Galaxy Heist": 416,
+        "Static": 11
+      },
+      "ranking": [
+        {
+          "film": "Galaxy Heist",
+          "score": 416
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 416
+        },
+        {
+          "film": "Starfall Squadron",
+          "score": 413
+        },
+        {
+          "film": "The Long Winter",
+          "score": 229
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 210
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 206
+        },
+        {
+          "film": "Family Picnic",
+          "score": 204
+        },
+        {
+          "film": "Static",
+          "score": 11
+        }
+      ],
+      "winners": [
+        "Galaxy Heist",
+        "Neon Rebellion"
+      ],
+      "note": "Random(20261104) draw 4."
+    },
+    {
+      "id": 8,
+      "kind": "random",
+      "profile_a": [
+        6,
+        7,
+        0,
+        14
+      ],
+      "profile_b": [
+        7,
+        9,
+        13,
+        1
+      ],
+      "combined": [
+        13,
+        0,
+        13,
+        15
+      ],
+      "scores": {
+        "Starfall Squadron": 444,
+        "Laugh Riot": 80,
+        "The Long Winter": 236,
+        "Neon Rebellion": 429,
+        "Family Picnic": 91,
+        "Quiet Harbor": 225,
+        "Galaxy Heist": 388,
+        "Static": 13
+      },
+      "ranking": [
+        {
+          "film": "Starfall Squadron",
+          "score": 444
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 429
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 388
+        },
+        {
+          "film": "The Long Winter",
+          "score": 236
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 225
+        },
+        {
+          "film": "Family Picnic",
+          "score": 91
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 80
+        },
+        {
+          "film": "Static",
+          "score": 13
+        }
+      ],
+      "winners": [
+        "Starfall Squadron"
+      ],
+      "note": "Random(20261104) draw 5."
+    },
+    {
+      "id": 9,
+      "kind": "random",
+      "profile_a": [
+        3,
+        3,
+        10,
+        13
+      ],
+      "profile_b": [
+        4,
+        0,
+        8,
+        11
+      ],
+      "combined": [
+        7,
+        3,
+        2,
+        8
+      ],
+      "scores": {
+        "Starfall Squadron": 229,
+        "Laugh Riot": 78,
+        "The Long Winter": 61,
+        "Neon Rebellion": 217,
+        "Family Picnic": 61,
+        "Quiet Harbor": 57,
+        "Galaxy Heist": 212,
+        "Static": 2
+      },
+      "ranking": [
+        {
+          "film": "Starfall Squadron",
+          "score": 229
+        },
+        {
+          "film": "Neon Rebellion",
+          "score": 217
+        },
+        {
+          "film": "Galaxy Heist",
+          "score": 212
+        },
+        {
+          "film": "Laugh Riot",
+          "score": 78
+        },
+        {
+          "film": "Family Picnic",
+          "score": 61
+        },
+        {
+          "film": "The Long Winter",
+          "score": 61
+        },
+        {
+          "film": "Quiet Harbor",
+          "score": 57
+        },
+        {
+          "film": "Static",
+          "score": 2
+        }
+      ],
+      "winners": [
+        "Starfall Squadron"
+      ],
+      "note": "Random(20261104) draw 6."
+    }
+  ],
+  "tie_rule": "Top-1 correct iff named film is in winners (any tied first-place film). Top-3 order correct iff first three distinct film names in the answer have non-increasing ground-truth scores and no film outside them scores strictly above the smallest of the three."
+}
