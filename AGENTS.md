@@ -90,6 +90,17 @@ Counting rules that have burned people before:
 - Merge each model in its own process on a 13 GB VM (see "Known
   bug classes"). Run long stages detached with a log file and
   verify liveness from the log, not from the launch call.
+- **A bigger circuit can OOM the stock merge even when the
+  per-model merge fits.** The 2B-v3 stock merge was killed at
+  11.7 GB RSS; the lowmem driver (`merge_v3_lowmem.py`) peaks
+  at 8.65 GB by sharding Qwen tensors out as they are widened
+  and emitting chip layers one at a time through
+  `emit_layers_sink` (a mechanical copy of upstream
+  `emit_layers` with a sink callback — 98/98 body lines
+  identical). The widen phase peak (~6 GB) is the second peak
+  and fits. Any future circuit that grows slots or chip width
+  must use the lowmem driver, or re-prove the stock merge
+  peak first. See "VEC4 v3" below.
 
 ## Known bug classes (check these first on any failure)
 
@@ -130,6 +141,17 @@ Counting rules that have burned people before:
   stage0 merged 0.8B successfully, then died merging 2B in the
   same process (11.65 GB RSS). Merge each model in its own
   process; the same applies to any future multi-model stage.
+- **Stock merge OOM on a larger circuit (2B-v3).** The v3
+  circuit is 364 slots / chip width 512 (vs 186 / 256 in v2),
+  so the stock merge's peak is ~17 GB: widened base ~5.7 GB +
+  fp32 chip dict ~7.6 GB + bf16 conversion copies ~3.8 GB.
+  The merge was killed at 11.70 GB RSS with `chipformer.json`
+  never created. This is a merge-host memory limit, not a
+  circuit error — Gate 0 on the lowmem-merged model is
+  720/720. Fix: `merge_v3_lowmem.py` (shard-out + per-layer
+  emit, peak 8.65 GB). Do not "fix" the circuit for a merge
+  OOM, and do not quote the killed run as a circuit result:
+  no 2B-v3 numbers exist from it.
 - **Long stages need detached execution + a log file.** A plain
   exec-style call that returns after ~1 minute cuts a long merge
   or tool run short mid-stage. Run long stages detached, verify
@@ -180,11 +202,27 @@ Counting rules that have burned people before:
 - The efficiency comparison is complete (`vec4-eff/`). A rerun
   should cite its ratios and fixed costs, not re-derive them
   from a different VM without saying the VM changed.
+- **VEC4 v3 is complete on both models** (`vec4-v3/`): Gate 0
+  720/720 and cache 40/40 on 0.8B and on 2B (lowmem merge).
+  The 2B-v3 tool numbers (orig 26/28, para 11/16, adv 8/10)
+  and the 0.8B-v3 numbers (orig 26/28, para 9/16, adv 5/10)
+  stand as measured; the VSORT orig failures on both models
+  are a prompt/schema artifact (orig prompts name only one
+  vector, the schema requires `a` and `b`), not a chip or
+  selection failure. The disp re-proof (2B, chip) is 44
+  executed + 1 expected refusal, 0 wrong — dispatcher+chip
+  clean on all 45 disp rows. A rerun that needs any of this
+  should cite it, not redo it — unless it changes the case
+  set, in which case it says so and re-proves from Gate 0.
 - No flash kernels, no stepwise interleaved rerun, no mid-input
-  text interruption, no sentence-form B2, no base-vs-merged
-  language-probe run, no VSHIFT/matrix/sorting circuit. These
-  are open, not failed. A new run that covers one should say
-  which one, with the same strict scoring.
+  text interruption, no sentence-form B2. VSHIFT, matrix
+  multiplication and sorting are no longer open — they shipped
+  as VSHL/VSHR, MMUL and VSORT in v3. The base-vs-merged
+  language probe was measured on 2026-11-05 (0.8B verbatim
+  7/10, 2B 8/10, no chip-token leak; sanity evidence only, not
+  a KL) but its JSONs are not in this repo. These are open,
+  not failed. A new run that covers one should say which one,
+  with the same strict scoring.
 - Do not push results to a repo, post them publicly, or touch
   another project from a run in this repo unless the operator
   explicitly says so for that run. This repo's own push history is
@@ -205,3 +243,63 @@ Counting rules that have burned people before:
   Python arithmetic vs gates/carry chains/adder trees). Agreement
   between two independent implementations is the check; sharing
   code between them destroys it.
+
+## VEC4 v3 — dispatcher fixes and lowmem merge (2026-11-05)
+
+V3 (`vec4-v3/`) adds VSHL/VSHR, MMUL and VSORT (OP ids 248–251,
+CHIP_VOCAB 248→252, merged vocab unchanged at 248576), Gate 0 is
+720 cases (72/op), and the dispatcher contract gained three
+fixes. The contract itself is unchanged otherwise: semantic task
+beats tool-name mentions, CONFLICT executes the semantic op,
+genuinely ambiguous prompts are refused, never guessed.
+
+- **MMUL pattern order.** `product.*matrices` is in the MMUL
+  SEMANTIC pattern (first in order). The generic `\bproduct\b`
+  pattern resolves to lane-wise MUL, so any matrix wording must
+  match before it. A bare "product" with no "matrices" still
+  resolves to MUL — guard that in `test_dispatcher.py`.
+- **VSORT single-vector path.** `parse_vectors` still requires
+  two vectors for every other op. In `dispatch`, on NO_VECTORS,
+  if the intended op resolves to VSORT (semantic OR single
+  mention), fall back to the single list with dummy B
+  `[0,0,0,0]` — VSORT never reads B. An out-of-range single
+  list still propagates OUT_OF_RANGE, and a bare list with no
+  op signal is still NO_VECTORS. The vector scan is shared
+  (`_scan_vectors`); `parse_vectors` behaviour is preserved
+  exactly.
+- **Stacked fixes are real.** The VSORT prompt needed two
+  fixes at once: even with two vectors, "in ascending order,
+  smallest first" resolves to MIN via `\bsmallest\b`, so
+  `in ascending order|ascending order` is in the VSORT pattern
+  before MIN in SEMANTIC order. The single-vector fix alone
+  would have executed the wrong op. When a prompt fails, check
+  every pattern it touches, not just the first.
+- **VSHL/VSHR direction words.** `to the left` is in the VSHL
+  pattern, `to the right` in VSHR (same gap class, added
+  symmetrically). A shift prompt with no direction word and no
+  other signal is still ambiguous.
+- **Prove dispatcher fixes on the chip, not just locally.**
+  `replay_disp_local.py` replicates the disp outcome logic
+  with the ref executor standing in for the chip (predicted
+  44 executed + 1 expected refusal, 0 wrong). The Colab
+  re-proof (`vec4-v3-disp-reproof/`) then ran the same 45 rows
+  against a fresh lowmem-merged 2B and matched the prediction
+  row for row. The local replay is evidence; the on-chip disp
+  file is the proof. Do not present the prediction as a
+  measured result.
+- **Lowmem merge pattern.** `merge_v3_lowmem.py` is
+  model-agnostic (takes SRC/DST) and changes only the memory
+  flow, never the math: widen in place, shift layer indices,
+  mute — identical to stock — then shard every Qwen/vision
+  tensor out immediately (512 MB shard cap, temp names
+  renamed at finish) and emit chip layers one at a time
+  through `emit_layers_sink`. Only embed_tokens.weight, the
+  final norm and the merger bias stay in RAM for the final
+  edits. Output format is identical to stock, so
+  `run_merged.py` / `tool_v3.py` / `cache_probe_v3.py` need no
+  changes. The driver prints VmRSS at each phase boundary;
+  record the peak in the RESULT file. Local tests
+  (`test_lowmem.py`, `test_lowmem_smoke.py`) prove the sink
+  equals stock `emit_layers` tensor-for-tensor and the
+  ShardWriter round-trips — they do not prove the merge
+  against real weights; Gate 0 is that proof.
