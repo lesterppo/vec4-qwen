@@ -33,10 +33,12 @@ file:
 /content/qwen35-08b-vec4/            <- merge output (0.8B)
 /content/qwen35-2b/                  <- snapshot_download("Qwen/Qwen3.5-2B")
 /content/qwen35-2b-vec4/             <- merge output (2B)
+/content/qwen35-2b-vec4v3-lowmem/    <- v3 lowmem merge output (2B)
 /content/vec4-toolcall/              <- per-experiment output dir (stage0 writes here)
 ... and likewise /content/vec4-fix/, /content/vec4-untested/,
     /content/vec4-app/, /content/vec4-2b/, /content/vec4-v2/,
-    /content/vec4-2b-v2/, /content/vec4-eff/
+    /content/vec4-2b-v2/, /content/vec4-eff/, /content/vec4-v3/,
+    /content/vec4-v3-2b-lowmem/, /content/vec4-v3-disp-reproof/
 ```
 
 The merge drivers resolve the upstream chipformer via
@@ -187,6 +189,51 @@ plus same-VM baselines). Expected: 0.8B cached median
 torch CUDA ~0.004 µs; fixed costs 22–30 s load, 3.05–7.28 GB,
 3.0–7.2 GB VRAM. Energy is not measured here — do not add
 an energy claim to a rerun without a real measurement method.
+
+### 10. `vec4-v3/` — V3 on 0.8B and 2B (lowmem merge)
+
+Read `SPEC_V3.md` first — it was written before implementation
+and is the design record, including the one test-arbitrated
+deviation (the written shift-mux argument order was inverted;
+the implementation shifts by 2·s1 + s0 = B & 3, and the circuit
+test proves it). Local first, with the lowmem-test venv or any
+CPU torch: `test_ref_v3.py` (24 hand edges + 2000 random),
+`test_circuit_v3.py` (720 cases, 0 mismatches),
+`test_dispatcher.py`, `test_lowmem.py`,
+`test_lowmem_smoke.py`, `replay_disp_local.py` (44 executed +
+1 expected refusal, 0 wrong — the prediction the chip
+re-proof must match).
+
+On Colab, in order: `stage0_v3.py 08b` (stock merge, Gate 0
+720/720) or `stage0_v3_lowmem.py` (2B only, lowmem merge,
+Gate 0 720/720), `cache_probe_v3.py` (40 cases, 4/op, all
+three drivers token-identical), `tool_v3.py --only
+orig|para|adv|disp|plain|notool` (cached driver, 10 tools).
+Do NOT use the stock merge for 2B-v3: the circuit is 364
+slots / chip width 512 and the stock merge was OOM-killed at
+11.70 GB RSS. The lowmem merge peaks at 8.65 GB. Merge each
+model in its own process.
+
+Expected: 0.8B merged hidden 1536, 50 layers, 2,071,262,336
+params, 4.14 GB bf16, Gate 0 720/720, cache 40/40, orig
+26/28 (both failures the VSORT prompt/schema artifact: orig
+prompts name only one vector, the schema requires `a` and
+`b`), para 9/16, adv 5/10, disp 41 executed + 2 refused +
+2 wrong (all three wrong in para_new), plain 5/5, notool 5/5.
+2B lowmem merged hidden 2560, 50 layers, 4,597,653,376
+params, 9.20 GB bf16, 16 shards, 981 keys, Gate 0 720/720,
+cache 40/40, orig 26/28, para 11/16, adv 8/10, disp
+41+2+2 (same three para_new gaps), plain 4/5 (greeting
+false trigger, same as 2B-v2), notool 5/5.
+
+Disp re-proof: after fixing the three para_new gaps (see
+AGENTS.md "VEC4 v3"), run `stage0_v3_lowmem.py` again for a
+fresh merged 2B (Gate 0 720/720 required first), then
+`tool_v3.py --only disp`. Before launching, grep the uploaded
+`dispatcher.py` on the VM for "to the left" and
+`parse_single_vector` — running disp against the unfixed
+file proves nothing. Expected: **44 executed + 1 expected
+refusal, 0 wrong**, para_new 4/4.
 
 ## After every run
 
