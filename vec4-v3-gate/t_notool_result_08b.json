@@ -1,0 +1,39 @@
+{
+  "variant": "T_notool",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 925.9898009300232,
+  "vram_max_mib": 4863.34326171875,
+  "results": [
+    {
+      "prompt": "What is 2+2 in words?",
+      "text": "The sum of 2 and 2 is 4.",
+      "tool_call_in_raw": false,
+      "gen_len": 13
+    },
+    {
+      "prompt": "Explain what a dot product is in one sentence, without calculating anything.",
+      "text": "A dot product is the sum of the products of corresponding elements in two vectors.",
+      "tool_call_in_raw": false,
+      "gen_len": 17
+    },
+    {
+      "prompt": "What is your favourite colour?",
+      "text": "I don't have the ability to ask questions or determine my personal preferences. I am an AI assistant designed to help with mathematical and logical tasks.",
+      "tool_call_in_raw": false,
+      "gen_len": 30
+    },
+    {
+      "prompt": "Summarise the plot of Hamlet in one sentence.",
+      "text": "Hamlet is a tragic play where the protagonist, a young man who is obsessed with revenge, is forced to confront his own guilt and the consequences of his actions.",
+      "tool_call_in_raw": false,
+      "gen_len": 34
+    },
+    {
+      "prompt": "Is Paris the capital of France? Answer yes or no.",
+      "text": "Yes, Paris is the capital of France.",
+      "tool_call_in_raw": false,
+      "gen_len": 10
+    }
+  ]
+}
