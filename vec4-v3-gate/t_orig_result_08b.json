@@ -1,0 +1,1668 @@
+{
+  "variant": "T_orig",
+  "driver": "cached",
+  "v0": 248320,
+  "seconds_total": 468.0535931587219,
+  "vram_max_mib": 4863.34326171875,
+  "median_seconds_per_case": 17.01532006263733,
+  "cases": [
+    {
+      "case": 0,
+      "op": "DOT",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "user": "What is the dot product of [0, 0, 0, 0] and [0, 0, 0, 0]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 0, 0]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "b": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [0, 0, 0, 0] and [0, 0, 0, 0] is 0.",
+      "final_raw": "The dot product of [0, 0, 0, 0] and [0, 0, 0, 0] is 0.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.093163013458252,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ]
+    },
+    {
+      "case": 1,
+      "op": "DOT",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "user": "What is the dot product of [15, 15, 15, 15] and [15, 15, 15, 15]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[15, 15, 15, 15]\n</parameter>\n<parameter=b>\n[15, 15, 15, 15]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          15,
+          15,
+          15,
+          15
+        ],
+        "b": [
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [15, 15, 15, 15] and [15, 15, 15, 15] is 900.",
+      "final_raw": "The dot product of [15, 15, 15, 15] and [15, 15, 15, 15] is 900.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 17.152650594711304,
+      "chip_gen": [
+        198,
+        219,
+        231,
+        243
+      ]
+    },
+    {
+      "case": 2,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "What is the dot product of [3, 5, 7, 9] and [2, 4, 6, 8]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "b": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [3, 5, 7, 9] and [2, 4, 6, 8] is 140.",
+      "final_raw": "The dot product of [3, 5, 7, 9] and [2, 4, 6, 8] is 140.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.649685382843018,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ]
+    },
+    {
+      "case": 3,
+      "op": "DOT",
+      "A": [
+        0,
+        15,
+        0,
+        15
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "user": "What is the dot product of [0, 15, 0, 15] and [15, 0, 15, 0]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[0, 15, 0, 15]\n</parameter>\n<parameter=b>\n[15, 0, 15, 0]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          0,
+          15,
+          0,
+          15
+        ],
+        "b": [
+          15,
+          0,
+          15,
+          0
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [0, 15, 0, 15] and [15, 0, 15, 0] is 0.",
+      "final_raw": "The dot product of [0, 15, 0, 15] and [15, 0, 15, 0] is 0.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.820291996002197,
+      "chip_gen": [
+        195,
+        211,
+        227,
+        243
+      ]
+    },
+    {
+      "case": 4,
+      "op": "DOT",
+      "A": [
+        2,
+        4,
+        5,
+        5
+      ],
+      "B": [
+        6,
+        4,
+        1,
+        8
+      ],
+      "user": "What is the dot product of [2, 4, 5, 5] and [6, 4, 1, 8]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[2, 4, 5, 5]\n</parameter>\n<parameter=b>\n[6, 4, 1, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          2,
+          4,
+          5,
+          5
+        ],
+        "b": [
+          6,
+          4,
+          1,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [2, 4, 5, 5] and [6, 4, 1, 8] is 73.",
+      "final_raw": "The dot product of [2, 4, 5, 5] and [6, 4, 1, 8] is 73.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.390328884124756,
+      "chip_gen": [
+        195,
+        215,
+        236,
+        243
+      ]
+    },
+    {
+      "case": 5,
+      "op": "DOT",
+      "A": [
+        3,
+        5,
+        14,
+        6
+      ],
+      "B": [
+        10,
+        5,
+        10,
+        10
+      ],
+      "user": "What is the dot product of [3, 5, 14, 6] and [10, 5, 10, 10]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[3, 5, 14, 6]\n</parameter>\n<parameter=b>\n[10, 5, 10, 10]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          3,
+          5,
+          14,
+          6
+        ],
+        "b": [
+          10,
+          5,
+          10,
+          10
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [3, 5, 14, 6] and [10, 5, 10, 10] is 255.",
+      "final_raw": "The dot product of [3, 5, 14, 6] and [10, 5, 10, 10] is 255.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 16.877989530563354,
+      "chip_gen": [
+        195,
+        226,
+        242,
+        243
+      ]
+    },
+    {
+      "case": 6,
+      "op": "DOT",
+      "A": [
+        14,
+        10,
+        14,
+        6
+      ],
+      "B": [
+        7,
+        3,
+        0,
+        2
+      ],
+      "user": "What is the dot product of [14, 10, 14, 6] and [7, 3, 0, 2]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[14, 10, 14, 6]\n</parameter>\n<parameter=b>\n[7, 3, 0, 2]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          14,
+          10,
+          14,
+          6
+        ],
+        "b": [
+          7,
+          3,
+          0,
+          2
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [14, 10, 14, 6] and [7, 3, 0, 2] is 140.",
+      "final_raw": "The dot product of [14, 10, 14, 6] and [7, 3, 0, 2] is 140.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 16.414210081100464,
+      "chip_gen": [
+        195,
+        219,
+        239,
+        243
+      ]
+    },
+    {
+      "case": 7,
+      "op": "DOT",
+      "A": [
+        9,
+        6,
+        15,
+        7
+      ],
+      "B": [
+        3,
+        12,
+        11,
+        1
+      ],
+      "user": "What is the dot product of [9, 6, 15, 7] and [3, 12, 11, 1]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[9, 6, 15, 7]\n</parameter>\n<parameter=b>\n[3, 12, 11, 1]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          9,
+          6,
+          15,
+          7
+        ],
+        "b": [
+          3,
+          12,
+          11,
+          1
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [9, 6, 15, 7] and [3, 12, 11, 1] is 271.",
+      "final_raw": "The dot product of [9, 6, 15, 7] and [3, 12, 11, 1] is 271.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 16.442089796066284,
+      "chip_gen": [
+        196,
+        211,
+        242,
+        243
+      ]
+    },
+    {
+      "case": 8,
+      "op": "DOT",
+      "A": [
+        2,
+        15,
+        4,
+        6
+      ],
+      "B": [
+        9,
+        8,
+        1,
+        3
+      ],
+      "user": "What is the dot product of [2, 15, 4, 6] and [9, 8, 1, 3]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[2, 15, 4, 6]\n</parameter>\n<parameter=b>\n[9, 8, 1, 3]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          2,
+          15,
+          4,
+          6
+        ],
+        "b": [
+          9,
+          8,
+          1,
+          3
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [2, 15, 4, 6] and [9, 8, 1, 3] is 160.",
+      "final_raw": "The dot product of [2, 15, 4, 6] and [9, 8, 1, 3] is 160.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 16.37700653076172,
+      "chip_gen": [
+        195,
+        221,
+        227,
+        243
+      ]
+    },
+    {
+      "case": 9,
+      "op": "DOT",
+      "A": [
+        10,
+        6,
+        13,
+        7
+      ],
+      "B": [
+        15,
+        0,
+        15,
+        5
+      ],
+      "user": "What is the dot product of [10, 6, 13, 7] and [15, 0, 15, 5]? Use vec_dot.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_dot>\n<parameter=a>\n[10, 6, 13, 7]\n</parameter>\n<parameter=b>\n[15, 0, 15, 5]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_dot",
+      "called_args": {
+        "a": [
+          10,
+          6,
+          13,
+          7
+        ],
+        "b": [
+          15,
+          0,
+          15,
+          5
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The dot product of [10, 6, 13, 7] and [15, 0, 15, 5] is 380.",
+      "final_raw": "The dot product of [10, 6, 13, 7] and [15, 0, 15, 5] is 380.<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 17.318042755126953,
+      "chip_gen": [
+        196,
+        218,
+        239,
+        243
+      ]
+    },
+    {
+      "case": 10,
+      "op": "ADD",
+      "A": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "user": "Use vec_add to add [0, 0, 0, 0] and [0, 0, 0, 0] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 0, 0, 0]\n</parameter>\n<parameter=b>\n[0, 0, 0, 0]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "b": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [0, 0, 0, 0] and [0, 0, 0, 0] lane by lane, modulo 16, is [0, 0, 0, 0].",
+      "final_raw": "The result of adding [0, 0, 0, 0] and [0, 0, 0, 0] lane by lane, modulo 16, is [0, 0, 0, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.03541398048401,
+      "chip_gen": [
+        131,
+        147,
+        163,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 11,
+      "op": "ADD",
+      "A": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "B": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "user": "Use vec_add to add [15, 15, 15, 15] and [15, 15, 15, 15] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[15, 15, 15, 15]\n</parameter>\n<parameter=b>\n[15, 15, 15, 15]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          15,
+          15,
+          15,
+          15
+        ],
+        "b": [
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [15, 15, 15, 15] and [15, 15, 15, 15] lane by lane, modulo 16, is [14, 14, 14, 14].",
+      "final_raw": "The result of adding [15, 15, 15, 15] and [15, 15, 15, 15] lane by lane, modulo 16, is [14, 14, 14, 14].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 20.366634130477905,
+      "chip_gen": [
+        145,
+        161,
+        177,
+        193,
+        243
+      ]
+    },
+    {
+      "case": 12,
+      "op": "ADD",
+      "A": [
+        15,
+        0,
+        8,
+        7
+      ],
+      "B": [
+        1,
+        15,
+        8,
+        9
+      ],
+      "user": "Use vec_add to add [15, 0, 8, 7] and [1, 15, 8, 9] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[15, 0, 8, 7]\n</parameter>\n<parameter=b>\n[1, 15, 8, 9]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          15,
+          0,
+          8,
+          7
+        ],
+        "b": [
+          1,
+          15,
+          8,
+          9
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [15, 0, 8, 7] and [1, 15, 8, 9] lane by lane, modulo 16, is [0, 15, 0, 0].",
+      "final_raw": "The result of adding [15, 0, 8, 7] and [1, 15, 8, 9] lane by lane, modulo 16, is [0, 15, 0, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.455084562301636,
+      "chip_gen": [
+        131,
+        162,
+        163,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 13,
+      "op": "ADD",
+      "A": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "B": [
+        15,
+        14,
+        13,
+        12
+      ],
+      "user": "Use vec_add to add [0, 1, 2, 3] and [15, 14, 13, 12] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[0, 1, 2, 3]\n</parameter>\n<parameter=b>\n[15, 14, 13, 12]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "b": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [0, 1, 2, 3] and [15, 14, 13, 12] lane by lane, modulo 16, is [15, 15, 15, 15].",
+      "final_raw": "The result of adding [0, 1, 2, 3] and [15, 14, 13, 12] lane by lane, modulo 16, is [15, 15, 15, 15].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 19.478748559951782,
+      "chip_gen": [
+        146,
+        162,
+        178,
+        194,
+        243
+      ]
+    },
+    {
+      "case": 14,
+      "op": "ADD",
+      "A": [
+        1,
+        4,
+        3,
+        12
+      ],
+      "B": [
+        3,
+        3,
+        11,
+        4
+      ],
+      "user": "Use vec_add to add [1, 4, 3, 12] and [3, 3, 11, 4] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[1, 4, 3, 12]\n</parameter>\n<parameter=b>\n[3, 3, 11, 4]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          1,
+          4,
+          3,
+          12
+        ],
+        "b": [
+          3,
+          3,
+          11,
+          4
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [1, 4, 3, 12] and [3, 3, 11, 4] lane by lane, modulo 16, is [4, 7, 14, 0].",
+      "final_raw": "The result of adding [1, 4, 3, 12] and [3, 3, 11, 4] lane by lane, modulo 16, is [4, 7, 14, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.595430612564087,
+      "chip_gen": [
+        135,
+        154,
+        177,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 15,
+      "op": "ADD",
+      "A": [
+        5,
+        10,
+        1,
+        1
+      ],
+      "B": [
+        6,
+        5,
+        13,
+        1
+      ],
+      "user": "Use vec_add to add [5, 10, 1, 1] and [6, 5, 13, 1] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[5, 10, 1, 1]\n</parameter>\n<parameter=b>\n[6, 5, 13, 1]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          5,
+          10,
+          1,
+          1
+        ],
+        "b": [
+          6,
+          5,
+          13,
+          1
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding the two vectors is [11, 15, 14, 2].",
+      "final_raw": "The result of adding the two vectors is [11, 15, 14, 2].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.38424015045166,
+      "chip_gen": [
+        142,
+        162,
+        177,
+        181,
+        243
+      ]
+    },
+    {
+      "case": 16,
+      "op": "ADD",
+      "A": [
+        11,
+        8,
+        7,
+        10
+      ],
+      "B": [
+        14,
+        15,
+        11,
+        13
+      ],
+      "user": "Use vec_add to add [11, 8, 7, 10] and [14, 15, 11, 13] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[11, 8, 7, 10]\n</parameter>\n<parameter=b>\n[14, 15, 11, 13]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          11,
+          8,
+          7,
+          10
+        ],
+        "b": [
+          14,
+          15,
+          11,
+          13
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [11, 8, 7, 10] and [14, 15, 11, 13] lane by lane, modulo 16, is [9, 7, 2, 7].",
+      "final_raw": "The result of adding [11, 8, 7, 10] and [14, 15, 11, 13] lane by lane, modulo 16, is [9, 7, 2, 7].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.723562717437744,
+      "chip_gen": [
+        140,
+        154,
+        165,
+        186,
+        243
+      ]
+    },
+    {
+      "case": 17,
+      "op": "ADD",
+      "A": [
+        7,
+        15,
+        2,
+        3
+      ],
+      "B": [
+        3,
+        9,
+        12,
+        1
+      ],
+      "user": "Use vec_add to add [7, 15, 2, 3] and [3, 9, 12, 1] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[7, 15, 2, 3]\n</parameter>\n<parameter=b>\n[3, 9, 12, 1]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          7,
+          15,
+          2,
+          3
+        ],
+        "b": [
+          3,
+          9,
+          12,
+          1
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [7, 15, 2, 3] and [3, 9, 12, 1] lane by lane, modulo 16, is [10, 8, 14, 4].",
+      "final_raw": "The result of adding [7, 15, 2, 3] and [3, 9, 12, 1] lane by lane, modulo 16, is [10, 8, 14, 4].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 19.104350090026855,
+      "chip_gen": [
+        141,
+        155,
+        177,
+        183,
+        243
+      ]
+    },
+    {
+      "case": 18,
+      "op": "ADD",
+      "A": [
+        10,
+        11,
+        11,
+        9
+      ],
+      "B": [
+        10,
+        15,
+        3,
+        8
+      ],
+      "user": "Use vec_add to add [10, 11, 11, 9] and [10, 15, 3, 8] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[10, 11, 11, 9]\n</parameter>\n<parameter=b>\n[10, 15, 3, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          10,
+          11,
+          11,
+          9
+        ],
+        "b": [
+          10,
+          15,
+          3,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding the two vectors is [4, 10, 14, 1].",
+      "final_raw": "The result of adding the two vectors is [4, 10, 14, 1].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.126936435699463,
+      "chip_gen": [
+        135,
+        157,
+        177,
+        180,
+        243
+      ]
+    },
+    {
+      "case": 19,
+      "op": "ADD",
+      "A": [
+        8,
+        4,
+        0,
+        11
+      ],
+      "B": [
+        11,
+        11,
+        7,
+        5
+      ],
+      "user": "Use vec_add to add [8, 4, 0, 11] and [11, 11, 7, 5] lane by lane, modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_add>\n<parameter=a>\n[8, 4, 0, 11]\n</parameter>\n<parameter=b>\n[11, 11, 7, 5]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_add",
+      "called_args": {
+        "a": [
+          8,
+          4,
+          0,
+          11
+        ],
+        "b": [
+          11,
+          11,
+          7,
+          5
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of adding [8, 4, 0, 11] and [11, 11, 7, 5] lane by lane, modulo 16, is [3, 15, 7, 0].",
+      "final_raw": "The result of adding [8, 4, 0, 11] and [11, 11, 7, 5] lane by lane, modulo 16, is [3, 15, 7, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.73189687728882,
+      "chip_gen": [
+        134,
+        162,
+        170,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 20,
+      "op": "VSHL",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "Use vec_shl to shift each lane of [3, 5, 7, 9] left by the corresponding lane of [2, 4, 6, 8] (amount modulo 4).",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_shl>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_shl",
+      "called_args": {
+        "a": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "b": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of shifting each lane of [3, 5, 7, 9] left by the corresponding lane of [2, 4, 6, 8] is [12, 5, 12, 9].",
+      "final_raw": "The result of shifting each lane of [3, 5, 7, 9] left by the corresponding lane of [2, 4, 6, 8] is [12, 5, 12, 9].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.191410064697266,
+      "chip_gen": [
+        143,
+        152,
+        175,
+        188,
+        243
+      ]
+    },
+    {
+      "case": 21,
+      "op": "VSHL",
+      "A": [
+        15,
+        8,
+        1,
+        0
+      ],
+      "B": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "user": "Use vec_shl to shift each lane of [15, 8, 1, 0] left by the corresponding lane of [4, 5, 6, 7] (amount modulo 4).",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_shl>\n<parameter=a>\n[15, 8, 1, 0]\n</parameter>\n<parameter=b>\n[4, 5, 6, 7]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_shl",
+      "called_args": {
+        "a": [
+          15,
+          8,
+          1,
+          0
+        ],
+        "b": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of shifting each lane of [15, 8, 1, 0] left by the corresponding lane of [4, 5, 6, 7] is [15, 0, 4, 0].",
+      "final_raw": "The result of shifting each lane of [15, 8, 1, 0] left by the corresponding lane of [4, 5, 6, 7] is [15, 0, 4, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.08561134338379,
+      "chip_gen": [
+        146,
+        147,
+        167,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 22,
+      "op": "VSHR",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "Use vec_shr to shift each lane of [3, 5, 7, 9] right by the corresponding lane of [2, 4, 6, 8] (amount modulo 4).",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_shr>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_shr",
+      "called_args": {
+        "a": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "b": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of shifting each lane of [3, 5, 7, 9] right by the corresponding lane of [2, 4, 6, 8] is [0, 5, 1, 9].",
+      "final_raw": "The result of shifting each lane of [3, 5, 7, 9] right by the corresponding lane of [2, 4, 6, 8] is [0, 5, 1, 9].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.328761339187622,
+      "chip_gen": [
+        131,
+        152,
+        164,
+        188,
+        243
+      ]
+    },
+    {
+      "case": 23,
+      "op": "VSHR",
+      "A": [
+        15,
+        8,
+        1,
+        0
+      ],
+      "B": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "user": "Use vec_shr to shift each lane of [15, 8, 1, 0] right by the corresponding lane of [4, 5, 6, 7] (amount modulo 4).",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_shr>\n<parameter=a>\n[15, 8, 1, 0]\n</parameter>\n<parameter=b>\n[4, 5, 6, 7]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_shr",
+      "called_args": {
+        "a": [
+          15,
+          8,
+          1,
+          0
+        ],
+        "b": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The result of shifting each lane of [15, 8, 1, 0] right by the corresponding lane of [4, 5, 6, 7] is [15, 4, 0, 0].",
+      "final_raw": "The result of shifting each lane of [15, 8, 1, 0] right by the corresponding lane of [4, 5, 6, 7] is [15, 4, 0, 0].<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 18.048579692840576,
+      "chip_gen": [
+        146,
+        151,
+        163,
+        179,
+        243
+      ]
+    },
+    {
+      "case": 24,
+      "op": "MMUL",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "Use vec_mmul to multiply the matrices [3, 5, 7, 9] and [2, 4, 6, 8] (row-major 2x2) modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_mmul>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[2, 4, 6, 8]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_mmul",
+      "called_args": {
+        "a": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "b": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The matrix multiplication of the given vectors modulo 16 is:\n\n[4, 4, 4, 4]",
+      "final_raw": "The matrix multiplication of the given vectors modulo 16 is:\n\n[4, 4, 4, 4]<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.61396837234497,
+      "chip_gen": [
+        135,
+        151,
+        167,
+        183,
+        243
+      ]
+    },
+    {
+      "case": 25,
+      "op": "MMUL",
+      "A": [
+        15,
+        8,
+        1,
+        0
+      ],
+      "B": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "user": "Use vec_mmul to multiply the matrices [15, 8, 1, 0] and [4, 5, 6, 7] (row-major 2x2) modulo 16.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_mmul>\n<parameter=a>\n[15, 8, 1, 0]\n</parameter>\n<parameter=b>\n[4, 5, 6, 7]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": "vec_mmul",
+      "called_args": {
+        "a": [
+          15,
+          8,
+          1,
+          0
+        ],
+        "b": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "format": "xml",
+      "parse_ok": true,
+      "correct_tool_and_args": true,
+      "chip_ok_requested": true,
+      "final_text": "The matrix multiplication of the given vectors modulo 16 is:\n\n[12, 3, 4, 5]",
+      "final_raw": "The matrix multiplication of the given vectors modulo 16 is:\n\n[12, 3, 4, 5]<|im_end|>",
+      "second_call_loop": false,
+      "strict": true,
+      "seconds": 15.407631635665894,
+      "chip_gen": [
+        143,
+        150,
+        167,
+        184,
+        243
+      ]
+    },
+    {
+      "case": 26,
+      "op": "VSORT",
+      "A": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "B": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "user": "Use vec_vsort to sort [3, 5, 7, 9] ascending.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_vsort>\n<parameter=a>\n[3, 5, 7, 9]\n</parameter>\n<parameter=b>\n[]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": null,
+      "called_args": "bad/unknown call name=vec_vsort args={'a': [3, 5, 7, 9], 'b': []}",
+      "format": "xml",
+      "parse_ok": false,
+      "correct_tool_and_args": false,
+      "chip_ok_requested": null,
+      "final_text": null,
+      "final_raw": null,
+      "second_call_loop": false,
+      "strict": false,
+      "seconds": 7.509911060333252
+    },
+    {
+      "case": 27,
+      "op": "VSORT",
+      "A": [
+        15,
+        8,
+        1,
+        0
+      ],
+      "B": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "user": "Use vec_vsort to sort [15, 8, 1, 0] ascending.",
+      "tools_listed": [
+        "vec_add",
+        "vec_dot",
+        "vec_sub",
+        "vec_mul",
+        "vec_max",
+        "vec_min",
+        "vec_shl",
+        "vec_shr",
+        "vec_mmul",
+        "vec_vsort"
+      ],
+      "model_gen_text": "<tool_call>\n<function=vec_vsort>\n<parameter=a>\n[15, 8, 1, 0]\n</parameter>\n</function>\n</tool_call>",
+      "called_tool": null,
+      "called_args": "bad/unknown call name=vec_vsort args={'a': [15, 8, 1, 0]}",
+      "format": "xml",
+      "parse_ok": false,
+      "correct_tool_and_args": false,
+      "chip_ok_requested": null,
+      "final_text": null,
+      "final_raw": null,
+      "second_call_loop": false,
+      "strict": false,
+      "seconds": 6.768497467041016
+    }
+  ]
+}
