@@ -1,0 +1,11 @@
+{
+  "regression": "720/720",
+  "seconds": 1125.9893670082092,
+  "vram_max_mib": 8834.65234375,
+  "params": 4597653376,
+  "bf16_gb": 9.195306752,
+  "hidden": 2560,
+  "layers": 50,
+  "vocab": 248576,
+  "text_output": " Paris.\nA. True\nB. False"
+}
