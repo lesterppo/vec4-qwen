@@ -1,0 +1,208 @@
+{
+  "base": "/content/qwen35-08b",
+  "merged": "/content/qwen35-08b-vec4v2",
+  "v0": 248320,
+  "max_tokens": 60,
+  "rows": [
+    {
+      "model": "base",
+      "prompt": "The capital of France is",
+      "continuation": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.133,
+      "loop": true
+    },
+    {
+      "model": "base",
+      "prompt": "Why don't cats like math?",
+      "continuation": "\n\nCats are not inherently bad at math, but they do have a different way of thinking. They are more intuitive and visual, which makes them less likely to struggle with abstract concepts like numbers. For example, they can easily understand that a cat is a cat, but they might struggle with the",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Define a vector in one sentence.",
+      "continuation": "\n\n<think>\n\n</think>\n\nA vector is a mathematical object that has both magnitude and direction.",
+      "new_tokens": 19,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.158,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "The capital of Japan is",
+      "continuation": " Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.133,
+      "loop": true
+    },
+    {
+      "model": "base",
+      "prompt": "Hello!",
+      "continuation": "\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!\n\nHello!",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.333,
+      "loop": true
+    },
+    {
+      "model": "base",
+      "prompt": "Summarise Hamlet in two sentences.",
+      "continuation": "\n\n<think>\n\n</think>\n\nHamlet is a tragic play where the protagonist, a young prince, is haunted by the ghost of his father and is forced to wrestle with the complexities of revenge, madness, and the consequences of his actions.\nThe play concludes with the tragic death of the protagonist,",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.1,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "What is 2 + 2? Answer without calculating by hand.",
+      "continuation": "\n\n2 + 2 = 4.\n\nWhat is 2 + 2? Answer without calculating by hand.\n\n2 + 2 = 4.\n\nWhat is 2 + 2? Answer without calculating by hand.\n\n2 + 2 = 4.\n\nWhat is",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.167,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Give a one-sentence definition of a dot product.",
+      "continuation": "\n\n<think>\n\n</think>\n\nA dot product is the multiplication of two vectors by the cosine of the angle between them, resulting in a scalar value.",
+      "new_tokens": 30,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.1,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "What colour do you prefer, red or blue?",
+      "continuation": "\n\n<think>\n\n</think>\n\nI don't have personal preferences, but I can help you decide! If you're looking for a **red** color, I can suggest some shades like crimson, burgundy, or deep rose. If you're looking for a **blue** color, I can offer options",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Write a haiku about the sea.",
+      "continuation": "\n\n<think>\n\n</think>\n\nDeep blue waves roll,\nShadows of the past,\nAnd endless blue.\n\n**Note:** The third line (\"And endless blue\") is slightly unusual for a haiku, as \"endless\" is not a standard poetic word. I have adjusted it to \"",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "The capital of France is",
+      "continuation": " Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe capital of France is Paris.\nThe",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.133,
+      "loop": true
+    },
+    {
+      "model": "merged",
+      "prompt": "Why don't cats like math?",
+      "continuation": "\n\nCats are not inherently bad at math, but they do have a different way of thinking. They are more intuitive and visual, which makes them less likely to struggle with abstract concepts like numbers. For example, they can easily understand that a cat is a cat, but they might struggle with the",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Define a vector in one sentence.",
+      "continuation": "\n\n<think>\n\n</think>\n\nA vector is a mathematical object that has both magnitude and direction.",
+      "new_tokens": 19,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.158,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "The capital of Japan is",
+      "continuation": " Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe capital of Japan is Tokyo.\nThe",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.133,
+      "loop": true
+    },
+    {
+      "model": "merged",
+      "prompt": "Hello!",
+      "continuation": " I am a 20-year-old male, 180cm, 70kg, and I have a 10-year history of a 10-year history of a 10-year history of a 10-year history of a 10-year history of a",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.133,
+      "loop": true
+    },
+    {
+      "model": "merged",
+      "prompt": "Summarise Hamlet in two sentences.",
+      "continuation": "\n\n<think>\n\n</think>\n\nHamlet is a tragic play where the protagonist, a young prince, is haunted by the ghost of his father and is forced to wrestle with the complexities of revenge, madness, and the consequences of his actions.\n</think>\n\nHamlet is a tragic play where the protagonist",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "What is 2 + 2? Answer without calculating by hand.",
+      "continuation": "\n\n2 + 2 = 4.\n\nWhat is 2 + 2? Answer without calculating by hand.\n\n2 + 2 = 4.\n\nWhat is 2 + 2? Answer without calculating by hand.\n\n2 + 2 = 4.\n\nWhat is",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.167,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Give a one-sentence definition of a dot product.",
+      "continuation": "\n\n<think>\n\n</think>\n\nA dot product is the multiplication of two vectors by the cosine of the angle between them, resulting in a scalar value.",
+      "new_tokens": 30,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.1,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "What colour do you prefer, red or blue?",
+      "continuation": "\n\n<think>\n\n</think>\n\nI don't have personal preferences, but I can help you decide! If you're looking for a **red** color, I can suggest shades like crimson, burgundy, or deep rose. If you're looking for a **blue** color, I can offer options such",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Write a haiku about the sea.",
+      "continuation": "\n\n<think>\n\n</think>\n\nDeep blue waves roll,\nShadows of the past,\nAnd endless blue.\n\n**Note:** The third line (\"And endless blue\") is slightly unusual for a haiku, as \"endless\" is not a standard poetic word. I have adjusted it to \"",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.067,
+      "loop": false
+    }
+  ]
+}
