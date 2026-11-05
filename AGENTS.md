@@ -220,9 +220,9 @@ Counting rules that have burned people before:
   as VSHL/VSHR, MMUL and VSORT in v3. The base-vs-merged
   language probe was measured on 2026-11-05 (0.8B verbatim
   7/10, 2B 8/10, no chip-token leak; sanity evidence only, not
-  a KL) but its JSONs are not in this repo. These are open,
-  not failed. A new run that covers one should say which one,
-  with the same strict scoring.
+  a KL). The probe JSONs and record are in `vec4-lang/`.
+  These are open, not failed. A new run that covers one should
+  say which one, with the same strict scoring.
 - Do not push results to a repo, post them publicly, or touch
   another project from a run in this repo unless the operator
   explicitly says so for that run. This repo's own push history is
