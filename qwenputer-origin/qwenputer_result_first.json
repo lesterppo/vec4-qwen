@@ -1,0 +1,58 @@
+{
+  "expected_product": "121932631112635269",
+  "stages": {
+    "env": {
+      "seconds": 18.7,
+      "output": "python 3.13.16\ntorch 2.15.0+cu132\ntransformers 5.22.0\ncuda True Tesla T4\nvram_total_mib 14912"
+    },
+    "clone": {
+      "seconds": 0.0,
+      "ok": true
+    },
+    "install": {
+      "seconds": 2.0,
+      "pip_exit": 0
+    },
+    "download": {
+      "seconds": 0.0,
+      "ok": true,
+      "size": "18G\t/content/qwenputer/qwenputer-rv",
+      "files": "total 18G\n-rw-r--r-- 1 root root 115K Nov  3 11:12 benchmarks-rv.png\n-rw-r--r-- 1 root root 7.6K Nov  3 11:12 chat_template.jinja\n-rw-r--r-- 1 root root 2.4K Nov  3 11:12 chipformer.json\n-rw-r--r-- 1 root root 2.1K Nov  3 11:12 config.json\n-rw-r--r-- 1 root root 170K Nov  3 11:12 gdn-ram.png\n-rw-r--r-- 1 root root  149 Nov  3 11:12 generation_config.json\n-rw-r--r-- 1 root root  12K Nov  3 11:12 LICENSE\n-rw-r--r-- 1 root root 3.6G Nov  3 11:14 model-00001-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:19 model-00002-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:19 model-00003-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:19 model-00004-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:18 model-00005-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:18 model-00006-of-00008.safetensors\n-rw-r--r-- 1 root root 2.1G Nov  3 11:19 model-00007-of-00008.safetensors\n-rw-r--r-- 1 root root 1.8G Nov  3 11:18 model-00008-of-00008.safetensors\n-rw-r--r-- 1 root root  48K Nov  3 11:17 model.safetensors.index.json\n-rw-r--r-- 1 root root 7.6K Nov  3 11:17 qwenputer-banner.svg\n-rw-r--r-- 1 root root 4.7K Nov  3 11:12 README.md\n-rw-r--r-- 1 root root 9.0K Nov  3 11:18 tokenizer_config.json\n-rw-r--r-- 1 root root  62M Nov  3 11:17 tokenizer.json"
+    },
+    "full_in_model": {
+      "seconds": 14.0,
+      "exit": 1,
+      "product_present": false
+    },
+    "fallback_core": {
+      "seconds": 8.4,
+      "c-fib": false,
+      "c-sieve4": true
+    }
+  },
+  "gpu_smi": "name, memory.total [MiB], memory.free [MiB]\nTesla T4, 15360 MiB, 14913 MiB",
+  "env": "python 3.13.16\ntorch 2.15.0+cu132\ntransformers 5.22.0\ncuda True Tesla T4\nvram_total_mib 14912",
+  "full": {
+    "exit": 1,
+    "seconds": 14.0,
+    "output_tail": "ile \"/usr/local/lib/python3.13/dist-packages/transformers/models/qwen3_5/modeling_qwen3_5.py\", line 37, in <module>\n    from ...modeling_layers import (\n    ...<3 lines>...\n    )\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py\", line 37, in <module>\n    from .modeling_utils import LoadStateDictConfig, PreTrainedModel, _get_resolved_checkpoint_files\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py\", line 84, in <module>\n    from .loss.loss_utils import LOSS_MAPPING\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/loss/loss_utils.py\", line 21, in <module>\n    from .loss_d_fine import DFineForObjectDetectionLoss\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/loss/loss_d_fine.py\", line 21, in <module>\n    from .loss_for_object_detection import box_iou\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/loss/loss_for_object_detection.py\", line 31, in <module>\n    from transformers.image_transforms import center_to_corners_format\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/image_transforms.py\", line 22, in <module>\n    from .image_utils import (\n    ...<5 lines>...\n    )\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/image_utils.py\", line 58, in <module>\n    from torchvision.transforms import InterpolationMode\n  File \"/usr/local/lib/python3.13/dist-packages/torchvision/__init__.py\", line 8, in <module>\n    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/torchvision/_meta_registrations.py\", line 163, in <module>\n    @torch.library.register_fake(\"torchvision::nms\")\n     ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/torch/library.py\", line 1271, in register\n    use_lib._register_fake(\n    ~~~~~~~~~~~~~~~~~~~~~~^\n        op_name, func, _stacklevel=stacklevel + 1, allow_override=allow_override\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/usr/local/lib/python3.13/dist-packages/torch/library.py\", line 354, in _register_fake\n    handle = entry.fake_impl.register(\n        func_to_register, source, lib=self, allow_override=allow_override\n    )\n  File \"/usr/local/lib/python3.13/dist-packages/torch/_library/fake_impl.py\", line 87, in register\n    lib.impl(self.qualname, meta_kernel, \"Meta\", allow_override=allow_override)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.13/dist-packages/torch/library.py\", line 496, in impl\n    if torch._C._dispatch_has_kernel_for_dispatch_key(\n       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        dispatcher_op_name, \"CompositeImplicitAutograd\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ):\n    ^\nRuntimeError: operator torchvision::nms does not exist\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 517, in <module>\n    main()\n    ~~~~^^\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 500, in main\n    chat = RvChat(args.model, fast=not args.slow)\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 102, in __init__\n    from transformers import AutoTokenizer, Qwen3_5ForCausalLM\n  File \"/usr/local/lib/python3.13/dist-packages/transformers/utils/import_utils.py\", line 2701, in __getattr__\n    raise ModuleNotFoundError(import_error_message) from e\nModuleNotFoundError: Could not import module 'Qwen3_5ForCausalLM'. Are this object's requirements defined correctly? Set the logging verbosity to DEBUG for the original import error.\n",
+    "product_present": false
+  },
+  "fallback": {
+    "c-fib": {
+      "exit": 0,
+      "seconds": 7.5,
+      "expected_stdout": "fib(25)=75025",
+      "expected_present": false,
+      "output_tail": "halted False fault None exit None stdout ''\n"
+    },
+    "c-sieve4": {
+      "exit": 0,
+      "seconds": 0.9,
+      "expected_stdout": "primes below 10000: 1229",
+      "expected_present": true,
+      "output_tail": "halted True fault None exit 0 stdout 'primes below 10000: 1229\\n'\n"
+    }
+  },
+  "verdict": "FULL_IN_MODEL_FAILED"
+}
