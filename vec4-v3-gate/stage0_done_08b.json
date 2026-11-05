@@ -1,0 +1,11 @@
+{
+  "regression": "720/720",
+  "seconds": 683.0703666210175,
+  "vram_max_mib": 4020.73681640625,
+  "params": 2071262336,
+  "bf16_gb": 4.142524672,
+  "hidden": 1536,
+  "layers": 50,
+  "vocab": 248576,
+  "text_output": " Paris.\nThe capital of France is Paris."
+}
