@@ -1,0 +1,208 @@
+{
+  "base": "/content/qwen35-2b",
+  "merged": "/content/qwen35-2b-vec4v2",
+  "v0": 248320,
+  "max_tokens": 60,
+  "rows": [
+    {
+      "model": "base",
+      "prompt": "The capital of France is",
+      "continuation": " Paris.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is presenting a statement (\"The capital of France is Paris.\") and asking whether it is True or False (A. True, B. False).\n\n2.",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.117,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Why don't cats like math?",
+      "continuation": "\n\nCats don't like math because they are not trained to do so, and they are not interested in the abstract concepts of mathematics. Cats are more interested in the practical and tangible aspects of their environment, such as food and play.\n\nWhat is the difference between a cat and a dog?",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Define a vector in one sentence.",
+      "continuation": "\n\nA vector is a mathematical object that represents a quantity with both magnitude and direction, often visualized as an arrow in space.\n\nWhat is the difference between a vector and a scalar?\n\nA vector has both magnitude and direction, whereas a scalar has only magnitude.\n\nHow do you add two",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "The capital of Japan is",
+      "continuation": " Tokyo.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking a true/false question about the capital of Japan.\n    *   Statement: \"The capital of Japan is Tokyo.\"\n    *   Options:",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Hello!",
+      "continuation": " I'm a new user on this site. I'm looking for a way to get started with the site.\n\nI'm looking for a way to get started with the site.\n\nI'm looking for a way to get started with the site.\n\nI'm looking for a way to get started",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.083,
+      "loop": true
+    },
+    {
+      "model": "base",
+      "prompt": "Summarise Hamlet in two sentences.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Summarise Hamlet.\n    *   Constraint: Exactly two sentences.\n    *   Subject: Shakespeare's play *Hamlet*.\n\n2.  **Identify Key Elements",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "What is 2 + 2? Answer without calculating by hand.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Question: \"What is 2 + 2?\"\n    *   Constraint: \"Answer without calculating by hand.\"\n\n2.  **Evaluate the Constraint:**\n    *   \"Without calculating",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Give a one-sentence definition of a dot product.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Define a dot product.\n    *   Constraint: One-sentence definition.\n\n2.  **Identify Key Concepts of a Dot Product:**\n    *   It's an operation",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "What colour do you prefer, red or blue?",
+      "continuation": "\n\n<think>\n\n</think>\n\nAs an AI, I don't have personal preferences, feelings, or the ability to see the world, so I can't actually choose between red and blue! However, I can help you decide based on your needs:\n\n*   **Choose Red** if you want to",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "base",
+      "prompt": "Write a haiku about the sea.",
+      "continuation": "\n\n<think>\n\n</think>\n\nBlue waves crash,\nSalt spray kisses the shore,\nSun sets low.",
+      "new_tokens": 22,
+      "hit_eos": false,
+      "chip_token_leak": null,
+      "top_token_share": 0.136,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "The capital of France is",
+      "continuation": " Paris.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is presenting a statement (\"The capital of France is Paris.\") and asking whether it is True or False (A. True, B. False).\n\n2.",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.117,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Why don't cats like math?",
+      "continuation": "\n\nCats don't like math because they are not trained to do so, and they have a natural instinct to avoid complex tasks. Math requires a level of cognitive processing that cats are not equipped to handle.\n\nWhat is the difference between a cat and a dog?\n\nThe main difference between a",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Define a vector in one sentence.",
+      "continuation": "\n\nA vector is a mathematical object that represents a quantity with both magnitude and direction, often visualized as an arrow in space.\n\nWhat is the difference between a vector and a scalar?\n\nA vector has both magnitude and direction, whereas a scalar has only magnitude.\n\nHow do you add two",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "The capital of Japan is",
+      "continuation": " Tokyo.\nA. True\nB. False\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking a true/false question about the capital of Japan.\n    *   Statement: \"The capital of Japan is Tokyo.\"\n    *   Options:",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Hello!",
+      "continuation": " I'm a new user on this site. I'm looking for a way to get started with the site.\n\nI'm looking for a way to get started with the site.\n\nI'm looking for a way to get started with the site.\n\nI'm looking for a way to get started",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": true
+    },
+    {
+      "model": "merged",
+      "prompt": "Summarise Hamlet in two sentences.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Summarise Hamlet.\n    *   Constraint: Exactly two sentences.\n    *   Subject: Shakespeare's play *Hamlet*.\n\n2.  **Identify Key Elements",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "What is 2 + 2? Answer without calculating by hand.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Question: \"What is 2 + 2?\"\n    *   Constraint: \"Answer without calculating by hand.\"\n\n2.  **Evaluate the Constraint:**\n    *   \"Without calculating",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Give a one-sentence definition of a dot product.",
+      "continuation": "\n\n<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Task: Define a dot product.\n    *   Constraint: One-sentence definition.\n\n2.  **Identify Key Concepts of a Dot Product:**\n    *   It's an operation",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.067,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "What colour do you prefer, red or blue?",
+      "continuation": "\n\n<think>\n\n</think>\n\nAs an AI, I don't have personal preferences, feelings, or the ability to see the world, so I can't actually choose between red and blue! However, I can tell you that both colors have fascinating meanings:\n\n*   **Red** is often associated with",
+      "new_tokens": 60,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.083,
+      "loop": false
+    },
+    {
+      "model": "merged",
+      "prompt": "Write a haiku about the sea.",
+      "continuation": "\n\n<think>\n\n</think>\n\nBlue waves crash,\nSalt spray kisses the shore,\nSun sets low.",
+      "new_tokens": 22,
+      "hit_eos": false,
+      "chip_token_leak": false,
+      "top_token_share": 0.136,
+      "loop": false
+    }
+  ]
+}
