@@ -10,7 +10,11 @@ host-side interface is fixed — and a bigger model fixes the interface
 failure on its own, on the tested cases, at 2.38x the size. V2
 extends the unit to six operations plus a deterministic dispatcher,
 and the dispatcher — not model tool choice — is the route that
-generalises. A measured efficiency comparison prices that exactness:
+generalises. V3 adds three more operations (variable shifts,
+2×2 matrix product, sorting), a low-memory merge driver that
+closes the 2B merge-host RAM blocker, and three dispatcher fixes
+proven on the chip — dispatcher+chip is now clean on all 45 disp
+rows. A measured efficiency comparison prices that exactness:
 ~7 orders of magnitude behind NumPy per case.
 
 This repo is the complete record of that arc, scripts plus measured
@@ -33,6 +37,9 @@ pushed until every file was verified against the remote tree.
 | VEC4 v2 into 0.8B (6 ops) | `V2_08B_GATE_PASS_SELECTION_FAILS` | Gate 0 **396/396**; orig 20/20, paraphrase 7/12, adversarial 3/10 — model tool selection does **not** generalise; dispatcher+chip 39 executed + 1 expected refusal, 0 wrong |
 | VEC4 v2 into 2B (6 ops) | `V2_2B_GATE_PASS_SELECTION_PARTIAL` | Gate 0 **396/396**; orig 20/20, paraphrase 8/12, adversarial 8/10 — selection genuinely improves but does **not** generalise (stickiness survives in canonical misdirection, SUB swap fails, plain false-triggers 1/5); dispatcher+chip identical 39+1 refusal |
 | Efficiency (v2, both models) | `EFF_MEASURED_NOT_COMPETITIVE` | Both gates 60/60; chip cached median **0.477 s (0.8B) / 0.521 s (2B)** per case vs NumPy median ~0.035–0.040 µs — ~7 orders behind, ~8 behind torch CUDA; fixed costs 22–30 s load, 3.0–7.2 GB VRAM |
+| VEC4 v3 into 0.8B (10 ops) | `V3_08B_GATE_PASS_SELECTION_FAILS` | Gate 0 **720/720**, cache 40/40; orig 26/28 (both failures the VSORT prompt/schema artifact), paraphrase 9/16, adversarial 5/10 — selection still does **not** generalise; disp 41 executed + 2 refused + 2 wrong, all three wrong in the new-op para_new group |
+| VEC4 v3 into 2B, lowmem merge (10 ops) | `V3_2B_LOWMEM_GREEN` | Stock merge OOM-killed at 11.7 GB; lowmem merge peak **8.65 GB**, Gate 0 **720/720**, cache 40/40; orig 26/28, para 11/16, adv 8/10 — better than 0.8B but still not generalising; disp 41+2+2, same three para_new gaps |
+| V3 disp re-proof (2B, chip) | `V3_DISP_REPROOF_CLEAN` | After three local dispatcher fixes, disp **44 executed + 1 expected refusal, 0 wrong** on the chip — para_new 1→4, exactly the local replay prediction; dispatcher+chip now clean on all 45 disp rows |
 
 The one-line story: **the circuit was never the problem after MERGED_GREEN.
 Every later failure was interface — tool selection, English reporting,
@@ -59,6 +66,25 @@ scale fixed the interface too.**
   after-instead clause, and genuinely ambiguous prompts are
   refused, never guessed. VSHIFT was deliberately deferred — a
   variable barrel shifter is a different unit.
+- **V3** (`vec4-v3/`, gates in `vec4-v3-gate/`,
+  `vec4-v3-gate-2b-lowmem/`, re-proof in
+  `vec4-v3-disp-reproof/`): four more ops — `VSHL`/`VSHR`
+  (shift by B's low 2 bits), `MMUL` (2×2 matrices row-major,
+  product mod 16), `VSORT` (ascending, 5-stage compare-exchange
+  network; B present but ignored) — OP ids 248–251, CHIP_VOCAB
+  248→252, merged vocab unchanged at 248576. Gate 0 is 720 cases
+  (72/op). The stock 2B merge OOMs on the bigger circuit, so v3
+  ships `merge_v3_lowmem.py`: shard Qwen tensors out as they are
+  widened, emit chip layers one at a time through
+  `emit_layers_sink` (see AGENTS.md). Three dispatcher fixes,
+  proven on the chip by the re-proof: `product.*matrices`
+  resolves to MMUL before generic "product" → MUL; a
+  single-vector VSORT falls back to a dummy B `[0,0,0,0]`
+  (VSORT never reads B); "in ascending order" resolves to VSORT
+  before MIN's "smallest"; "to the left" / "to the right" added
+  to the VSHL/VSHR patterns. `replay_disp_local.py` replicates
+  the disp outcome logic with the ref executor standing in for
+  the chip.
 - Token encoding: OP (ADD=0, DOT=1), VAL, GO, OUT_ADD, OUT_DOT, END —
   full spec in `vec4/SPEC.md`, reference simulator in `vec4/ref.py`.
 - It is **not** CHIP-8, **not** RV32, **not** QwenPU. Only the compiler
@@ -136,6 +162,20 @@ directory layout documented in `SETUP.md`.
   chip cached 0.477/0.521 s/case vs NumPy ~0.035–0.040 µs and
   torch CUDA ~0.004 µs. Energy not measured (power snapshots
   only). Read its README before quoting any number from it.
+- `vec4-v3/` — V3 on both models. `SPEC_V3.md`,
+  `RESULT_V3_LOCAL.md` (local gates + both Colab gates +
+  disp re-proof, with the 2026-11-05 addenda),
+  `RESULT_LOWMEM.md` (the low-memory merge driver),
+  `merge_v3_lowmem.py` / `stage0_v3_lowmem.py`,
+  `test_lowmem.py` / `test_lowmem_smoke.py`,
+  `replay_disp_local.py`, `tool_v3.py`, `cache_probe_v3.py`.
+  0.8B: merged hidden 1536, 50 layers, 2,071,262,336 params,
+  4.14 GB bf16, Gate 0 720/720, cache 40/40. 2B lowmem: merged
+  hidden 2560, 50 layers, 4,597,653,376 params, 9.20 GB bf16,
+  16 shards, 981 keys, merge peak 8.65 GB, Gate 0 720/720,
+  cache 40/40. Tool results per model are in the gate JSONs
+  (`vec4-v3-gate/`, `vec4-v3-gate-2b-lowmem/`); the disp
+  re-proof JSONs are in `vec4-v3-disp-reproof/`.
 
 ## How to replicate (short version)
 
@@ -221,9 +261,10 @@ strict scoring and the same "download before teardown" discipline.
    both models. The remaining question is whether a different
    model-side approach (prompting, more tools, a larger model)
    closes those gaps, or whether the dispatcher route — which is
-   39+1 refusal, 0 wrong on both models — is simply the design.
-   Multi-operation prompts where no guard can name the tool in
-   advance are the sharpest next test.
+   39+1 refusal, 0 wrong on both models in v2, and 44+1 refusal,
+   0 wrong in v3 after the three dispatcher fixes — is simply
+   the design. Multi-operation prompts where no guard can name
+   the tool in advance are the sharpest next test.
 2. **Sentence-form B2.** The one in-model B2 case produced a bare
    "140", not a sentence. Test whether a host-rewritten chip result
    can be verbalised into a full sentence, and whether that costs
@@ -248,17 +289,22 @@ strict scoring and the same "download before teardown" discipline.
    the v2 circuit's max is 154 units per sublayer, so there is
    headroom before any redesign is needed, but the widening
    arithmetic must be recomputed and Gate 0 re-proven from
-   scratch. Named candidates, in order: VSHIFT (deferred from
-   v2 — a variable barrel shifter is a different unit), matrix
-   multiplication, sorting.
+   scratch. The named candidates from the earlier list are now
+   built: VSHIFT (as VSHL/VSHR), matrix multiplication (MMUL)
+   and sorting (VSORT) all shipped in v3 — see `vec4-v3/`.
+   What is still unbuilt: more lanes, or a genuinely new unit
+   (e.g. a divider, a wider word).
 7. **Base-vs-merged language capability.** The 10 language probes
-   in `vec4-v2/generalisation.json` have never been run on any
-   model; plain/notool results show no false triggering, not
-   preservation. Run base vs merged on those probes (and the
-   recorded text-sanity prompts) before claiming the merge is
-   free for ordinary text. No KL was computed anywhere in this
-   project; a probe comparison is not a KL, and must not be
-   reported as one.
+   in `vec4-v2/generalisation.json` were run base vs merged on
+   2026-11-05 (plain completion, greedy, 60 new tokens): merged
+   matches base verbatim on 7/10 prompts (0.8B) and 8/10 (2B),
+   no chip-token leak on any merged row, and the loop flags are
+   identical sets in base and merged — the loops are base-model
+   greedy behaviour, not merge damage. That is sanity evidence
+   only, not a KL and not a "text preserved" claim. The probe
+   JSONs are not in this repo (local run record only); a rerun
+   that wants them should re-run `vec4-v2/lang_probe.py` and
+   record the verbatim continuations the same way.
 
 ## Provenance
 
