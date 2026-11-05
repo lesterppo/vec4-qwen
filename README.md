@@ -302,9 +302,11 @@ strict scoring and the same "download before teardown" discipline.
    identical sets in base and merged — the loops are base-model
    greedy behaviour, not merge damage. That is sanity evidence
    only, not a KL and not a "text preserved" claim. The probe
-   JSONs are not in this repo (local run record only); a rerun
-   that wants them should re-run `vec4-v2/lang_probe.py` and
-   record the verbatim continuations the same way.
+   JSONs and the record are in `vec4-lang/` (`lang_08b.json`,
+   `lang_2b.json`, `stage0_done_08b.json`,
+   `stage0_done_2b.json`, `RESULT_LANG.md`); the driver is
+   `vec4-v2/lang_probe.py`. A rerun should record the verbatim
+   continuations the same way.
 
 ## Provenance
 
