@@ -1,0 +1,41 @@
+{
+  "expected_product": "121932631112635269",
+  "stages": {
+    "uv_sync": {
+      "seconds": 0.0,
+      "exit": 0
+    },
+    "full_in_model_uv": {
+      "seconds": 72.6,
+      "exit": 1,
+      "peak_vram_mib_polled": 14901,
+      "product_present": false
+    }
+  },
+  "correction_note": "First system-pip attempt died at import (torch 2.15 vs torchvision 0.26); this is the official uv-venv attempt in the same session.",
+  "full": {
+    "exit": 1,
+    "seconds": 72.6,
+    "peak_vram_mib_polled": 14901,
+    "first_output_seconds": 5.5,
+    "product_present": false,
+    "output_tail": "\nLoading weights:   0%|          | 0/580 [00:00<?, ?it/s]\nLoading weights:  23%|\u2588\u2588\u258e       | 135/580 [00:00<00:00, 1342.26it/s]\nLoading weights:  47%|\u2588\u2588\u2588\u2588\u258b     | 270/580 [00:00<00:00, 622.37it/s] \nLoading weights:  61%|\u2588\u2588\u2588\u2588\u2588\u2588    | 352/580 [00:00<00:00, 489.40it/s]\nLoading weights:  83%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e | 481/580 [00:00<00:00, 667.08it/s]\nLoading weights:  98%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 568/580 [00:00<00:00, 611.59it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 580/580 [00:00<00:00, 636.40it/s]\n[W1103 11:29:13.690491586 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 73400320 bytes (free: 12386304, total: 15637086208).\n[W1103 11:29:13.690687637 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 73400320 bytes (free: 12386304, total: 15637086208).\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 517, in <module>\n    main()\n    ~~~~^^\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 500, in main\n    chat = RvChat(args.model, fast=not args.slow)\n  File \"/content/qwenputer/experimental/riscv/chipformer/rv/chat.py\", line 112, in __init__\n    self.model = self.model.to(self.dev).eval()\n                 ~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py\", line 3711, in to\n    return super().to(*args, **kwargs)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1388, in to\n    return self._apply(convert)\n           ~~~~~~~~~~~^^^^^^^^^\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 933, in _apply\n    module._apply(fn)\n    ~~~~~~~~~~~~~^^^^\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 933, in _apply\n    module._apply(fn)\n    ~~~~~~~~~~~~~^^^^\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 933, in _apply\n    module._apply(fn)\n    ~~~~~~~~~~~~~^^^^\n  [Previous line repeated 2 more times]\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 966, in _apply\n    param_applied = fn(param)\n  File \"/content/qwenputer/experimental/riscv/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1374, in convert\n    return t.to(\n           ~~~~^\n        device,\n        ^^^^^^^\n        dtype if t.is_floating_point() or t.is_complex() else None,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        non_blocking,\n        ^^^^^^^^^^^^^\n    )\n    ^\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 70.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 11.81 MiB is free. Including non-PyTorch memory, this process has 14.55 GiB memory in use. Of the allocated memory 14.42 GiB is allocated by PyTorch, and 25.44 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n"
+  },
+  "fallback": {
+    "c-fib_isa": {
+      "exit": 0,
+      "seconds": 15.9,
+      "expected_stdout": "fib(25)=75025",
+      "expected_present": true,
+      "output_tail": "halted True steps 2114686 exit 0 stdout 'fib(25)=75025\\n'\n"
+    },
+    "c-sieve4_traced": {
+      "exit": 0,
+      "seconds": 0.9,
+      "expected_stdout": "primes below 10000: 1229",
+      "expected_present": true,
+      "output_tail": "halted True fault None exit 0 stdout 'primes below 10000: 1229\\n' trace_tokens 176225\n"
+    }
+  },
+  "verdict": "FALLBACK_CORE_ONLY"
+}
